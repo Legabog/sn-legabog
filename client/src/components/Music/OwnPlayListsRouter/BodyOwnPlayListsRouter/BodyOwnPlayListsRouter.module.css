@@ -1,0 +1,52 @@
+.bodyOwnPlayListsRouter {
+    display:flex;
+    word-break: break-all;
+}
+
+.playListImage {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.playListImage img {
+    width: 300px;
+    height: 300px;
+}
+
+.playListTitle {
+    display: block;
+    width: 620px;
+    margin-left: 30px;
+}
+
+.playListTitle h1, h4, h6{
+    color: #4A76A8;
+}
+
+.playListTitle br {
+    margin: 0;
+}
+
+.playListTracks {
+    margin-top: 20px;
+}
+
+.lastBlock {
+    height: 30px;
+}
+
+.delete {
+    margin-top: 160px;
+    margin-left: 550px;
+    font-size: 200%;
+    color: #F62A54;
+
+}
+
+.delete a {
+    color: #F62A54;
+}
+
+.delete i:hover {
+    cursor: pointer;
+}

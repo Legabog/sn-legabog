@@ -1,0 +1,56 @@
+/* -------------------Button_back--------------------- */
+
+.buttonBack {
+    margin-top: -70px;
+    margin-bottom: 22.4px;
+    margin-left: 20px;
+    display: flex;
+    color: #4A76A8;
+    /* margin-left: 15px; */
+  
+  }
+  
+  .buttonBack i {
+    font-size: 250%;
+  
+  }
+  
+  .buttonBack h3 {
+    margin-left: 5px;
+    color: #4A76A8;
+  }
+  
+  .buttonBack:hover h3 {
+    color: #F62A54;
+  }
+  
+  .buttonBack:hover i {
+    color: #F62A54;
+    
+  }
+  
+  
+  .headerMusicPlayer {
+    padding-top: 80px;
+  }
+  
+  .headerMusicPlayer hr {
+    margin: 0;
+  
+  }
+  
+  
+  .headerMusicPlayer h1 {
+      margin-left: 55px;
+      color: #4A76A8;
+  }
+
+  .headerMusicPlayer h4 {
+    margin-left: 55px;
+    color: #4A76A8;
+}
+
+  .trackImage img {
+      width: 300px;
+      height: 300px;
+  }

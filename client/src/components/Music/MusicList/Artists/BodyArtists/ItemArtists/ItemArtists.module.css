@@ -1,0 +1,35 @@
+.itemArtists {
+    height: 60px;
+    display: flex;
+  }
+
+  .itemArtists i {
+    color: #4A76A8;
+  }
+  
+  .itemArtists:hover {
+    cursor: pointer;
+    width: 980px;
+    background-color: rgb(214, 233, 255);
+  }
+  
+  .itemArtists h3 {
+    margin-left: 10px;
+    margin-top: 10px;
+    min-width: 930px;
+    color: #4A76A8;
+  }
+  
+  .itemArtists:hover h3 {
+    margin-left: 40px;
+    color: #F62A54;
+  }
+  
+  .itemArtists:hover i {
+    margin-left: -30px;
+    color: #F62A54;
+  }
+  
+  .itemArtists i {
+    margin-top: 21px;
+  }

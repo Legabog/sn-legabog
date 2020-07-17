@@ -1,0 +1,113 @@
+.bodyMusicList hr {
+  margin: 0;
+
+}
+/* --------------------------Artists----------------- */
+.item1 {
+  height: 60px;
+  display: flex;
+}
+
+.item1 i{
+  color: #4A76A8;
+}
+
+.item2 i{
+  color: #4A76A8;
+}
+
+.item3 i{
+  color: #4A76A8;
+}
+
+
+.item1:hover {
+  cursor: pointer;
+  width: 980px;
+  background-color: rgb(214, 233, 255);
+}
+
+.item1 h3 {
+  margin-left: 10px;
+  margin-top: 10px;
+  min-width: 930px;
+  color: #4A76A8;
+}
+
+.item1:hover h3 {
+  margin-left: 40px;
+  color: #F62A54;
+}
+
+.item1:hover i {
+  margin-left: -30px;
+  color: #F62A54;
+}
+
+.item1 i {
+  margin-top: 21px;
+}
+/* --------------------------Albums----------------- */
+.item2 {
+  height: 60px;
+  display: flex;
+}
+
+.item2:hover {
+  cursor: pointer;
+  width: 980px;
+  background-color: rgb(214, 233, 255);
+}
+
+.item2 h3 {
+  margin-left: 10px;
+  margin-top: 10px;
+  min-width: 930px;
+  color: #4A76A8;
+}
+
+.item2:hover h3 {
+  margin-left: 40px;
+  color: #F62A54;
+}
+
+.item2:hover i {
+  margin-left: -30px;
+  color: #F62A54;
+}
+
+.item2 i {
+  margin-top: 21px;
+}
+/* --------------------------Playlists----------------- */
+.item3 {
+  height: 60px;
+  display: flex;
+}
+
+.item3:hover {
+  cursor: pointer;
+  width: 980px;
+  background-color: rgb(214, 233, 255);
+}
+
+.item3 h3 {
+  margin-left: 10px;
+  margin-top: 10px;
+  min-width: 930px;
+  color: #4A76A8;
+}
+
+.item3:hover h3 {
+  margin-left: 40px;
+  color: #F62A54;
+}
+
+.item3:hover i {
+  margin-left: -30px;
+  color: #F62A54;
+}
+
+.item3 i {
+  margin-top: 21px;
+}

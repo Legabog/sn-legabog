@@ -1,0 +1,16 @@
+.headerMusicList {
+}
+
+.headerMusicList hr {
+  margin: 0;
+
+}
+
+.headerTitle {
+  padding-top: 80px;
+}
+
+.headerMusicList h1 {
+    margin-left: 55px;
+    color: #4A76A8;
+}

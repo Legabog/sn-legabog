@@ -1,0 +1,138 @@
+.buttonBack {
+    margin-top: -70px;
+    margin-bottom: 22.4px;
+    margin-left: 20px;
+    display: flex;
+    color: #4A76A8;
+    /* margin-left: 15px; */
+  
+  }
+  
+  .buttonBack i {
+    font-size: 250%;
+  
+  }
+  
+  .buttonBack h3 {
+    margin-left: 5px;
+    color: #4A76A8;
+  }
+  
+  .buttonBack:hover h3 {
+    color: #F62A54;
+  }
+  
+  .buttonBack:hover i {
+    color: #F62A54;
+    
+  }
+
+
+/* ----------------------------------------------------------------- */
+
+.buttonDone {
+    margin-top: -70px;
+    margin-bottom: 22.4px;
+    margin-left: 880px;
+    display: flex;
+    color: #4A76A8;
+    /* margin-left: 15px; */
+  
+  }
+
+  .buttonDone {
+      cursor: pointer;
+  }
+  
+  .buttonDone h3 {
+    margin-left: 5px;
+    color: #4A76A8;
+  }
+  
+  .buttonDone:hover h3 {
+    color: #F62A54;
+  }
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+.headerCreateAlbum {
+    padding-top: 80px;
+  }
+  
+  .headerCreateAlbum hr {
+    margin: 0;
+  
+  }
+  
+  
+  .headerCreateAlbum h1 {
+      margin-left: 55px;
+      color: #4A76A8;
+  }
+
+  .headerCreateAlbum img {
+   margin-left: 30px;
+  }
+
+  .inputs {
+      display: flex;
+  }
+
+  .addPhoto:hover label {
+    filter: brightness(0.95);
+    cursor: pointer;
+}
+.addPhoto {
+  width: 250px;
+  height: 250px;
+
+}
+.addPhoto img {
+  width: 250px;
+  height: 250px;
+  
+}
+
+.addPhoto input {
+  display: none;
+}
+
+  .inputs2 {
+    display: block;
+}
+
+.input1 {
+    border: none;
+    font-size: 250%;
+    width: 650px;
+    height: 60px;
+    margin-left: 50px;
+}
+
+.input1:hover {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+}
+
+.input2:hover {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+}
+
+.input2 {
+    border: none;
+    font-size: 250%;
+    width: 650px;
+    height: 60px;
+    margin-left: 50px;
+    margin-top: 80px;
+}
+
+
+  .lastBlock {
+      height: 20px;
+  }
+

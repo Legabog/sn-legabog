@@ -1,0 +1,57 @@
+.item {
+    display: block;
+  }
+  
+  .item:hover {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+  }
+
+  .item p {
+    color: #4A76A8;
+    font-size: 130%;
+    margin-bottom: 0px;
+  }
+
+ 
+  
+  .item:hover h6{
+    margin-left: 40px;
+    color: #F62A54;  
+  }
+
+  .item:hover p{
+    margin-left: 40px;
+    color: #F62A54;  
+  }
+
+  .item:hover button {
+    margin-left: -40px;
+    
+  }
+
+ 
+
+  .description {
+    display: flex;
+  }
+  
+  .description h6 {
+    font-size: 160%;
+    width: 556px;
+    margin-bottom: 0px;
+  }
+  
+  .description i {
+    color: #4A76A8;
+    font-size: 130%;
+    margin-top: 15px;
+  }
+
+  .item hr {
+    margin: 0;
+  }
+
+  .titleAndAuthor {
+      display: block;
+  }

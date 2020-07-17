@@ -1,0 +1,56 @@
+.bodyPlayLists {    
+  word-break: break-all;
+}
+
+.bodyPlayLists hr {
+    width: 710px;
+    margin-top: 0px;
+    margin-left: 270px;
+  }
+  
+.createPlayList {
+    margin-left: 30px;
+    display: flex;
+}
+
+.createPlayList img {
+  width: 200px;
+  height: 200px;
+}
+
+.createPlayList i {
+  margin-top: 70px;
+  margin-left: 380px;
+  font-size: 200%;
+  color: #4A76A8;
+}
+
+.createPlayList:hover img {
+  filter: brightness(0.95);
+}
+
+.createPlayList:hover {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+}
+
+.createPlayList:hover h3 {
+    color: #F62A54;
+    margin-left: 80px;
+}
+
+.createPlayList:hover i {
+  color: #F62A54;
+}
+
+.createPlayList h3 {
+    font-size: 250%;
+    margin-top: 65px;
+    margin-left: 30px;
+    color: #4A76A8;
+}
+  
+  
+  .lastBlock {
+    height: 20px;
+  }

@@ -1,0 +1,13 @@
+.mainMusic {
+    width: 950px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.player {
+    margin-right: 10px;
+}

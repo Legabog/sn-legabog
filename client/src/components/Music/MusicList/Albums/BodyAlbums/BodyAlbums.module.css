@@ -1,0 +1,54 @@
+.bodyAlbumsList {
+  display: block;
+}
+
+.bodyAlbumsList hr {
+  margin: 0;
+}
+
+.item {
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+}
+
+.item:hover img {
+    width: 17rem;
+}
+
+.item:hover .album {
+  font-size: 150%;
+}
+
+.item:hover .artist {
+  font-size: 150%;
+}
+
+.discription {
+  margin-top: -10px;
+}
+
+.album {
+  max-width: 300px;
+  padding-left: 55px;
+  color: #4A76A8;
+}
+
+.artist {
+  padding-left: 55px;
+  color: rgb(163, 163, 163);
+}
+
+
+
+.item img {
+  width: 250px;
+  margin-left: 55px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.lastBlock {
+  height: 60px;
+}
+
