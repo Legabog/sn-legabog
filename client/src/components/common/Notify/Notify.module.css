@@ -1,0 +1,15 @@
+.notify {
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.notify img {
+    width: 35px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.notify:hover {
+    background-color: #3d6898;
+}

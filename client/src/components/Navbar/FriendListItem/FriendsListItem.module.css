@@ -1,0 +1,12 @@
+.friendslistitem {
+    display: block;
+    padding: 5px;
+}
+.friendslistitem img {
+    width: 40px;
+    border-radius: 30px;
+}
+
+.friendslistitem p {
+    margin-top: 0px;
+}

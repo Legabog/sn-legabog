@@ -1,0 +1,40 @@
+.item {
+  padding: 10px;
+  
+}
+
+.likes {
+  padding: 10px;
+}
+
+.likes i {
+  color: #f67891;
+  font-size: 130%;
+}
+
+.likesCount i:hover {
+  cursor: pointer;
+  color: #F62A54;
+  font-size: 160%;
+}
+
+
+.likes span {
+  color: #F62A54;
+  font-size: 130%;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.description {
+  display: flex;
+}
+
+.description h6{
+  margin-left: 10px;
+  margin-top: 10px;
+}

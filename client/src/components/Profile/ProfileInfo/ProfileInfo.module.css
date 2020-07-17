@@ -1,0 +1,169 @@
+.descriptionBlock {
+    display: inline-block;
+    width: 600px;
+    /* max-height: 710px; */
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    /* background-image: url(https://image.freepik.com/free-photo/_1962-1376.jpg); */
+}
+
+.descriptionBlock h2 {
+    max-width: 400px;
+}
+
+.headerinfo {
+    display: flex;
+}
+
+.profile {
+    display: flex;
+}
+
+.allProfile {
+    height: auto;    
+}
+
+.headerinfo p{
+    margin-top: 5px;
+    
+}
+
+.avatarFrame {
+    display: block;
+    width: 340px;
+    height: 470px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.avatar img{
+    width: 300px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px solid #fff;
+}
+
+
+.contacts {
+    list-style: none;
+    font-size: 120%;
+    margin-top: 4px;
+}
+
+.profileStatus {
+    padding: 2px;
+}
+
+.profileStatus span:hover {
+    width: fit-content;
+    background-color: #d9d9df;
+    border-radius: 5px;
+}
+
+
+.info {
+    margin-left: 10px;
+    font-size: 110%;
+    margin-top: 10px;
+}
+
+.prosts {
+    margin-bottom: 30px;
+}
+
+.savePhoto img {
+    position: relative;
+}
+
+.savePhoto img:hover {
+    filter: brightness(0.95);
+    cursor: pointer;
+}
+
+.savePhoto i:hover{
+    cursor: pointer;
+}
+
+.savePhoto input {
+    display: none;
+}
+
+
+.downloadIcon {
+    width: fit-content;
+}
+
+.downloadIcon img {
+    position: relative;
+    top: -110px;
+    left: 240px;
+    width: 50px;
+    border: none;
+    opacity: 0;
+}
+
+.savePhoto:hover .downloadIcon img {
+    opacity: 1;
+}
+
+.follow {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4A76A8;
+}
+
+.follow:focus {
+    outline: none;
+}
+
+.follow:disabled {
+    background: #ccc;
+    color: #000;
+    cursor: not-allowed;
+}
+  
+.follow {
+    text-align: center;
+    margin-top: 5px;
+    color: #fff;
+}
+
+.unfollow {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    background-color: #F62A54;
+}
+
+.unfollow:focus {
+    outline: none;
+}
+
+.unfollow:disabled {
+    background: #ccc;
+    color: #000;
+    cursor: not-allowed;
+}
+
+.unfollow {
+    text-align: center;
+    margin-top: 5px;
+    color: #fff;
+}

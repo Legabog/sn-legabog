@@ -1,0 +1,45 @@
+.nav {
+  grid-area: n;
+  background-color: #e9ecf1;
+  padding: 20px;
+  display: block;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.list {
+  margin-top: 20px;
+  font-size: 120%;
+}
+
+.list li{
+  padding: 3px;
+}
+
+.nav span {
+  margin-left: 10px;
+  font-size: 150%;
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
+}
+
+.nav li:hover {
+  background-color: #d9d9df;
+  border-radius: 10px;
+
+}
+
+.item a {
+  color:#4A76A8;
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: #4A76A8;
+}
+
+.nav img {
+  width: 25px;
+}

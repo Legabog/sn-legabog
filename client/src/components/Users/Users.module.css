@@ -1,0 +1,135 @@
+.userphoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.followbutton {
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-left: 75px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;  
+  color: #fff;
+  background-color: #4A76A8;;  
+  cursor: pointer;
+}
+
+.followbutton:focus {
+  outline: none;
+}
+
+.followbutton:active {
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.followbutton:disabled {
+  background: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.unfollowbutton {
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-left: 75px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;  
+  cursor: pointer;
+  color: #fff;
+  background-color: #F62A54;  
+}
+
+.unfollowbutton:focus {
+  outline: none;
+}
+
+.unfollowbutton:active {
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.unfollowbutton:disabled {
+  background: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.shortinfo {
+  display: flex;
+}
+
+.shortinfo span {
+  margin-top: -25px;
+}
+
+.usercard {
+  padding: 10px;
+  display: block;
+  border-radius: 10px;
+  width: 960px;
+  background-color: #fff;
+  margin: 10px;  
+  
+}
+
+.usercard a {
+  text-decoration: none;
+}
+
+.usercard h4 {
+  font-size: 150%;
+  color: #4A76A8
+}
+
+.usercard p {
+  color: #4A76A8;
+  font-size: 130%;
+}
+
+.userslider {
+  padding: 10px;
+  margin-left: 380px;
+}
+
+.root button {
+  color: #4A76A8;
+}
+
+.root button:hover {
+  background-color: #d9d9df;
+}
+
+.root button:focus {
+  outline: none;
+}
+
+.rootdiv {
+  display: block;
+}
+
+.cardsdiv {
+  margin-left: 20px;
+  width: 1000px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.hrline {
+  height: 0;
+	border: none;
+	border-top: 1px solid rgb(202, 202, 202);
+}

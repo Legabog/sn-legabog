@@ -1,0 +1,45 @@
+.SimpleMenu {
+  display: flex;
+  margin-right: 15px;
+  margin-top: -16px;
+  padding: 10px;
+  height: 60px;
+  width: 100px;
+}
+
+.SimpleMenu button:focus {
+  outline: none;
+}
+
+.SimpleMenu button:hover {
+
+}
+
+.loginblock {
+  display: flex;
+  height: 75px;
+  margin-top: -35px;
+}
+
+.loginblock img {
+  margin-left: 5px;
+  margin-top: 35px;
+  width: 20px;
+  height: 20px;
+}
+
+.loginblock:hover {
+  background-color: #3d6898;
+}
+
+.loginblock p {
+  margin-left: 15px;
+  margin-top: 35px;
+}
+
+.avatar img {
+  margin-top: 20px;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}

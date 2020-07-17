@@ -1,0 +1,33 @@
+.formControll.error input,
+.formControll.error textarea {
+    border: 3px solid #F62A54;
+}
+
+.formControll.error span {
+    color: #F62A54;
+}
+
+.formSummaryError { 
+    display: inline-block;
+    width: fit-content; 
+    border-radius: 10px;
+    border: 3px solid #F62A54;
+    font-size: 110%;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #d8aaaa;
+}
+
+.formSummaryError h3 { 
+    color: #F62A54;
+}
+
+.formSummaryError img {
+    margin-top: 10px;
+    margin-bottom: -7px;
+    width: 40px;
+}
+
+.formSummaryError span { 
+    color: #fff
+}

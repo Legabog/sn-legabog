@@ -1,0 +1,57 @@
+.headerh1 {
+    text-align: center;
+    color: #4A76A8;
+}
+
+.themeSettings {
+    padding: 30px;
+    display: block;
+    border-radius: 30px;
+    background-color: #fff;
+    margin: 30px;
+}
+
+.themeSettings h3 {
+    text-align: center;
+    color: #4A76A8;
+}
+
+.newsSettings {
+    padding: 30px;
+    display: block;
+    border-radius: 30px;
+    background-color: #fff;
+    margin: 30px;
+}
+
+.newsSettings h3 {
+    text-align: center;
+    color: #4A76A8;
+}
+
+.listOfCountries {
+    display: block;
+    padding: 50px;
+    
+}
+
+.categoriesSettings {
+    padding: 5px;
+}
+
+.categoriesbuttons {
+    border: 2px solid rgb(122, 194, 51);
+    background-color: rgb(172, 248, 165);
+    border-radius: 20px;
+    margin-left: 25px;
+    font-size: 110%;
+}
+
+.resultbutton {
+    border: 2px solid rgb(95, 7, 196);
+    background-color: rgb(50, 156, 255);
+    border-radius: 20px;
+    margin-left: 50px;
+    font-size: 150%;
+}
+

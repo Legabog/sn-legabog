@@ -1,0 +1,125 @@
+.newsCard {
+    padding: 20px;
+    display: block;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 15px;
+    /* margin: 20px; */
+    width: 970px;
+
+
+}
+
+.newsCard h2 {
+    color: #4A76A8;
+}
+
+.newsHeader {
+    color: #4A76A8;
+}
+
+.newsInfo {
+    display: block;
+}
+
+.newsInfo img{
+    border-radius: 30px;   
+    max-width: 900px; 
+    max-height: 500px;
+}
+
+.newsInfo p{
+    color: #4A76A8;
+    display: block;
+    font-size: 180%;
+}
+
+.options {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0px;
+    width: 560px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.optionsTogether {
+    display: flex;
+}
+
+.optionsLabel {
+    color: #4A76A8;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.optionsLabel i {
+    position: relative;
+    font-size: 2000%;
+    /* margin-top: 100px; */
+}
+
+.optionsLabel h1 {
+    width: 150px;
+    margin-left: 190px;
+    position: absolute;
+    color: #4A76A8;
+}
+
+.optionstitle {
+    color: #4A76A8;
+    display: flex;
+}
+
+.optionstitle h1{
+    color: #4A76A8;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+.optionCountries {
+    padding: 5px;
+}
+
+.optionCountries select:focus {
+    border-color: 15px solid #4A76A8;
+    box-shadow: none;    
+}
+
+.optionCountries button {
+    font-size: 140%;
+    background: #4A76A8;
+    color: #fff;
+}
+
+.optionCountries button:hover {
+    color: #4A76A8;
+    background: #fff;
+}
+
+.optionCategories {
+    padding: 5px;
+}
+
+.optionCategories button {
+    font-size: 140%;
+    background: #4A76A8;
+    color: #fff;
+}
+
+.optionCategories button:hover {
+    color: #4A76A8;
+    background: #fff;
+}
+
+.optionCategories select:focus {
+    border-color: 15px solid #4A76A8;
+    box-shadow: none;    
+}
+

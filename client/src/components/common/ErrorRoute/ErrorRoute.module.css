@@ -1,0 +1,47 @@
+.error {
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 980px;
+    /* height: 200px; */
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+  
+  .error h1 {
+   color: red;
+   text-align: center;
+  }
+  
+  .errorIcon i {
+    width: 350px;
+    height: 350px;
+    padding-top: 50px;
+    padding-left: 250px;
+    font-size: 500%;
+    color: red;
+  }
+  
+  .errorDescription {
+    
+    margin-top: -290px;
+  }
+  
+  .errorNumber h1 {
+    font-size: 800%;
+  }
+  
+  .errorDescription h2 {
+    font-size: 400%;
+  }
+  
+  .error h2 {
+    color: red;
+    text-align: center;
+   }
+  
+  
+   .lastBlock {
+    height: 60px;
+  }
+  
