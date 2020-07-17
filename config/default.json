@@ -1,0 +1,5 @@
+{
+    "port": 4000,
+    "jwtSecret": "legabog13",
+    "mongoURI": "mongodb+srv://legabog:13141599o@cluster0-8g9zn.mongodb.net/music-playlists?retryWrites=true&w=majority"
+}
