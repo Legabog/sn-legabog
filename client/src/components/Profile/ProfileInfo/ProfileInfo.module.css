@@ -1,7 +1,6 @@
 .descriptionBlock {
     display: inline-block;
     width: 600px;
-    /* max-height: 710px; */
     padding: 10px;
     border-radius: 10px;
     margin-top: 10px;
@@ -9,16 +8,52 @@
     margin-right: 10px;
     margin-bottom: 30px;
     background-color: #fff;
-    /* background-image: url(https://image.freepik.com/free-photo/_1962-1376.jpg); */
 }
 
+.descriptionBlock li {
+    list-style: none;
+}
+
+.descriptionBlock li::before {
+    content: "\2022";
+    color: #224b7a; 
+    font-weight: bold;
+    display: inline-block; 
+    width: 10px; 
+}
+
+.descriptionBlock li{
+    padding-left: -10px;
+    color: #4A76A8
+}
+
+
 .descriptionBlock h2 {
+    color: #4A76A8;
     max-width: 400px;
 }
 
+.descriptionBlock h4 {
+    margin-top: -1px;
+}
+
 .headerinfo {
+    margin-top: -20px;
     display: flex;
 }
+
+.headerinfo img {
+    margin-top: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.headerinfo img:hover {
+    cursor: pointer;
+    filter: opacity(50%);
+}
+
+
 
 .profile {
     display: flex;
@@ -28,19 +63,18 @@
     height: auto;    
 }
 
-.headerinfo p{
-    margin-top: 5px;
-    
-}
-
 .avatarFrame {
     display: block;
     width: 340px;
-    height: 470px;
+    height: 410px;
     border-radius: 10px;
     background-color: #fff;
     margin-top: 10px;
     margin-left: 15px;
+}
+
+.avatar {
+    height: fit-content;
 }
 
 .avatar img{
@@ -64,10 +98,32 @@
     padding: 2px;
 }
 
+.profileStatus img {
+    margin-bottom: -4px;
+    margin-right: 5px;
+}
+
+.profileStatus span {
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #4A76A8
+}
+
 .profileStatus span:hover {
     width: fit-content;
+    cursor: pointer;
     background-color: #d9d9df;
     border-radius: 5px;
+}
+
+.profileStatus input {
+    font-size: 110%;
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #4A76A8;
+    border: #fff;
 }
 
 
@@ -75,6 +131,11 @@
     margin-left: 10px;
     font-size: 110%;
     margin-top: 10px;
+}
+
+.info p {
+    margin-top: -5px;
+    color: #939393;
 }
 
 .prosts {
@@ -87,10 +148,6 @@
 
 .savePhoto img:hover {
     filter: brightness(0.95);
-    cursor: pointer;
-}
-
-.savePhoto i:hover{
     cursor: pointer;
 }
 
@@ -116,54 +173,105 @@
     opacity: 1;
 }
 
-.follow {
-    width: 100px;
+.follow button{
+    width: 80px;
     height: 30px;
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-left: 5px;
     border-radius: 20px;
     border: none;
     background-color: #4A76A8;
+    text-align: center;
+    margin-top: 25px;
+    color: #fff;
 }
 
-.follow:focus {
+.follow button:focus {
     outline: none;
 }
 
-.follow:disabled {
+.follow button:hover {
+    cursor: pointer;
+    filter: opacity(90%);
+}
+
+.follow button:disabled {
     background: #ccc;
     color: #000;
     cursor: not-allowed;
 }
   
-.follow {
-    text-align: center;
-    margin-top: 5px;
-    color: #fff;
-}
-
-.unfollow {
-    width: 100px;
+.unfollow button{
+    width: 80px;
     height: 30px;
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-left: 5px;
     border-radius: 20px;
     border: none;
+    text-align: center;
+    margin-top: 25px;
+    color: #fff;
     background-color: #F62A54;
 }
 
-.unfollow:focus {
+.unfollow button:focus {
     outline: none;
 }
 
-.unfollow:disabled {
+.unfollow button:hover {
+    cursor: pointer;
+    filter: opacity(90%);
+}
+
+.unfollow button:disabled {
     background: #ccc;
     color: #000;
     cursor: not-allowed;
 }
 
-.unfollow {
-    text-align: center;
-    margin-top: 5px;
+.buttonWriteMessage button{
+    margin-top: -10px;
+    width: 250px;
+    height: 45px;
+    margin-left: 20px;
+    font-size: 130%;
+    background: #4A76A8;
+    border: #4A76A8;
     color: #fff;
+    border-radius: 10px;
+}
+
+.buttonWriteMessage button:hover{
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.buttonSettings button {
+    width: 45px;
+    height: 45px;
+    margin-left: 5px;
+    font-size: 130%;
+    background: #e5ebf1;
+    border: #e5ebf1;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+.buttonSettings button:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.buttonSettings img {
+    width: 30px;
+    margin-top: 7px;
+}
+
+.frontButtons {
+    margin-top: -80px;
+    display: flex;
+}
+
+.descriptionBlock hr {
+    height: 0;
+	border: none;
+	border-top: 1px solid rgb(202, 202, 202);
 }

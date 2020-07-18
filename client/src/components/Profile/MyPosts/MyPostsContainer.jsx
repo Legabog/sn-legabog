@@ -14,6 +14,7 @@ let mapStateToProps = state => {
   return {
     PostsData: state.profileReducer.PostsData,
     newPostText: state.profileReducer.newPostText,
+    photoImg: state.profileReducer.profilePhoto
   }
 }
 

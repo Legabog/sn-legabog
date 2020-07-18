@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./ProfileInfo.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import status_icon from "../../../assets/images/icons/status.svg";
 
 const ProfileStatusWithHooks = (props) => {
   let [editMode, setEditMode] = useState(false);
@@ -19,12 +20,14 @@ const ProfileStatusWithHooks = (props) => {
     <div className={classes.profileStatus}>
       {props.isOwner 
         ? <div>
+          <img src={status_icon} alt="status"></img>
           <span>
             {props.status || "---"}
           </span>
         </div>
         : !editMode ? (
           <div>
+            <img src={status_icon} alt="status"></img>
             <span
               onClick={() => {
                 setEditMode(true);
@@ -35,6 +38,7 @@ const ProfileStatusWithHooks = (props) => {
           </div>
         ) : (
           <div>
+            <img src={status_icon} alt="status"></img>
             <input
               onChange={onStatusChange}
               autoFocus={true}

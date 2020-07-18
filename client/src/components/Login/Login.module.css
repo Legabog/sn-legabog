@@ -72,9 +72,9 @@
     font-size: 120%;
     border-radius: 20px;
     background-color: #4A76A8;
-    background-image: url('../../assets//images/icons/qr.svg');
+    background-image: url('../../assets//images/icons/key.svg');
     background-repeat: no-repeat;
-    background-position: 10px 7px;
+    background-position: 10px 5px;
     padding-left: 40px;
     color: #fff;
     border: none;
@@ -127,9 +127,12 @@
 }
 
 .captchaInput input {
-    font-size: 120%;
+    font-size: 110%;
     border-radius: 20px;
     background-color: #4A76A8;
+    background-image: url('../../assets//images/icons/qr.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
     color: #fff;
     border: none;
     outline: none;

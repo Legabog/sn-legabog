@@ -8,7 +8,7 @@ import { login } from "../.././redux/auth-reducer";
 import { Redirect } from "react-router-dom";
 import Img from "../../assets/images/user.png";
 import cls from "../common/FormsControls/FormsControls.module.css";
-import error from "../../assets/images/icons/error.svg";
+import report from "../../assets/images/icons/report.svg";
 
 const LoginForm = (props) => {
   return (
@@ -39,8 +39,8 @@ const LoginForm = (props) => {
         <div>
           <div className={cls.formSummaryError}>
             <div>
-              <span>Warning</span>
-              <img src={error} alt="error"></img>
+              <img src={report} alt="error"></img>
+              <span>Warning!!!</span>
             </div>
             <div>
               <h3>{props.error}</h3>
@@ -60,6 +60,7 @@ const LoginForm = (props) => {
               placeholder={"Symbols from image"}
               component={Input}
               validate={[requiredField]}
+              autoComplete="off"
             />
           </div>
         </div>

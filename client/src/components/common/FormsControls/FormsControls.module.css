@@ -7,6 +7,14 @@
     color: #F62A54;
 }
 
+.formControll.error img {
+    margin-bottom: -3px;
+    margin-right: -5px;
+    color: #F62A54;
+}
+
+
+
 .formSummaryError { 
     display: inline-block;
     width: fit-content; 
@@ -23,9 +31,9 @@
 }
 
 .formSummaryError img {
-    margin-top: 10px;
-    margin-bottom: -7px;
-    width: 40px;
+    margin-bottom: -13px;
+    margin-right: 5px;
+    width: 50px;
 }
 
 .formSummaryError span { 

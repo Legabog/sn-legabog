@@ -7,8 +7,19 @@
     margin-bottom: 20px;
 }
 
-.postsBlock h2 {
-    text-align: center;
+.header {
+    margin-left: 100px;
+    display: flex;
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.header h2 {
+    margin-left: 10px;
     color: #4A76A8;
 }
 
@@ -21,6 +32,32 @@
     margin-top: 10px;
 }
 
-/* .field {
-    width: px;
-} */
+.inputMessage button {
+    width: 320px;
+    height: 40px;
+    font-size: 160%;
+    margin-top: 10px;
+    background: #4a76a8;
+    border: #4A76A8;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.inputMessage button:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.inputMessage textarea {
+    width: 316px;
+    font-size: 200%;
+    border-radius: 10px;
+    background-color: #a3c6ee;
+    color: #fff;
+    border: #4A76A8;
+}
+
+.inputMessage textarea::-webkit-input-placeholder { 
+    color: #fff;
+    padding-left: 10px;
+}

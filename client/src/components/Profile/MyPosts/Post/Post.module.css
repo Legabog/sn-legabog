@@ -7,24 +7,11 @@
   padding: 10px;
 }
 
-.likes i {
-  color: #f67891;
-  font-size: 130%;
+.likes h4 {
+  margin-top: -10px;
 }
 
-.likesCount i:hover {
-  cursor: pointer;
-  color: #F62A54;
-  font-size: 160%;
-}
-
-
-.likes span {
-  color: #F62A54;
-  font-size: 130%;
-}
-
-.item img {
+.description img {
   width: 50px;
   height: 50px;
   border-radius: 30px;
@@ -35,6 +22,24 @@
 }
 
 .description h6{
+  font-size: 90%;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.likesCount img {
+  margin-bottom: -3px;
+  width: 20px;
+}
+
+.likesCount span {
+  margin-top: 10px;
+  color: #F62A54;
+  font-size: 100%;
+}
+
+.likesCount img:hover {
+  cursor: pointer;
+  filter:opacity(70%);
+  width: 25px;
 }

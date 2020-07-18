@@ -5,20 +5,19 @@ const ProfileFollowButton = (props) => {
   return (
     <>
       {props.followStatus ? (
-        <div>
+        <div className={classes.follow}>
           <button
             disabled={props.fetchStatus}
-            className={classes.follow}
             onClick={() => props.unfollow(props.userId)}
           >
             followed
           </button>
         </div>
       ) : (
-        <div>
+        <div className={classes.unfollow}>
           <button
             disabled={props.fetchStatus}
-            className={classes.unfollow}
+            
             onClick={() => props.follow(props.userId)}
           >
             unfollowed

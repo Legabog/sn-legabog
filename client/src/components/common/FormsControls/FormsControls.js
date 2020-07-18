@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./FormsControls.module.css";
+import error from "../../../assets/images/icons/error.svg"
 
 const FormControl = ({ input, child, meta, ...props }) => {
   const hasError = meta.touched && meta.error;
@@ -10,7 +11,7 @@ const FormControl = ({ input, child, meta, ...props }) => {
       <div>{props.children}</div>
       {hasError && (
         <span>
-          <i className="fas fa-exclamation-circle"></i> {meta.error}
+          <img src={error} alt="error"></img> {meta.error}
         </span>
       )}
     </div>

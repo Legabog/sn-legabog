@@ -5,6 +5,17 @@ import MyPostsContainer from "../MyPosts/MyPostsContainer";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import ProfileFollowButton from "./ProfileFollowButton";
 import download from "../../../assets/images/icons/download.svg";
+import settings from "../../../assets/images/icons/navbar/settings.svg";
+import info from "../../../assets/images/icons/info.svg";
+import facebook from "../../../assets/images/icons/facebook.svg"
+import site from "../../../assets/images/icons/site.svg"
+import vk from "../../../assets/images/icons/vk.svg"
+import twitter from "../../../assets/images/icons/twitter.svg"
+import instagram from "../../../assets/images/icons/instagram.svg"
+import youtube from "../../../assets/images/icons/youtube.svg"
+import github from "../../../assets/images/icons/github.svg"
+import linked from "../../../assets/images/icons/linked.svg"
+
 
 const ProfileInfo = (props) => {
   const onMainPhotoSelected = (e) => {
@@ -31,9 +42,8 @@ const ProfileInfo = (props) => {
                     alt="description"
                   />
                   <div className={classes.downloadIcon}>
-                  <img src={download} alt="download"></img>
+                    <img src={download} alt="download"></img>
                   </div>
-                  
                 </label>
                 <input
                   id="save-photo"
@@ -44,36 +54,17 @@ const ProfileInfo = (props) => {
             )}
           </div>
 
-          <button
-            type="button"
-            className="btn btn-primary btn-sm"
-            style={{
-              width: "250px",
-              height: "40px",
-              marginLeft: "20px",
-              fontSize: "130%",
-              marginTop: "20px",
-              background: "#4A76A8",
-              border: "#4A76A8",
-            }}
-          >
-            Write a message
-          </button>
-          <button
-            type="button"
-            className="btn btn-secondary btn-sm"
-            style={{
-              width: "45px",
-              height: "40px",
-              marginLeft: "5px",
-              fontSize: "130%",
-              marginTop: "20px",
-              background: "#e5ebf1",
-              border: "#e5ebf1",
-            }}
-          >
-            <i className="fas fa-cog" style={{ color: "#4A76A8" }}></i>
-          </button>
+          <div className={classes.frontButtons}>
+            <div className={classes.buttonWriteMessage}>
+              <button>Write a message</button>
+            </div>
+            <div className={classes.buttonSettings}>
+              <button>
+                <img src={settings} alt="settings"></img>
+              </button>
+            </div>
+          </div>
+
           <div className={classes.posts}>
             <MyPostsContainer />
           </div>
@@ -84,7 +75,7 @@ const ProfileInfo = (props) => {
               <h2>
                 <strong>{props.profile.fullName || "Нет информации"}</strong>
               </h2>
-              <i className="far fa-question-circle"></i>
+              <img src={info} alt="info"></img>
               {props.isOwner ? (
                 <ProfileFollowButton
                   followStatus={props.followStatus}
@@ -95,67 +86,53 @@ const ProfileInfo = (props) => {
                 />
               ) : null}
             </div>
-            <p>online</p>
+            <div>
+              <p>online</p>
+            </div>
 
             <ProfileStatusWithHooks {...props} />
-            <hr align="center" width="550" size="3" />
+            <hr align="center" />
             <h4>Information about me:</h4>
-            <li>{props.profile.aboutMe || "Нет информации"} </li>
+            <li style={{marginTop: "-20px"}}>{props.profile.aboutMe || "Нет информации"} </li>
             <hr />
             <h4>Inforamtion about job:</h4>
-            <li>Ищу работу: {props.profile.lookingForAJob ? "да" : "Нет"}</li>
-            <li>
+            <li style={{marginTop: "-20px"}}>Ищу работу: {props.profile.lookingForAJob ? "да" : "Нет"}</li>
+            <li >
               Описание: {props.profile.lookingForAJobDescription || "Нет"}
             </li>
             <hr />
             <h4>Contacts:</h4>
             <li>
-              <i className="fab fa-facebook">
-                {" "}
-                <strong>{props.profile.contacts.facebook || "Нет"}</strong>
-              </i>
+              <img src={facebook} alt="facebook" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.facebook || "Нет"}</strong>
             </li>
             <li>
-              <i className="fas fa-sitemap">
-                {" "}
-                <strong>{props.profile.contacts.website || "Нет"}</strong>
-              </i>
+              <img src={site} alt="site" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.website || "Нет"}</strong>
             </li>
             <li>
-              <i className="fab fa-vk">
-                {" "}
-                <strong>{props.profile.contacts.vk || "Нет"}</strong>
-              </i>
+              <img src={vk} alt="vk" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.vk || "Нет"}</strong>
             </li>
             <li>
-              <i className="fab fa-twitter">
-                {" "}
-                <strong>{props.profile.contacts.twitter || "Нет"}</strong>
-              </i>
+              <img src={twitter} alt="twitter" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.twitter || "Нет"}</strong>
             </li>
             <li>
-              <i className="fab fa-instagram">
-                {" "}
-                <strong>{props.profile.contacts.instagram || "Нет"}</strong>
-              </i>
+              <img src={instagram} alt="instagram" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.instagram || "Нет"}</strong>
             </li>
             <li>
-              <i className="fab fa-youtube">
-                {" "}
-                <strong>{props.profile.contacts.youtube || "Нет"}</strong>
-              </i>
+              <img src={youtube} alt="youtube" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.youtube || "Нет"}</strong>
             </li>
             <li>
-              <i className="fab fa-github">
-                {" "}
-                <strong>{props.profile.contacts.github || "Нет"}</strong>
-              </i>
+              <img src={github} alt="github" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.github || "Нет"}</strong>
             </li>
             <li>
-              <i className="fas fa-link">
-                {" "}
-                <strong>{props.profile.contacts.mainlink || "Нет"}</strong>
-              </i>
+              <img src={linked} alt="linked" style={{width: "30px", marginBottom: "-5px"}}></img>
+              <strong>{props.profile.contacts.mainlink || "Нет"}</strong>
             </li>
             <hr />
             <h4>Photos:</h4>
