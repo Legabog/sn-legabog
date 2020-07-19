@@ -6,7 +6,14 @@
     width: 710px;
     margin-top: 0px;
     margin-left: 270px;
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(202, 202, 202);
   }
+
+.bodyPlayLists a {
+  text-decoration: none;
+}  
   
 .createPlayList {
     margin-left: 30px;

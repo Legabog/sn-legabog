@@ -1,13 +1,13 @@
 .startScreen {
-    display: flex;
+    display: block;
     border-radius: 10px;
     /* background-color: #fff; */
     text-align: center;
     font-size: 150%;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 150px;
+    margin-right: 100px;
     opacity:0;
     transition: 1s;
     animation: show 3s 1;
@@ -15,26 +15,30 @@
     animation-delay: 1s;
 }
 
-.startScreen i {
-    font-size: 800%;
-    color: #F62A54;
+.description {
+    width: 700px;
+    display: flex;
 }
 
-.description {
+.description img{
     margin-top: 30px;
-    margin-Left: 30px;
+    width: 200px;
+    height: 200px;
 }
 
 .description h1 {
+    width: 500px;
     color: #4A76A8;
-    font-size: 350%;
+    font-size: 300%;
+    margin-top: 60px;
 }
 
-.description p {
+.startScreen p {
+    width: 160px;
     font-size: 110%;
     color: #4A76A8;
-    margin-top: -30px;
-    margin-left: -270px;
+    margin-top: -60px;
+    margin-left: 350px;
 }
 
 @keyframes show{

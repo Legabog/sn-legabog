@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./PlayList.module.css";
 import { NavLink } from "react-router-dom";
+import arrow_right from "../../../../../assets/images/icons/music/arrow_right.svg";
 
 const PlayList = (props) => {
   return (
@@ -39,7 +40,7 @@ const PlayList = (props) => {
               <div className={classes.description}>
                 <h3>{props.name}</h3>
               </div>
-              <i className="fas fa-chevron-right"></i>
+              <img src={arrow_right} alt="arrow right"></img>
 
               <hr />
             </div>
@@ -52,7 +53,10 @@ const PlayList = (props) => {
             <div className={classes.description}>
               <h3>{props.name}</h3>
             </div>
-            <i className="fas fa-chevron-right"></i>
+            <div className={classes.arrowRight}>
+              <img src={arrow_right} alt="arrow right"></img>
+            </div>
+
             <hr />
           </div>
         </NavLink>

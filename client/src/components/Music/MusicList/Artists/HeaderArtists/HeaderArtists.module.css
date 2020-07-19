@@ -10,8 +10,10 @@
 
 }
 
-.buttonBack i {
-  font-size: 250%;
+.buttonBack img {
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
 
 }
 
@@ -24,10 +26,6 @@
   color: #F62A54;
 }
 
-.buttonBack:hover i {
-  color: #F62A54;
-  
-}
 
 /* ------------------------------------------------------------- */
 
@@ -37,9 +35,14 @@
 
 .headerArtists hr {
   margin: 0;
-
+  height: 0;
+  border: none;
+  border-top: 1px solid rgb(202, 202, 202);
 }
 
+.headerArtists a {
+  text-decoration: none;
+}
 
 .headerArtists h1 {
     margin-left: 55px;

@@ -7,12 +7,14 @@
     /* margin-left: 15px; */
   
   }
-  
-  .buttonBack i {
-    font-size: 250%;
+
+  .buttonBack img {
+    margin-top: 10px;
+    width: 30px;
+    height: 40px;
   
   }
-  
+
   .buttonBack h3 {
     margin-left: 5px;
     color: #4A76A8;
@@ -22,10 +24,6 @@
     color: #F62A54;
   }
   
-  .buttonBack:hover i {
-    color: #F62A54;
-    
-  }
 /* --------------------------------------------------------- */
 
 .headerPlayLists {
@@ -34,7 +32,13 @@
   
   .headerPlayLists hr {
     margin: 0;
-  
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(202, 202, 202);
+  }
+
+  .headerPlayLists a {
+    text-decoration: none;
   }
   
   

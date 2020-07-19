@@ -21,12 +21,14 @@
   }
   
   .album {
+    margin-left: 55px;
+    margin-top: 13px;
     max-width: 300px;
-    padding-left: 55px;
     color: #4A76A8;
   }
   
   .artist {
+    margin-top: -13px;
     padding-left: 55px;
     color: rgb(163, 163, 163);
   }

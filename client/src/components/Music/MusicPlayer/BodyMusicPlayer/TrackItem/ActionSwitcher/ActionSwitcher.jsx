@@ -4,6 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import classes from "./ActionSwitcher.module.css"
 import { NavLink } from "react-router-dom";
+import options from "../../../../../../assets/images/icons/music/options.svg"
 
 export const ActionSwitcher = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +26,7 @@ export const ActionSwitcher = (props) => {
         style={{textTransform: "none", color: "#fff" , transition: "none" || "none", }}
       >
         <div className={classes.icon}>
-          <i className="fas fa-ellipsis-h"></i>
+          <img src={options} alt="options"></img>
         </div>
       </Button>
       <Menu
@@ -39,7 +40,7 @@ export const ActionSwitcher = (props) => {
           props.switchStateOfPlayLists(true)
           props.addTrackToPlayList(props.title, props.author, props.trackUrl, props.albumTitle)
 
-        }}><NavLink style={{color: "#4A76A8"}} to={`/music-list/playlists`}>Add to a Playlist</NavLink></MenuItem>
+        }}><NavLink style={{color: "#4A76A8", textDecoration: "none"}} to={`/music-list/playlists`}>Add to a Playlist</NavLink></MenuItem>
       </Menu>
     </div>
   );

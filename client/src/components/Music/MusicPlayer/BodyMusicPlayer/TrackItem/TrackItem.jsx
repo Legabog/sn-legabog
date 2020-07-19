@@ -9,7 +9,7 @@ const TracksItem = (props) => {
         return (
           <div key={e._id} className={classes.item}>
             <div className={classes.description}>
-              <h6
+              <h2
                 onClick={() => {
                   if (
                     props.disabledAuthors.includes(props.author) &&
@@ -27,7 +27,7 @@ const TracksItem = (props) => {
                 }}
               >
                 {e.title}
-              </h6>
+              </h2>
               <ActionSwitcher
                 switchStateOfPlayLists={props.switchStateOfPlayLists}
                 addTrackToPlayList={props.addTrackToPlayList}

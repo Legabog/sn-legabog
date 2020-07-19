@@ -9,12 +9,12 @@ const ArtistItem = (props) => {
       <div className={classes.item}>
         <img src={props.img || MusicDefault} alt="description" />
         <div className={classes.discription}>
-          <h5 className={classes.album}>
+          <h4 className={classes.album}>
             <strong>{props.title}</strong>
-          </h5>
-          <p className={classes.artist}>
+          </h4>
+          <h4 className={classes.artist}>
             <strong>{props.author}</strong>
-          </p>
+          </h4>
         </div>
       </div>
     </NavLink>

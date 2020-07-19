@@ -1,11 +1,12 @@
 .footerMusicList {
-    margin-top: 40px;
+    margin-top: 20px;
 
 }
 
-.footerMusicList h1 {
-    margin-left: 10px;
-    Color: #4A76A8;
+.footerMusicList h3 {
+  font-size: 21px;
+  margin-left: 10px;
+  Color: #4A76A8;
 }
 
   

@@ -10,9 +10,8 @@
   
   }
   
-  .buttonBack i {
-    font-size: 250%;
-  
+  .headerMusicPlayer a {
+    text-decoration: none;
   }
   
   .buttonBack h3 {
@@ -24,33 +23,17 @@
     color: #F62A54;
   }
   
-  .buttonBack:hover i {
-    color: #F62A54;
-    
-  }
-  
   
   .headerMusicPlayer {
     padding-top: 80px;
   }
+
+  .buttonBack img {
+    margin-top: 10px;
+    width: 30px;
+    height: 40px;
   
-  .headerMusicPlayer hr {
-    margin: 0;
-  
-  }
-  
-  
-  .headerMusicPlayer h1 {
-      margin-left: 55px;
-      color: #4A76A8;
   }
 
-  .headerMusicPlayer h4 {
-    margin-left: 55px;
-    color: #4A76A8;
-}
 
-  .trackImage img {
-      width: 300px;
-      height: 300px;
-  }
+

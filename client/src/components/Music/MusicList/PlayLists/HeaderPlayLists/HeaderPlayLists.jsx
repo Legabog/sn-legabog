@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./HeaderPlayLists.module.css";
 import { NavLink } from "react-router-dom";
+import arrow_back from "../../../../../assets/images/icons/music/arrow_back.svg"
 
 const HeaderPlayLists = (props) => {
   return (
@@ -14,7 +15,7 @@ const HeaderPlayLists = (props) => {
             to={`/music-player/${props.tempTrack.author}/${props.tempTrack.albumTitle}`}
           >
             <div className={classes.buttonBack}>
-              <i className="fas fa-chevron-left"></i>
+              <img src={arrow_back} alt="arrow-back"></img>
               <h3>{props.tempTrack.albumTitle}</h3>
             </div>
           </NavLink>
@@ -27,7 +28,7 @@ const HeaderPlayLists = (props) => {
         >
           <NavLink to="/music-list">
             <div className={classes.buttonBack}>
-              <i className="fas fa-chevron-left"></i>
+             <img src={arrow_back} alt="arrow-back"></img>
               <h3>Library</h3>
             </div>
           </NavLink>

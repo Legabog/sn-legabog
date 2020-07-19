@@ -1,6 +1,13 @@
 .bodyMusicList hr {
   margin: 0;
+  height: 0;
+  border: none;
+  border-top: 1px solid rgb(202, 202, 202);
 
+}
+
+.bodyMusicList a {
+  text-decoration: none;
 }
 /* --------------------------Artists----------------- */
 .item1 {
@@ -8,18 +15,12 @@
   display: flex;
 }
 
-.item1 i{
-  color: #4A76A8;
+.item1 img {
+  margin-top: 15px;
+  margin-left: -10px;
+  width: 30px;
+  height: 30px;
 }
-
-.item2 i{
-  color: #4A76A8;
-}
-
-.item3 i{
-  color: #4A76A8;
-}
-
 
 .item1:hover {
   cursor: pointer;
@@ -27,30 +28,32 @@
   background-color: rgb(214, 233, 255);
 }
 
-.item1 h3 {
+.item1 h2 {
   margin-left: 10px;
   margin-top: 10px;
   min-width: 930px;
   color: #4A76A8;
 }
 
-.item1:hover h3 {
+.item1:hover h2 {
   margin-left: 40px;
   color: #F62A54;
 }
 
-.item1:hover i {
-  margin-left: -30px;
-  color: #F62A54;
-}
-
-.item1 i {
-  margin-top: 21px;
+.item1:hover img {
+  margin-left: -40px;
 }
 /* --------------------------Albums----------------- */
 .item2 {
   height: 60px;
   display: flex;
+}
+
+.item2 img {
+  margin-top: 15px;
+  margin-left: -10px;
+  width: 30px;
+  height: 30px;
 }
 
 .item2:hover {
@@ -59,30 +62,32 @@
   background-color: rgb(214, 233, 255);
 }
 
-.item2 h3 {
+.item2 h2 {
   margin-left: 10px;
   margin-top: 10px;
   min-width: 930px;
   color: #4A76A8;
 }
 
-.item2:hover h3 {
+.item2:hover h2 {
   margin-left: 40px;
   color: #F62A54;
 }
 
-.item2:hover i {
-  margin-left: -30px;
-  color: #F62A54;
-}
-
-.item2 i {
-  margin-top: 21px;
+.item2:hover img {
+  margin-left: -40px;
 }
 /* --------------------------Playlists----------------- */
 .item3 {
   height: 60px;
   display: flex;
+}
+
+.item3 img {
+  margin-top: 15px;
+  margin-left: -10px;
+  width: 30px;
+  height: 30px;
 }
 
 .item3:hover {
@@ -91,23 +96,18 @@
   background-color: rgb(214, 233, 255);
 }
 
-.item3 h3 {
+.item3 h2 {
   margin-left: 10px;
   margin-top: 10px;
   min-width: 930px;
   color: #4A76A8;
 }
 
-.item3:hover h3 {
+.item3:hover h2 {
   margin-left: 40px;
   color: #F62A54;
 }
 
-.item3:hover i {
-  margin-left: -30px;
-  color: #F62A54;
-}
-
-.item3 i {
-  margin-top: 21px;
+.item3:hover img {
+  margin-left: -40px;
 }
