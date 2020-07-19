@@ -39,7 +39,7 @@
     margin-top: 10px;
     margin-left: 10px;
     padding: 0px;
-    width: 560px;
+    width: 580px;
     border-radius: 10px;
     background-color: #fff;
 }
@@ -59,15 +59,19 @@
     background-color: #fff;
 }
 
-.optionsLabel i {
-    position: relative;
-    font-size: 2000%;
-    /* margin-top: 100px; */
+.optionsLabel img {
+    width: 420px;
+    height: 420px;
+    margin-left: -70px;
+    margin-bottom: -70px;
 }
 
 .optionsLabel h1 {
-    width: 150px;
-    margin-left: 190px;
+    width: 200px;
+    font-size: 350%;
+    margin-left: 160px;
+    line-height: 3.4rem;
+    margin-top: -5px;
     position: absolute;
     color: #4A76A8;
 }
@@ -77,49 +81,82 @@
     display: flex;
 }
 
-.optionstitle h1{
-    color: #4A76A8;
-    margin-left: 150px;
+.optionstitle img {
     margin-top: 10px;
+    width: 200px;
+    margin-left: 30px;
 }
 
-.optionCountries {
-    padding: 5px;
-}
-
-.optionCountries select:focus {
-    border-color: 15px solid #4A76A8;
-    box-shadow: none;    
-}
-
-.optionCountries button {
-    font-size: 140%;
-    background: #4A76A8;
-    color: #fff;
-}
-
-.optionCountries button:hover {
+.optionstitle h1{
+    font-size: 350%;
     color: #4A76A8;
-    background: #fff;
+    margin-left: 130px;
+    margin-top: -5px;
 }
 
-.optionCategories {
-    padding: 5px;
+
+.inputGroup1 {
+    display: flex;
+    margin-top: 40px;
 }
 
-.optionCategories button {
-    font-size: 140%;
-    background: #4A76A8;
-    color: #fff;
-}
-
-.optionCategories button:hover {
+.inputGroup1 select{
+    margin-left: 10px;
+    width: 400px;
+    height: 50px;
+    font-size: 200%;
     color: #4A76A8;
-    background: #fff;
+    border: 2px solid #939393;
 }
 
-.optionCategories select:focus {
-    border-color: 15px solid #4A76A8;
-    box-shadow: none;    
+.inputGroup1 button {
+    width: 160px;
+    height: 50px;
+    font-size: 120%;
+    background-color: #4A76A8;
+    color: #fff;
+    border: none;
+}
+
+.inputGroup1 button:hover {
+    filter: opacity(80%);
+    cursor: pointer;    
+}
+
+.inputGroup1 select:hover {
+    cursor: pointer;
+}
+
+.inputGroup2 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputGroup2 select{
+    margin-left: 10px;
+    width: 400px;
+    height: 50px;
+    font-size: 200%;
+    color: #4A76A8;
+    border: 2px solid #939393;
+}
+
+.inputGroup2 button {
+    width: 160px;
+    height: 50px;
+    font-size: 120%;
+    background-color: #4A76A8;
+    color: #fff;
+    border: none;
+}
+
+.inputGroup2 button:hover {
+    filter: opacity(80%);
+    cursor: pointer;    
+}
+
+.inputGroup2 select:hover {
+    cursor: pointer;
 }
 
