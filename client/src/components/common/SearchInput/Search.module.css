@@ -4,7 +4,11 @@
 
 }
 
-.inputheader input{
+.inputheader label {
+    color: #4A76A8
+}
+
+.inputheader input {
     width: 300px;
     height: 25px;
     border-radius: 20px;

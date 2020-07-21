@@ -1,11 +1,12 @@
 import React from "react";
 import classes from "./ErrorRoute.module.css";
+import error from "../../../assets/images/icons/error.svg";
 
 const ErrorRoute = (props) => {
   return (
     <div className={classes.error}>
       <div className={classes.errorIcon}>
-        <i className="fas fa-exclamation-triangle"></i>
+        <img src={error} alt="error"></img>
       </div>
       <div className={classes.errorDescription}>
         <h2>Oops, error</h2>
@@ -20,5 +21,4 @@ const ErrorRoute = (props) => {
   );
 };
 
-
-export default ErrorRoute
+export default ErrorRoute;

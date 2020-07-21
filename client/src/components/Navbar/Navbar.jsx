@@ -12,6 +12,7 @@ const Navbar = (props) => {
   return (
     <nav className={classes.nav}>
       <div className={classes.list}>
+        <ul>
         <li>
           <div className={`${classes.item} ${classes.active}`}>
             <img src={user} alt="user"></img>
@@ -60,6 +61,7 @@ const Navbar = (props) => {
             </NavLink>
           </div>
         </li>
+        </ul>
       </div>
 
       {/* <FriendsList state={store.getState().navbarReducer} /> */}

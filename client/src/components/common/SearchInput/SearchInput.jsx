@@ -4,7 +4,8 @@ import classes from "./Search.module.css";
 const SearchInput = (props) => {
   return (
     <div className={classes.inputheader}>
-        <input type="text" placeholder="Search"></input>
+      <input id="SearchInput" type="text" placeholder="Search"></input>
+      <label htmlFor="SearchInput">Label for input</label>
     </div>
   );
 };

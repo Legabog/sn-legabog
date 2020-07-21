@@ -3,7 +3,7 @@
     width: 340px;
     border-radius: 10px;
     background-color: #fff;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -49,15 +49,15 @@
 }
 
 .inputMessage textarea {
-    width: 316px;
+    width: 302px;
     font-size: 200%;
     border-radius: 10px;
-    background-color: #a3c6ee;
-    color: #fff;
+    background-color: #fff;
+    color: #4A76A8;
     border: #4A76A8;
+    padding-left: 10px;
 }
 
 .inputMessage textarea::-webkit-input-placeholder { 
-    color: #fff;
-    padding-left: 10px;
+    color: #4A76A8;
 }

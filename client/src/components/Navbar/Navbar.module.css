@@ -15,6 +15,10 @@
   font-size: 120%;
 }
 
+.list ul {
+  margin-left: -50px;
+}
+
 .list li{
   padding: 3px;
 }

@@ -9,26 +9,34 @@
   }
   
   .error h1 {
-   color: red;
+   color: #F62A54;
    text-align: center;
   }
-  
-  .errorIcon i {
-    width: 350px;
-    height: 350px;
-    padding-top: 50px;
-    padding-left: 250px;
-    font-size: 500%;
-    color: red;
+
+  .error img {
+    width: 100px;
+  }
+
+  .errorIcon {
+    width: fit-content;
+    margin-left: 200px;
+
+    margin-bottom: -150px;
   }
   
-  .errorDescription {
+  
+  .errorDescription hr{
+    margin-top: -50px;
+    height: 0;
+	  border: none;
+  	border-top: 1px solid rgb(202, 202, 202);
     
-    margin-top: -290px;
   }
   
   .errorNumber h1 {
+    color: #F62A54;
     font-size: 800%;
+    margin-top: -50px;
   }
   
   .errorDescription h2 {
@@ -36,7 +44,7 @@
   }
   
   .error h2 {
-    color: red;
+    color: #F62A54;
     text-align: center;
    }
   

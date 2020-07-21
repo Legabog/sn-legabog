@@ -34,6 +34,7 @@
 }
 
 .descriptionBlock h4 {
+    color: #4A76A8;
     margin-top: -1px;
 }
 
@@ -66,7 +67,7 @@
 .avatarFrame {
     display: block;
     width: 340px;
-    height: 410px;
+    height: 340px;
     border-radius: 10px;
     background-color: #fff;
     margin-top: 10px;
@@ -80,7 +81,7 @@
 .avatar img{
     width: 300px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -169,6 +170,10 @@
     opacity: 0;
 }
 
+.savePhoto {
+    height: 340px;
+}
+
 .savePhoto:hover .downloadIcon img {
     opacity: 1;
 }
@@ -228,7 +233,7 @@
 }
 
 .buttonWriteMessage button{
-    margin-top: -10px;
+    margin-top: 10px;
     width: 250px;
     height: 45px;
     margin-left: 20px;
@@ -251,7 +256,7 @@
     font-size: 130%;
     background: #e5ebf1;
     border: #e5ebf1;
-    margin-top: -10px;
+    margin-top: 10px;
     border-radius: 10px;
 }
 
@@ -266,12 +271,29 @@
 }
 
 .frontButtons {
-    margin-top: -80px;
+    width: 340px;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 20px;
     display: flex;
 }
 
 .descriptionBlock hr {
     height: 0;
 	border: none;
-	border-top: 1px solid rgb(202, 202, 202);
+	border-top: 1px solid rgb(240, 236, 236);
+}
+
+.Contacts{
+    margin-top: -20px;
+}
+
+.Contacts ul {
+    margin-left: -40px;
+    
+}
+
+.Contacts li::before  {
+    content: none;
 }
