@@ -9,8 +9,7 @@ const StartScreen = (props) => {
       <div className={classes.startScreen}>
         <div className={classes.description}>
           <img src={playlist} alt={playlist}></img>
-          <h1>Music-player</h1>
-          
+          <h1>Music-player</h1> 
         </div>
         <p>press to Enter</p>
       </div>

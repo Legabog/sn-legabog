@@ -10,8 +10,10 @@
   
   }
   
-  .buttonBack i {
-    font-size: 250%;
+  .buttonBack img {
+    margin-top: 10px;
+    width: 30px;
+    height: 40px;
   
   }
   
@@ -24,15 +26,15 @@
     color: #F62A54;
   }
   
-  .buttonBack:hover i {
-    color: #F62A54;
-    
-  }
   
   /* ------------------------------------------------------------- */
   
   .headerArtistItemRouter {
     padding-top: 80px;
+  }
+
+  .headerArtistItemRouter a {
+    text-decoration: none;
   }
   
   .headerArtistItemRouter hr {

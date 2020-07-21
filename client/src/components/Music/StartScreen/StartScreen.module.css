@@ -31,14 +31,15 @@
     color: #4A76A8;
     font-size: 300%;
     margin-top: 60px;
+    margin-left: -30px;
 }
 
 .startScreen p {
     width: 160px;
     font-size: 110%;
     color: #4A76A8;
-    margin-top: -60px;
-    margin-left: 350px;
+    margin-top: -70px;
+    margin-left: 320px;
 }
 
 @keyframes show{

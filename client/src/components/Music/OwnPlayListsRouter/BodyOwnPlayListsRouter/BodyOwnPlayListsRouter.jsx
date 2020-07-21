@@ -3,6 +3,7 @@ import classes from "./BodyOwnPlayListsRouter.module.css";
 import DefaultMusic from "../../../../assets/apple theme/music.jpg";
 import TracksItem from "./TrackItem/TrackItem";
 import { NavLink } from "react-router-dom";
+import delete_icon from "../../../../assets/images/icons/music/delete_icon.svg";
 
 const BodyOwnPlayListsRouter = (props) => {
   return (
@@ -12,7 +13,7 @@ const BodyOwnPlayListsRouter = (props) => {
       </div>
       <div className={classes.playListTitle}>
         <h1>{props.title}</h1>
-        <h4>{props.description}</h4>
+        <h2>{props.description}</h2>
         <div className={classes.playListTracks}>
           {props.tracks.map((e) => (
             <TracksItem
@@ -28,12 +29,13 @@ const BodyOwnPlayListsRouter = (props) => {
         </div>
         <div className={classes.delete}>
           <NavLink to="/music-list/playlists/">
-            <i
-              className="fas fa-trash"
+            <img
+              src={delete_icon}
+              alt="delete_icon"
               onClick={() => {
                 props.deleteOwnPlayList(props.id);
               }}
-            ></i>
+            ></img>
           </NavLink>
         </div>
         <div className={classes.lastBlock}></div>

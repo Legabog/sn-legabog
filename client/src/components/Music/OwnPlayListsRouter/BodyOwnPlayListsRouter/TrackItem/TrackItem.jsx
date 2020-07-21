@@ -13,7 +13,7 @@ const TracksItem = (props) => {
               window.open(`${props.trackUrl}`, "_blank");
             }}
           >
-            <h6>{props.title}</h6>
+            <h2>{props.title}</h2>
             <p>{props.author}</p>
           </div>
           <ActionSwitcher

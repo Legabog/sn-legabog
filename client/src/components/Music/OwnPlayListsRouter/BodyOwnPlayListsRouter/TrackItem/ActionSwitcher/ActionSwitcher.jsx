@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import classes from "./ActionSwitcher.module.css";
+import options from "../../../../../../assets/images/icons/music/options.svg"
 
 export const ActionSwitcher = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -28,7 +29,7 @@ export const ActionSwitcher = (props) => {
         }}
       >
         <div className={classes.icon}>
-          <i className="fas fa-ellipsis-h"></i>
+         <img src={options} alt="options"></img>
         </div>
       </Button>
       <Menu
@@ -37,7 +38,7 @@ export const ActionSwitcher = (props) => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        style={{ width: "220px" }}
+        style={{ width: "250px" }}
       >
         <MenuItem
           onClick={() => {

@@ -5,6 +5,7 @@ import AddPhoto from "../../../../../assets/apple theme/photo_add.png";
 import DefaultPhoto from "../../../../../assets/apple theme/music.jpg";
 import firebase from "firebase/app";
 import "firebase/storage";
+import arrow_back from "../../../../../assets/images/icons/music/arrow_back.svg"
 
 class HeaderCreateAlbum extends React.Component {
   componentDidMount() {
@@ -53,7 +54,7 @@ class HeaderCreateAlbum extends React.Component {
       <div className={classes.headerCreateAlbum}>
         <NavLink to="/music-list/playlists">
           <div className={classes.buttonBack}>
-            <i className="fas fa-chevron-left"></i>
+            <img src={arrow_back} alt="button-back"></img>
             <h3>Cancel</h3>
           </div>
         </NavLink>

@@ -3,6 +3,10 @@
     word-break: break-all;
 }
 
+.bodyOwnPlayListsRouter a {
+    text-decoration: none;
+}
+
 .playListImage {
     margin-left: 30px;
     margin-bottom: 30px;
@@ -19,8 +23,14 @@
     margin-left: 30px;
 }
 
-.playListTitle h1, h4, h6{
+.playListTitle h1 {
     color: #4A76A8;
+    margin-top: -5px;
+}
+
+.playListTitle h2 {
+    margin-top: -5px;
+    color: rgb(163, 163, 163);
 }
 
 .playListTitle br {
@@ -28,18 +38,31 @@
 }
 
 .playListTracks {
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.playListTracks h2 {
+    color: #4A76A8;
+}
+
+.playListTracks p {
+    margin-top: 5px;
+}
+
+.playListTracks hr {
+    margin: 0;
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(240, 236, 236);
 }
 
 .lastBlock {
     height: 30px;
 }
 
-.delete {
-    margin-top: 160px;
+.delete img{
+    margin-top: 270px;
     margin-left: 550px;
-    font-size: 200%;
-    color: #F62A54;
 
 }
 

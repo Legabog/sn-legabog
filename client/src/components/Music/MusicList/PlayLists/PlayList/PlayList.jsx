@@ -40,7 +40,9 @@ const PlayList = (props) => {
               <div className={classes.description}>
                 <h3>{props.name}</h3>
               </div>
-              <img src={arrow_right} alt="arrow right"></img>
+              <div className={classes.arrowRight}>
+                <img src={arrow_right} alt="arrow right"></img>
+              </div>
 
               <hr />
             </div>

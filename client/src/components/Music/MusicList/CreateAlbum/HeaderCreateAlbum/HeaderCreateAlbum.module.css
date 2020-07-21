@@ -1,15 +1,17 @@
 .buttonBack {
     margin-top: -70px;
     margin-bottom: 22.4px;
-    margin-left: 20px;
+    margin-left: 0px;
     display: flex;
     color: #4A76A8;
     /* margin-left: 15px; */
   
   }
   
-  .buttonBack i {
-    font-size: 250%;
+  .buttonBack img {
+    margin-top: 10px;
+    width: 30px;
+    height: 40px;
   
   }
   
@@ -22,16 +24,12 @@
     color: #F62A54;
   }
   
-  .buttonBack:hover i {
-    color: #F62A54;
-    
-  }
 
 
 /* ----------------------------------------------------------------- */
 
 .buttonDone {
-    margin-top: -70px;
+    margin-top: -87px;
     margin-bottom: 22.4px;
     margin-left: 880px;
     display: flex;
@@ -61,6 +59,10 @@
 .headerCreateAlbum {
     padding-top: 80px;
   }
+
+.headerCreateAlbum a {
+  text-decoration: none;
+}
   
   .headerCreateAlbum hr {
     margin: 0;
@@ -110,7 +112,12 @@
     width: 650px;
     height: 60px;
     margin-left: 50px;
+    color: #4A76A8
 }
+
+.input1::-webkit-input-placeholder { color: #4A76A8 }
+
+
 
 .input1:hover {
     cursor: pointer;
@@ -128,8 +135,11 @@
     width: 650px;
     height: 60px;
     margin-left: 50px;
-    margin-top: 80px;
+    margin-top: 125px;
+    color: #4A76A8
 }
+
+.input2::-webkit-input-placeholder { color: #4A76A8 }
 
 
   .lastBlock {
