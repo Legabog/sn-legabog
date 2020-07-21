@@ -35,7 +35,7 @@ import {
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import firebase from "firebase/app"
 import 'firebase/storage';
-
+import MusicPlayerPanel from "./components/common/MusicPlayer/MusicPlayer.jsx"
 
 class App extends React.Component {
   componentDidMount() {
@@ -51,7 +51,6 @@ class App extends React.Component {
       measurementId: "G-M27KYJSGPK",
     };
     firebase.initializeApp(firebaseConfig);
-
 
     this.props.initializeApp();
     this.props.getMusicAlbumsData();
@@ -79,7 +78,12 @@ class App extends React.Component {
 
               {/* -----------------------Player Routes----------------- */}
               <Route path="/music" component={() => <Music />} />
-              <Route exact path="/music-list" component={() => <MusicList />} />
+              <Route exact path="/music-list" component={() => (
+                <React.Fragment>
+                  <MusicList />
+                </React.Fragment>
+                
+              ) } />
               <Route
                 exact
                 path="/music-list/artists"
@@ -148,6 +152,7 @@ class App extends React.Component {
               <Route exact path="/" />
               <Route render={() => <ErrorRoute />} />
             </Switch>
+            <MusicPlayerPanel/>
           </div>
         </div>
       );

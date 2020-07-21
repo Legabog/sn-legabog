@@ -13,7 +13,7 @@ let initialState = {
   PostsData: [],
   profile: null,
   profilePhoto:
-    "https://avatars0.githubusercontent.com/u/44378669?s=460&u=079ef1f1a38cec38b2b6ba37b9f71cfccc88ce1f&v=4",
+    "https://firebasestorage.googleapis.com/v0/b/covers-storage.appspot.com/o/avatar%20Url%2FAvatar.jpg?alt=media",
   profileStatus: "Change status",
   captcha: "",
   followStatus: null,
