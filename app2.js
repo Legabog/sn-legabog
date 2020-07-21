@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const config = require("config");
+const http2 = require("http2")
 
 // Express Route
 const musicalbumsRoute = require("./routes/musicalbums.routes")
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use(cors());
 app.use('/musicalbums', musicalbumsRoute)
 app.use('/myownplaylists', myownplaylistsRoute)
