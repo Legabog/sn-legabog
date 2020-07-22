@@ -14,4 +14,8 @@
   background-color: #e9ecf1;
 }
 
+.appwrappercontent audio {
+  display: none;
+}
+
 

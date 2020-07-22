@@ -30,16 +30,22 @@ import {
   getMyOwnPlayLists,
   createNewPlayList,
   deleteOwnPlayList,
-  deleteTrackFromPlayList
+  deleteTrackFromPlayList,
 } from "./redux/musicalplaylists-reducer";
+import {
+  setMusicForPlayer,
+  toggleIsPlaying,
+  playPlayer,
+  pausePlayer,
+} from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
-import firebase from "firebase/app"
-import 'firebase/storage';
-import MusicPlayerPanel from "./components/common/MusicPlayer/MusicPlayer.jsx"
+import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
+
+import firebase from "firebase/app";
+import "firebase/storage";
 
 class App extends React.Component {
   componentDidMount() {
-
     const firebaseConfig = {
       apiKey: "AIzaSyCxA5YZP2u1BeiuAtesygR3xKUNS4WM0PA",
       authDomain: "covers-storage.firebaseapp.com",
@@ -78,12 +84,15 @@ class App extends React.Component {
 
               {/* -----------------------Player Routes----------------- */}
               <Route path="/music" component={() => <Music />} />
-              <Route exact path="/music-list" component={() => (
-                <React.Fragment>
-                  <MusicList />
-                </React.Fragment>
-                
-              ) } />
+              <Route
+                exact
+                path="/music-list"
+                component={() => (
+                  <React.Fragment>
+                    <MusicList />
+                  </React.Fragment>
+                )}
+              />
               <Route
                 exact
                 path="/music-list/artists"
@@ -103,7 +112,11 @@ class App extends React.Component {
                 exact
                 path="/music-list/playlists/create"
                 component={() => (
-                  <CreateAlbum fetch={this.props.fetch} addToPlayList={this.props.createNewPlayList} update={this.props.getMyOwnPlayLists}/>
+                  <CreateAlbum
+                    fetch={this.props.fetch}
+                    addToPlayList={this.props.createNewPlayList}
+                    update={this.props.getMyOwnPlayLists}
+                  />
                 )}
               />
               {this.props.musicAlbums.map((e) => (
@@ -127,6 +140,8 @@ class App extends React.Component {
                       img={e.albumcoverUrl}
                       switchStateOfPlayLists={this.props.switchStateOfPlayLists}
                       addTrackToPlayList={this.props.addTrackToPlayList}
+                      playPlayer={this.props.playPlayer}
+                      setMusicForPlayer={this.props.setMusicForPlayer}
                     />
                   )}
                 />
@@ -144,7 +159,9 @@ class App extends React.Component {
                       description={e.description}
                       tracks={e.tracks}
                       deleteOwnPlayList={this.props.deleteOwnPlayList}
-                      deleteTrackFromPlayList={this.props.deleteTrackFromPlayList}
+                      deleteTrackFromPlayList={
+                        this.props.deleteTrackFromPlayList
+                      }
                     />
                   )}
                 />
@@ -152,7 +169,12 @@ class App extends React.Component {
               <Route exact path="/" />
               <Route render={() => <ErrorRoute />} />
             </Switch>
-            <MusicPlayerPanel/>
+            <MusicPlayerPanel
+              isPlaying={this.props.isPlaying}
+              playPlayer={this.props.playPlayer}
+              pausePlayer={this.props.pausePlayer}
+              musicPlayerPlayList={this.props.musicPlayerPlayList}
+            />
           </div>
         </div>
       );
@@ -170,6 +192,8 @@ const mapStateToProps = (state) => {
     recentlyPlayed: state.musicAlbumsReducer.recentlyPlayed,
     musicAlbumsSwitcher: state.musicAlbumsReducer.musicAlbumsSwitcher,
     ownPlayLists: state.musicPlayListReducer.ownPlayLists,
+    isPlaying: state.musicPlayerReducer.isPlaying,
+    musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList
   };
 };
 
@@ -184,6 +208,10 @@ export default compose(
     getMyOwnPlayLists,
     createNewPlayList,
     deleteOwnPlayList,
-    deleteTrackFromPlayList
+    deleteTrackFromPlayList,
+    setMusicForPlayer,
+    toggleIsPlaying,
+    playPlayer,
+    pausePlayer,
   })
 )(App);

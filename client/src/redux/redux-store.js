@@ -11,6 +11,8 @@ import friendslistReducer from "./friendslist-reducer";
 import appReducer from "./app-reducer"
 import musicAlbumsReducer from "./musicalbums-reducer"
 import musicPlayListReducer from "./musicalplaylists-reducer"
+import musicPlayerReducer from "./musicplayer-reducer"
+
 import thunk from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
 
@@ -27,7 +29,8 @@ let reducers = combineReducers({
   form: formReducer,
   appReducer,
   musicPlayListReducer,
-  musicAlbumsReducer
+  musicAlbumsReducer,
+  musicPlayerReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunk));
