@@ -3,6 +3,7 @@ import classes from "./TrackItem.module.css";
 import { ActionSwitcher } from "./ActionSwitcher/ActionSwitcher";
 
 const TracksItem = (props) => {
+  console.log(props)
   return (
     <div className={classes.tracks}>
       {props.tracks.map((e) => {
@@ -20,10 +21,15 @@ const TracksItem = (props) => {
                       props.img,
                       props.title,
                       props.author
-                    );                    
+                    );   
                   }
-
-                  window.open(`${e.trackUrl}`, "_blank")
+                  props.setMusicForPlayer({
+                    "author" : props.author,
+                    "title" : props.title,
+                    "albumCover": props.img,
+                    "tracks": props.tracks
+                  })
+                  props.playPlayer()
                 }}
               >
                 {e.title}

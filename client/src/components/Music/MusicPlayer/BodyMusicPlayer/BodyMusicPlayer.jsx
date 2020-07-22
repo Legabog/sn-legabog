@@ -4,6 +4,7 @@ import DefaultMusic from "../../../../assets/apple theme/music.jpg";
 import TracksItem from "./TrackItem/TrackItem";
 
 const BodyMusicPlayer = (props) => {
+  console.log(props)
   return (
     <div className={classes.bodyMusicPlayer}>
       <div className={classes.trackImage}>

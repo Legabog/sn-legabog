@@ -33,6 +33,8 @@ const MusicPlayer = (props) => {
         pushAuthorToDisabledArray={props.pushAuthorToDisabledArray}
         switchStateOfPlayLists={props.switchStateOfPlayLists}
         addTrackToPlayList={props.addTrackToPlayList}
+        playPlayer={props.playPlayer}
+        setMusicForPlayer={props.setMusicForPlayer}
       />
     </div>
   );
