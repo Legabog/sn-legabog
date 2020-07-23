@@ -35,9 +35,11 @@
 }
 
 .MusicPlayerPanel h1 {
-    font-size: 150%;
+    min-width: 340px;
+    font-size: 100%;
+    text-align: center;
     color: #4A76A8;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .controlPanel {
-    margin-left: 130px;
+    /* margin-left: 130px; */
 }
 
 .controlPanel img {

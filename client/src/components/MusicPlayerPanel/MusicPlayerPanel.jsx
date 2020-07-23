@@ -28,33 +28,74 @@ const MusicPlayerPanel = (props) => {
         <div className={cls.join(" ")}>
           <img
             src={
-              props.musicPlayerPlayList !== null
+              props.activeTrack !== null
                 ? props.musicPlayerPlayList.albumCover
                 : musicCover
             }
             alt={musicCover}
             onClick={toggleMusicPanel}
           ></img>
-          <h1 onClick={toggleMusicPanel}>Music Player Panel</h1>
+          <h1 onClick={toggleMusicPanel}>
+            {props.activeTrack !== null
+              ? props.activeTrack.title + " - " + props.activeTrack.author
+              : "Music Player Panel"}
+          </h1>
           <div className={classes.controlPanel}>
             <img
               src={previous}
               alt="previous"
               onClick={() => {
-                let audio = document.getElementById("audio");
-                audio.currentTime = 0;
+                if (props.activeTrack !== null) {
+                  let audio = document.getElementById("audio");
+                  audio.currentTime = 0;
+                }
               }}
             ></img>
             <img
               src={props.isPlaying ? pause : play}
               alt="playAndPause"
               onClick={() => {
-                props.isPlaying ? props.pausePlayer() : props.playPlayer();
+                if (props.activeTrack !== null) {
+                  let audio = document.getElementById("audio");
+
+                  if (props.isPlaying) {
+                    audio.pause();
+                    props.toggleIsPlaying(false);
+                  } else {
+                    audio.play();
+                    props.toggleIsPlaying(true);
+                  }
+                }
               }}
             ></img>
-            <img src={next} alt="next" onClick={() => {
-                let audio = document.getElementById("audio");
-              }}></img>
+            <img
+              src={next}
+              alt="next"
+              onClick={() => {
+                if (props.activeTrack !== null) {
+                  if (
+                    props.indexOfPlayingTrack + 1 <
+                    props.musicPlayerPlayList.tracks.length
+                  ) {
+                    props.nextTrack(
+                      {
+                        album: props.musicPlayerPlayList.title,
+                        author: props.musicPlayerPlayList.author,
+                        title:
+                          props.musicPlayerPlayList.tracks[
+                            props.indexOfPlayingTrack + 1
+                          ].title,
+                        trackUrl:
+                          props.musicPlayerPlayList.tracks[
+                            props.indexOfPlayingTrack + 1
+                          ].trackUrl,
+                      },
+                      props.indexOfPlayingTrack + 1
+                    );
+                  }
+                }
+              }}
+            ></img>
           </div>
         </div>
       ) : (
@@ -83,11 +124,32 @@ const MusicPlayerPanel = (props) => {
       )}
 
       {isOpen ? null : <BackDrop onClick={toggleMusicPanel} />}
-      <audio controls id="audio">
-        {props.musicPlayerPlayList !== null
-        ? props.musicPlayerPlayList.tracks.map(e => <source key={e._id} src={e.trackUrl}/>)
-        : null}
-      </audio>
+      <audio
+        controls
+        id="audio"
+        onEnded={() => {
+          if (
+            props.indexOfPlayingTrack + 1 <
+            props.musicPlayerPlayList.tracks.length
+          ) {
+            props.nextTrack(
+              {
+                album: props.musicPlayerPlayList.title,
+                author: props.musicPlayerPlayList.author,
+                title:
+                  props.musicPlayerPlayList.tracks[
+                    props.indexOfPlayingTrack + 1
+                  ].title,
+                trackUrl:
+                  props.musicPlayerPlayList.tracks[
+                    props.indexOfPlayingTrack + 1
+                  ].trackUrl,
+              },
+              props.indexOfPlayingTrack + 1
+            );
+          }
+        }}
+      ></audio>
     </React.Fragment>
   );
 };
