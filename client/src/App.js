@@ -37,6 +37,8 @@ import {
   toggleIsPlaying,
   playPlayer,
   pausePlayer,
+  setIndexOfTrack,
+  nextTrack
 } from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
@@ -124,7 +126,11 @@ class App extends React.Component {
                   key={e._id}
                   exact
                   path={`/music-list/artists/${e.author}`}
-                  component={() => <ArtistItemRouter nameArtist={e.author} />}
+                  component={() => (
+                    <ArtistItemRouter
+                      nameArtist={e.author}
+                    />
+                  )}
                 />
               ))}
               {this.props.Fetching ? <Preloader /> : null}
@@ -142,6 +148,11 @@ class App extends React.Component {
                       addTrackToPlayList={this.props.addTrackToPlayList}
                       playPlayer={this.props.playPlayer}
                       setMusicForPlayer={this.props.setMusicForPlayer}
+                      setIndexOfTrack={this.props.setIndexOfTrack}
+                      musicPlayerPlayList={this.props.musicPlayerPlayList}
+                      indexOfPlayingTrack={this.props.indexOfPlayingTrack}
+                      isPlaying={this.props.isPlaying}
+                      activeTrack={this.props.activeTrack}
                     />
                   )}
                 />
@@ -174,6 +185,10 @@ class App extends React.Component {
               playPlayer={this.props.playPlayer}
               pausePlayer={this.props.pausePlayer}
               musicPlayerPlayList={this.props.musicPlayerPlayList}
+              indexOfPlayingTrack={this.props.indexOfPlayingTrack}
+              toggleIsPlaying={this.props.toggleIsPlaying}
+              activeTrack={this.props.activeTrack}
+              nextTrack={this.props.nextTrack}
             />
           </div>
         </div>
@@ -193,7 +208,9 @@ const mapStateToProps = (state) => {
     musicAlbumsSwitcher: state.musicAlbumsReducer.musicAlbumsSwitcher,
     ownPlayLists: state.musicPlayListReducer.ownPlayLists,
     isPlaying: state.musicPlayerReducer.isPlaying,
-    musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList
+    musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList,
+    indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
+    activeTrack: state.musicPlayerReducer.activeTrack,
   };
 };
 
@@ -213,5 +230,7 @@ export default compose(
     toggleIsPlaying,
     playPlayer,
     pausePlayer,
+    setIndexOfTrack,
+    nextTrack
   })
 )(App);
