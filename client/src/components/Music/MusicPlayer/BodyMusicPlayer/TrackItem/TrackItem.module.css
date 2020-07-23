@@ -6,6 +6,21 @@
     cursor: pointer;
     background-color: rgb(214, 233, 255);
   }
+
+  .item:active {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+  }
+
+  .item:visited {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+  }
+
+  .item:focus {
+    cursor: pointer;
+    background-color: rgb(214, 233, 255);
+  }
   
   .item:hover h2{
     margin-left: 40px;

@@ -1,9 +1,32 @@
 import React from "react";
 import classes from "./TrackItem.module.css";
 import { ActionSwitcher } from "./ActionSwitcher/ActionSwitcher";
+import { useEffect } from "react";
 
 const TracksItem = (props) => {
-  console.log(props)
+  useEffect(() => {
+    const audio = document.getElementById("audio");
+    if (props.activeTrack !== null) {
+      if (props.isPlaying) {
+        if (audio.currentTime === 0) {
+          audio.src = props.activeTrack.trackUrl;
+          audio.currentTime = 0;
+          audio.play();
+        }
+        if (audio.src !== props.activeTrack.trackUrl) {
+          audio.src = props.activeTrack.trackUrl;
+          audio.currentTime = 0;
+          audio.play();
+        } else {
+          audio.play();
+        }
+      } else {
+        audio.pause();
+      }
+    } else {
+    }
+  });
+
   return (
     <div className={classes.tracks}>
       {props.tracks.map((e) => {
@@ -21,15 +44,31 @@ const TracksItem = (props) => {
                       props.img,
                       props.title,
                       props.author
-                    );   
+                    );
                   }
-                  props.setMusicForPlayer({
-                    "author" : props.author,
-                    "title" : props.title,
-                    "albumCover": props.img,
-                    "tracks": props.tracks
-                  })
-                  props.playPlayer()
+
+                  //-------------------Set music for player
+                  //-------------------- Set index of active(playing) track
+                  let SearchElement = e.title;
+                  let index = props.tracks.findIndex(
+                    (e) => e.title === SearchElement
+                  );
+
+                  props.playPlayer(
+                    {
+                      album: props.title,
+                      author: props.author,
+                      title: e.title,
+                      trackUrl: e.trackUrl,
+                    },
+                    {
+                      author: props.author,
+                      title: props.title,
+                      albumCover: props.img,
+                      tracks: props.tracks,
+                    },
+                    index
+                  );
                 }}
               >
                 {e.title}

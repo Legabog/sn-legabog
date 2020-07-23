@@ -16,7 +16,6 @@ const BodyArtistItemRouter = (props) => {
             />
           );
         }
-
         return null
       })}
       <div className={classes.lastBlock}></div>

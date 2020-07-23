@@ -35,6 +35,11 @@ const MusicPlayer = (props) => {
         addTrackToPlayList={props.addTrackToPlayList}
         playPlayer={props.playPlayer}
         setMusicForPlayer={props.setMusicForPlayer}
+        setIndexOfTrack={props.setIndexOfTrack}
+        musicPlayerPlayList={props.musicPlayerPlayList}
+        indexOfPlayingTrack={props.indexOfPlayingTrack}
+        isPlaying={props.isPlaying}
+        activeTrack={props.activeTrack}
       />
     </div>
   );
