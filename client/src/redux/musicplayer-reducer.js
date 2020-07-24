@@ -86,6 +86,15 @@ export const nextTrack = (activeTrack, index) => {
   }
 }
 
+export const previousTrack = (activeTrack, index) => {
+  return (dispatch) => {
+    dispatch(toggleIsPlaying(true));
+    dispatch(setIndexOfTrack(index));
+    dispatch(setActiveTrack(activeTrack))
+  }
+}
+
+
 export const pausePlayer = () => {
   return (dispatch) => {
     let audio = document.getElementById("audio");

@@ -38,7 +38,8 @@ import {
   playPlayer,
   pausePlayer,
   setIndexOfTrack,
-  nextTrack
+  nextTrack,
+  previousTrack
 } from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
@@ -173,6 +174,13 @@ class App extends React.Component {
                       deleteTrackFromPlayList={
                         this.props.deleteTrackFromPlayList
                       }
+                      playPlayer={this.props.playPlayer}
+                      setMusicForPlayer={this.props.setMusicForPlayer}
+                      setIndexOfTrack={this.props.setIndexOfTrack}
+                      musicPlayerPlayList={this.props.musicPlayerPlayList}
+                      indexOfPlayingTrack={this.props.indexOfPlayingTrack}
+                      isPlaying={this.props.isPlaying}
+                      activeTrack={this.props.activeTrack}
                     />
                   )}
                 />
@@ -189,6 +197,7 @@ class App extends React.Component {
               toggleIsPlaying={this.props.toggleIsPlaying}
               activeTrack={this.props.activeTrack}
               nextTrack={this.props.nextTrack}
+              previousTrack={this.props.previousTrack}
             />
           </div>
         </div>
@@ -231,6 +240,7 @@ export default compose(
     playPlayer,
     pausePlayer,
     setIndexOfTrack,
-    nextTrack
+    nextTrack,
+    previousTrack
   })
 )(App);

@@ -11,7 +11,7 @@ let initialState = {
   playListSwitcher: false,
   tempTrack: null,
   fetch: false,
-  tempTrackPayLoad: null
+  tempTrackPayLoad: null,
 };
 
 const musicPlayListReducer = (state = initialState, action) => {
@@ -64,10 +64,16 @@ export const addToPlayList = (img, name, description) => {
   };
 };
 
-export const addTrackToPlayList = (title, author, trackUrl, albumTitle) => {
+export const addTrackToPlayList = (
+  title,
+  author,
+  trackUrl,
+  albumTitle,
+  albumCover
+) => {
   return {
     type: ADD_TRACK_TO_PLAYLIST,
-    track: { title, author, trackUrl, albumTitle },
+    track: { title, author, trackUrl, albumTitle, albumCover },
   };
 };
 
@@ -88,41 +94,41 @@ export const setMyOwnPlayListsData = (data) => {
 export const createNewPlayList = (data) => {
   return (dispatch) => {
     userAPI.createNewPlayList(data).then(() => {
-      dispatch(getMyOwnPlayLists())
-    })
-  }
-}
+      dispatch(getMyOwnPlayLists());
+    });
+  };
+};
 
 export const deleteOwnPlayList = (id) => {
   return (dispatch) => {
     userAPI.deleteOwnPlayList(id).then(() => {
-      dispatch(getMyOwnPlayLists())
-    })
-  }
-}
+      dispatch(getMyOwnPlayLists());
+    });
+  };
+};
 
 export const deleteTrackFromPlayList = (id, pid) => {
   return (dispatch) => {
-    userAPI.deleteTrack(id,pid).then(() => {
-      dispatch(getMyOwnPlayLists())
-    })
-  }
-}
+    userAPI.deleteTrack(id, pid).then(() => {
+      dispatch(getMyOwnPlayLists());
+    });
+  };
+};
 
 export const updatePlaylist = (id, data) => {
   return (dispatch) => {
     userAPI.updateOwnPlayList(id, data).then((response) => {
-      dispatch(getMyOwnPlayLists())
-    })
-  }
-}
+      dispatch(getMyOwnPlayLists());
+    });
+  };
+};
 
 export const getMyOwnPlayLists = () => {
   return (dispatch) => {
-    dispatch(toggleFetch(true))
+    dispatch(toggleFetch(true));
     userAPI.getMyOwnPlaylists().then((response) => {
       dispatch(setMyOwnPlayListsData(response));
-      dispatch(toggleFetch(false))
+      dispatch(toggleFetch(false));
     });
   };
 };
