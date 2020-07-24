@@ -56,6 +56,7 @@ const TracksItem = (props) => {
 
                   props.playPlayer(
                     {
+                      albumCover: props.img,
                       album: props.title,
                       author: props.author,
                       title: e.title,
@@ -79,6 +80,7 @@ const TracksItem = (props) => {
                 title={e.title}
                 albumTitle={props.title}
                 author={props.author}
+                albumCover={props.img}
                 trackUrl={e.trackUrl}
               />
             </div>

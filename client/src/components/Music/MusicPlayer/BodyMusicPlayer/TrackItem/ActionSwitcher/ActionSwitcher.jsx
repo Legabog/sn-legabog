@@ -38,9 +38,10 @@ export const ActionSwitcher = (props) => {
       >
         <MenuItem onClick={() => { 
           props.switchStateOfPlayLists(true)
-          props.addTrackToPlayList(props.title, props.author, props.trackUrl, props.albumTitle)
+          props.addTrackToPlayList(props.title, props.author, props.trackUrl, props.albumTitle, props.albumCover)
 
         }}><NavLink style={{color: "#4A76A8", textDecoration: "none"}} to={`/music-list/playlists`}>Add to a Playlist</NavLink></MenuItem>
+        <MenuItem><a href={props.trackUrl} download >Download</a></MenuItem>
       </Menu>
     </div>
   );

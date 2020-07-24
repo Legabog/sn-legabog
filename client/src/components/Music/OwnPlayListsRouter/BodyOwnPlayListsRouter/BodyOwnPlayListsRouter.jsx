@@ -4,8 +4,31 @@ import DefaultMusic from "../../../../assets/apple theme/music.jpg";
 import TracksItem from "./TrackItem/TrackItem";
 import { NavLink } from "react-router-dom";
 import delete_icon from "../../../../assets/images/icons/music/delete_icon.svg";
+import {useEffect} from "react"
 
 const BodyOwnPlayListsRouter = (props) => {
+  useEffect(() => {
+    const audio = document.getElementById("audio");
+    if (props.activeTrack !== null) {
+      if (props.isPlaying) {
+        if (audio.currentTime === 0) {
+          audio.src = props.activeTrack.trackUrl;
+          audio.currentTime = 0;
+          audio.play();
+        }
+        if (audio.src !== props.activeTrack.trackUrl) {
+          audio.src = props.activeTrack.trackUrl;
+          audio.currentTime = 0;
+          audio.play();
+        } else {
+          audio.play();
+        }
+      } else {
+        audio.pause();
+      }
+    } else {
+    }
+  });
   return (
     <div className={classes.bodyOwnPlayListsRouter}>
       <div className={classes.playListImage}>
@@ -19,11 +42,21 @@ const BodyOwnPlayListsRouter = (props) => {
             <TracksItem
               key={e._id}
               title={e.title}
+              albumTitle={e.albumTitle}
+              albumCover={e.albumCover}
               author={e.author}
               trackUrl={e.trackUrl}
+              tracks={props.tracks}
               id={e._id}
               pid={props.id}
               deleteTrackFromPlayList={props.deleteTrackFromPlayList}
+              playPlayer={props.playPlayer}
+              setMusicForPlayer={props.setMusicForPlayer}
+              setIndexOfTrack={props.setIndexOfTrack}
+              musicPlayerPlayList={props.musicPlayerPlayList}
+              indexOfPlayingTrack={props.indexOfPlayingTrack}
+              isPlaying={props.isPlaying}
+              activeTrack={props.activeTrack}
             />
           ))}
         </div>
