@@ -23,6 +23,16 @@ const myOwnPlayListsSchema = new Schema({
         trackUrl: {
             type: String,
             required: true
+        },
+
+        albumTitle: {
+            type: String,
+            required: false
+        },
+
+        albumCover: {
+            type: String,
+            required: false
         }
     }]
 })
