@@ -24,6 +24,8 @@
 
 .inputheader input::-webkit-input-placeholder { color: #fff; }
 
+.inputheader input::-moz-placeholder { color: #fff; }
+
 
 .inputheader input:active, :hover, :focus {
     outline: 0;

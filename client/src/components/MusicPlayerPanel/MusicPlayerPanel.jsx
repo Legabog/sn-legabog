@@ -8,20 +8,55 @@ import previous from "../../assets/images/icons/music-player-panel/previous.svg"
 import { useState } from "react";
 import BackDrop from "../common/BackDrop/BackDrop";
 import dropDown from "../../assets/images/icons/music-player-panel/dropdown.svg";
+import mute from "../../assets/images/icons/music-player-panel/mute.svg";
+import volumeicon from "../../assets/images/icons/music-player-panel/volume.svg";
+import { useEffect } from "react";
 
 const MusicPlayerPanel = (props) => {
+  let audio = document.getElementById("audio");
+
   const [isOpen, switchCondition] = useState(true);
 
   const toggleMusicPanel = () => {
     switchCondition(!isOpen);
   };
 
-  let [volume, volumeH] = useState(0.5);
+  let [volume, volumeH] = useState(1);
 
   const volumeHandler = (e) => {
+    volumeH((audio.volume = e.target.value));
+  };
+
+  let [audioCurrentTime, setAudioCurrentTime] = useState(0);
+
+  const audioTimeHandler = (e) => {
+    audioCurrentTime = audio.currentTime;
+    setAudioCurrentTime((audio.currentTime = e.target.value));
+  };
+
+  useEffect(() => {
     let audio = document.getElementById("audio");
-    audio.volume = volume;
-    volumeH((volume = e.target.value));
+    setInterval(() => {
+      setAudioCurrentTime(audio.currentTime);
+    }, 1);
+  }, []);
+
+  const calculateTime = (seconds = 0, guide = seconds) => {
+    let s = Math.floor(seconds % 60);
+    let m = Math.floor((seconds / 60) % 60);
+    let h = Math.floor(seconds / 3600);
+    const gm = Math.floor((guide / 60) % 60);
+    const gh = Math.floor(guide / 3600);
+
+    if (isNaN(seconds) || seconds === Infinity) {
+      h = m = s = "-";
+    }
+
+    h = h > 0 || gh > 0 ? `${h}:` : "";
+    m = `${(h || gm >= 10) && m < 10 ? `0${m}` : m}:`;
+    s = s < 10 ? `0${s}` : s;
+
+    return h + m + s;
   };
 
   const cls = [classes.MusicPlayerPanel];
@@ -54,8 +89,6 @@ const MusicPlayerPanel = (props) => {
               alt="playAndPause"
               onClick={() => {
                 if (props.activeTrack !== null) {
-                  let audio = document.getElementById("audio");
-
                   if (props.isPlaying) {
                     audio.pause();
                     props.toggleIsPlaying(false);
@@ -123,7 +156,6 @@ const MusicPlayerPanel = (props) => {
           <div className={classes.dropDown}>
             <img src={dropDown} alt="dropDown" onClick={toggleMusicPanel} />
           </div>
-
           {props.isPlaying ? (
             <div className={classes.avatarIsPlaying}>
               <img
@@ -147,7 +179,6 @@ const MusicPlayerPanel = (props) => {
               />
             </div>
           )}
-
           <div className={classes.description}>
             <div className={classes.songName}>
               <h3>
@@ -164,7 +195,53 @@ const MusicPlayerPanel = (props) => {
               </h3>
             </div>
           </div>
+          <div className={classes.trackBar}>
+            <input
+              id="trackBarRange"
+              type="range"
+              min="0"
+              max={isNaN(audio.duration) ? null : audio.duration}
+              step="1"
+              value={audioCurrentTime}
+              style={{
+                background: `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%,#E6E6E6 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%, #E6E6E6 100%)`,
+              }}
+              onInput={() => {
+                let trackBarRange = document.getElementById("trackBarRange");
 
+                trackBarRange.style.background = `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%,#E6E6E6 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%, #E6E6E6 100%)`;
+              }}
+              onClick={() => {
+                let trackBarRange = document.getElementById("trackBarRange");
+                trackBarRange.style.background = `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%,#E6E6E6 ${
+                  (audioCurrentTime / audio.duration) * 100
+                }%, #E6E6E6 100%)`;
+              }}
+              onChange={audioTimeHandler}
+            />
+            <div className={classes.time}>
+              <div className={classes.currentTime}>
+                <h5>{calculateTime(audioCurrentTime)}</h5>
+              </div>
+              <div className={classes.timeLeft}>
+                <h5>
+                  {isNaN(audio.duration)
+                    ? "-0:00"
+                    : "-" + calculateTime(audio.duration - audioCurrentTime)}
+                </h5>
+              </div>
+            </div>
+          </div>
           <div className={classes.controlPanel}>
             <img
               src={previous}
@@ -214,19 +291,16 @@ const MusicPlayerPanel = (props) => {
               }}
               onClick={() => {
                 if (props.activeTrack !== null) {
-                  let audio = document.getElementById("audio");
                   audio.currentTime = 0;
                 }
               }}
-              style={{marginLeft: "130px"}}
+              style={{ marginLeft: "130px" }}
             />
             <img
               src={props.isPlaying ? pause : play}
               alt="playAndPause"
               onClick={() => {
                 if (props.activeTrack !== null) {
-                  let audio = document.getElementById("audio");
-
                   if (props.isPlaying) {
                     audio.pause();
                     props.toggleIsPlaying(false);
@@ -236,10 +310,10 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-              style={{marginLeft: "110px"}}
+              style={{ marginLeft: "110px" }}
             />
             <img
-              style={{marginLeft: "100px"}}
+              style={{ marginLeft: "100px" }}
               src={next}
               alt="next"
               onClick={() => {
@@ -290,10 +364,17 @@ const MusicPlayerPanel = (props) => {
               }}
             />
           </div>
-          {/* <div className={classes.audiotrack}>
-            <div className={classes.time}></div>
-          </div> */}
           <div className={classes.volume}>
+            <div className={classes.mute}>
+              <img
+                src={mute}
+                alt="mute"
+                onClick={() => {
+                  volumeH((audio.volume = 0));
+                }}
+              />
+            </div>
+
             <input
               id="volumeRange"
               type="range"
@@ -301,13 +382,32 @@ const MusicPlayerPanel = (props) => {
               max="1"
               step="0.01"
               value={volume}
+              style={{
+                background: `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${
+                  volume * 100
+                }%,#E6E6E6 ${volume * 100}%, #E6E6E6 100%)`,
+              }}
               onInput={() => {
                 let val = volume * 100;
                 let volumeRange = document.getElementById("volumeRange");
-                volumeRange.style.background = `-webkit-linear-gradient(left ,#4A76A8 0%,#4A76A8 ${val}%,#E6E6E6 ${val}%, #E6E6E6 100%)`;
+                volumeRange.style.background = `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${val}%,#E6E6E6 ${val}%, #E6E6E6 100%)`;
+              }}
+              onClick={() => {
+                let val = volume * 100;
+                let volumeRange = document.getElementById("volumeRange");
+                volumeRange.style.background = `-webkit-linear-gradient(left ,#4A76A8 0%, #4A76A8 ${val}%,#E6E6E6 ${val}%, #E6E6E6 100%)`;
               }}
               onChange={volumeHandler}
-            ></input>
+            />
+            <div className={classes.unmute}>
+              <img
+                src={volumeicon}
+                alt="volumeicon"
+                onClick={() => {
+                  volumeH((audio.volume = 1));
+                }}
+              />
+            </div>
           </div>
         </div>
       )}
