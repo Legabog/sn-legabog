@@ -7,6 +7,9 @@ const Settings = (props) => {
       <h1 className={classes.headerh1}>Account settings</h1>
       <div className={classes.themeSettings}>
         <h3>Theme Settings</h3>
+        <button onClick={() => {
+          
+        }}></button>
       </div>
     </div>
   );

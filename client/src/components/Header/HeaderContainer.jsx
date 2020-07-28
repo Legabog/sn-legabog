@@ -3,6 +3,7 @@ import Header from "./Header";
 import { connect } from "react-redux";
 import { logout } from "../../redux/auth-reducer";
 import { toggleNotify } from "../../redux/header-reducer"
+import { toggleNotifyOpacity } from "../../redux/notify-reducer"
 
 class HeaderContainer extends React.Component {
   render() {
@@ -20,4 +21,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, { 
   toggleNotify,
+  toggleNotifyOpacity,
   logout })(HeaderContainer);

@@ -1,0 +1,8 @@
+.notifyForm {
+    position: absolute;
+    top: 60px;
+    margin-left: 665px;
+    width: 470px;
+    max-width: 470px;
+    background-color: red;
+}

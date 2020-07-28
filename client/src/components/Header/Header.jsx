@@ -12,7 +12,6 @@ const Header = (props) => {
         <SearchInput/>
         <Notify {...props}/>
         <LoginBlock {...props}/>
-
     </header>
   );
 };

@@ -84,9 +84,7 @@ const MusicPlayerPanel = (props) => {
               : "Not Playing"}
           </h1>
           <div className={classes.controlPanel}>
-            <img
-              src={props.isPlaying ? pause : play}
-              alt="playAndPause"
+            <button
               onClick={() => {
                 if (props.activeTrack !== null) {
                   if (props.isPlaying) {
@@ -98,10 +96,12 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-            />
-            <img
-              src={next}
-              alt="next"
+            >
+              <img src={props.isPlaying ? pause : play} alt="playAndPause" />
+            </button>
+
+            <button
+              disabled={props.disablerButtonNext}
               onClick={() => {
                 if (props.activeTrack !== null) {
                   if (
@@ -148,7 +148,9 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-            />
+            >
+              <img src={next} alt="next" />
+            </button>
           </div>
         </div>
       ) : (
@@ -243,11 +245,13 @@ const MusicPlayerPanel = (props) => {
             </div>
           </div>
           <div className={classes.controlPanel}>
-            <img
-              src={previous}
-              alt="previous"
-              onDoubleClick={() => {
-                if (props.activeTrack !== null) {
+            <button
+              disabled={props.disablerButtonNext}
+              style={{ marginLeft: "130px" }}
+              onClick={() => {
+                if (props.activeTrack !== null && audio.currentTime > 3 ) {
+                  audio.currentTime = 0;
+                } else {
                   if (props.indexOfPlayingTrack - 1 >= 0) {
                     props.previousTrack(
                       {
@@ -289,16 +293,12 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-              onClick={() => {
-                if (props.activeTrack !== null) {
-                  audio.currentTime = 0;
-                }
-              }}
-              style={{ marginLeft: "130px" }}
-            />
-            <img
-              src={props.isPlaying ? pause : play}
-              alt="playAndPause"
+            >
+              <img src={previous} alt="previous" />
+            </button>
+
+            <button
+              style={{ marginLeft: "110px" }}
               onClick={() => {
                 if (props.activeTrack !== null) {
                   if (props.isPlaying) {
@@ -310,12 +310,13 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-              style={{ marginLeft: "110px" }}
-            />
-            <img
+            >
+              <img src={props.isPlaying ? pause : play} alt="playAndPause" />
+            </button>
+
+            <button
+              disabled={props.disablerButtonNext}
               style={{ marginLeft: "100px" }}
-              src={next}
-              alt="next"
               onClick={() => {
                 if (props.activeTrack !== null) {
                   if (
@@ -362,7 +363,9 @@ const MusicPlayerPanel = (props) => {
                   }
                 }
               }}
-            />
+            >
+              <img src={next} alt="next" />
+            </button>
           </div>
           <div className={classes.volume}>
             <div className={classes.mute}>

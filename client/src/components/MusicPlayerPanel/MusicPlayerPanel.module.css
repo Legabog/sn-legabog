@@ -135,23 +135,41 @@
 }
 
 
-.controlPanel img {
-    padding-top: 20px;
+.controlPanel button img {
+    /* padding-top: 20px; */
     width: 50px;
     height: 50px;
     margin: 0;
 }
 
-.controlPanel img:hover {
-    filter: opacity(70%);
+.controlPanel button {
+    background-color: #F9F9F9;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
 }
 
-.MusicPlayerPanel.close .controlPanel img{
+.controlPanel button:hover {
+    filter: opacity(70%);
+    cursor: pointer;
+}
+
+.MusicPlayerPanel.close .controlPanel button {
+    background-color: #F9F9F9;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.MusicPlayerPanel.close .controlPanel button img{
     width: 50px;
     height: 50px;
 }
 
-.MusicPlayerPanel.close .controlPanel img:hover {
+.MusicPlayerPanel.close .controlPanel button:hover {
+    filter: opacity(70%);
     cursor: pointer;
 }
 
