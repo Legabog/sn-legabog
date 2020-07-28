@@ -2,12 +2,14 @@ const SET_MUSIC_FOR_PLAYER = "SET_MUSIC_FOR_PLAYER";
 const TOGGLE_IS_PLAYING = "TOGGLE_IS_PLAYING";
 const SET_INDEX_OF_TRACK = "SET_INDEX_OF_TRACK";
 const SET_ACTIVE_TRACK = "SET_ACTIVE_TRACK";
+const SET_DISABLER_BUTTON_NEXT = "SET_DISABLER_BUTTON_NEXT"
 
 let initialState = {
   musicPlayerPlayList: null,
   isPlaying: false,
   indexOfPlayingTrack: 0,
   activeTrack: null,
+  disablerButtonNext: false
 };
 
 const musicPlayerReducer = (state = initialState, action) => {
@@ -35,7 +37,13 @@ const musicPlayerReducer = (state = initialState, action) => {
         ...state,
         activeTrack: action.track,
       };
-
+    
+    case SET_DISABLER_BUTTON_NEXT:
+      return {
+        ...state,
+        disablerButtonNext: action.boolean
+      }
+    
     default:
       return state;
   }
@@ -69,12 +77,28 @@ export const toggleIsPlaying = (boolean) => {
   };
 };
 
+export const setDisablerButtonNext = (boolean) => {
+  return {
+    type: SET_DISABLER_BUTTON_NEXT,
+    boolean
+  }
+}
+
 export const playPlayer = (activeTrack, data, index) => {
   return (dispatch) => {
     dispatch(toggleIsPlaying(true));
     dispatch(setIndexOfTrack(index));
     dispatch(setMusicForPlayer(data));
     dispatch(setActiveTrack(activeTrack))
+
+
+    setTimeout(() => {
+      let audio = document.getElementById("audio")
+      audio.src = activeTrack.trackUrl;
+      audio.currentTime = 0;
+      audio.play()
+    }, 10)
+
   };
 };
 
@@ -83,6 +107,18 @@ export const nextTrack = (activeTrack, index) => {
     dispatch(toggleIsPlaying(true));
     dispatch(setIndexOfTrack(index));
     dispatch(setActiveTrack(activeTrack))
+    dispatch(setDisablerButtonNext(true))
+
+    setTimeout(() => {
+      let audio = document.getElementById("audio")
+      audio.src = activeTrack.trackUrl;
+      audio.currentTime = 0;
+      audio.play()
+    }, 10)
+
+    setTimeout(() => {
+      dispatch(setDisablerButtonNext(false))
+    }, 800)
   }
 }
 
@@ -91,6 +127,18 @@ export const previousTrack = (activeTrack, index) => {
     dispatch(toggleIsPlaying(true));
     dispatch(setIndexOfTrack(index));
     dispatch(setActiveTrack(activeTrack))
+    dispatch(setDisablerButtonNext(true))
+
+    setTimeout(() => {
+      let audio = document.getElementById("audio")
+      audio.src = activeTrack.trackUrl;
+      audio.currentTime = 0;
+      audio.play()
+    }, 10)
+
+    setTimeout(() => {
+      dispatch(setDisablerButtonNext(false))
+    }, 800)
   }
 }
 

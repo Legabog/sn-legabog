@@ -46,6 +46,7 @@ import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
 
 import firebase from "firebase/app";
 import "firebase/storage";
+import NotifyForm from "./components/common/NotifyForm/NotifyForm";
 
 class App extends React.Component {
   componentDidMount() {
@@ -64,6 +65,7 @@ class App extends React.Component {
     this.props.initializeApp();
     this.props.getMusicAlbumsData();
     this.props.getMyOwnPlayLists();
+    
   }
 
   render() {
@@ -198,7 +200,9 @@ class App extends React.Component {
               activeTrack={this.props.activeTrack}
               nextTrack={this.props.nextTrack}
               previousTrack={this.props.previousTrack}
+              disablerButtonNext={this.props.disablerButtonNext}
             />
+            <NotifyForm notifyOpacity={this.props.notifyOpacity}/>
           </div>
         </div>
       );
@@ -220,6 +224,8 @@ const mapStateToProps = (state) => {
     musicPlayerPlayList: state.musicPlayerReducer.musicPlayerPlayList,
     indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
     activeTrack: state.musicPlayerReducer.activeTrack,
+    disablerButtonNext: state.musicPlayerReducer.disablerButtonNext,
+    notifyOpacity: state.notifyReducer.notifyOpacity
   };
 };
 

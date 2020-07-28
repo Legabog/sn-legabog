@@ -6,12 +6,14 @@ const ADD_TRACK_TO_PLAYLIST = "ADD_TRACK_TO_PLAYLIST";
 const SET_MY_OWN_PLAYLISTS_DATA = "SET_MY_OWN_PLAYLISTS_DATA";
 const TOGGLE_FETCH = "TOGGLE_FETCH";
 
+
 let initialState = {
   ownPlayLists: [],
   playListSwitcher: false,
   tempTrack: null,
   fetch: false,
   tempTrackPayLoad: null,
+  
 };
 
 const musicPlayListReducer = (state = initialState, action) => {
