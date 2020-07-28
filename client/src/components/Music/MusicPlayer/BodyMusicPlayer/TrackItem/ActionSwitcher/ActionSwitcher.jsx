@@ -41,7 +41,6 @@ export const ActionSwitcher = (props) => {
           props.addTrackToPlayList(props.title, props.author, props.trackUrl, props.albumTitle, props.albumCover)
 
         }}><NavLink style={{color: "#4A76A8", textDecoration: "none"}} to={`/music-list/playlists`}>Add to a Playlist</NavLink></MenuItem>
-        <MenuItem><a href={props.trackUrl} download >Download</a></MenuItem>
       </Menu>
     </div>
   );

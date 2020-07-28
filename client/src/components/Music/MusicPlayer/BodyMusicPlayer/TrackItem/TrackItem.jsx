@@ -1,32 +1,8 @@
 import React from "react";
 import classes from "./TrackItem.module.css";
 import { ActionSwitcher } from "./ActionSwitcher/ActionSwitcher";
-import { useEffect } from "react";
 
 const TracksItem = (props) => {
-  useEffect(() => {
-    const audio = document.getElementById("audio");
-    if (props.activeTrack !== null) {
-      if (props.isPlaying) {
-        if (audio.currentTime === 0) {
-          audio.src = props.activeTrack.trackUrl;
-          audio.currentTime = 0;
-          audio.play();
-        }
-        if (audio.src !== props.activeTrack.trackUrl) {
-          audio.src = props.activeTrack.trackUrl;
-          audio.currentTime = 0;
-          audio.play();
-        } else {
-          audio.play();
-        }
-      } else {
-        audio.pause();
-      }
-    } else {
-    }
-  });
-
   return (
     <div className={classes.tracks}>
       {props.tracks.map((e) => {
@@ -69,7 +45,10 @@ const TracksItem = (props) => {
                       tracks: props.tracks,
                     },
                     index
-                  );
+                  )
+
+
+                  
                 }}
               >
                 {e.title}
