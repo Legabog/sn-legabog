@@ -11,5 +11,10 @@
 }
 
 .notify:hover {
+    cursor: pointer;
     background-color: #3d6898;
+}
+
+.notify img:hover {
+    cursor: pointer;
 }

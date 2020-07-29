@@ -1,0 +1,41 @@
+.notifyFormItemWrapper hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(240, 236, 236);
+    margin-top: 10px;
+}
+
+.notifyFormItem {
+    display: flex;
+    background-color: rgb(249, 249, 249);
+}
+
+.notifyFormItem img {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+.notifyFormItem p {
+    color: #4A76A8;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0px;
+}
+
+.notifyFormItemWrapper button {
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    margin-left: 80px;
+    border-radius: 4px;
+    background-color: #4A76A8;
+    color: #fff;
+    border: none;
+
+}
+
+.notifyFormItemWrapper button:hover {
+    filter: opacity(80%);    
+    cursor: pointer;
+}

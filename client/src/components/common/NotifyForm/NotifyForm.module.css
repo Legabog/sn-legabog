@@ -1,8 +1,12 @@
 .notifyForm {
+    display: block;
     position: absolute;
     top: 60px;
     margin-left: 665px;
-    width: 470px;
+    width: 430px;
     max-width: 470px;
-    background-color: red;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.3);
+    background-color: rgb(249, 249, 249);
+    border: 1px solid rgb(233, 233, 233);
+    transition: opacity 200ms linear;
 }
