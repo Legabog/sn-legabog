@@ -9,7 +9,7 @@ let initialState = {
   isPlaying: false,
   indexOfPlayingTrack: 0,
   activeTrack: null,
-  disablerButtonNext: false
+  disablerButtonNext: false,
 };
 
 const musicPlayerReducer = (state = initialState, action) => {

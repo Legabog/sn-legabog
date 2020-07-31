@@ -39,7 +39,7 @@ import {
   pausePlayer,
   setIndexOfTrack,
   nextTrack,
-  previousTrack
+  previousTrack,
 } from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
@@ -65,7 +65,6 @@ class App extends React.Component {
     this.props.initializeApp();
     this.props.getMusicAlbumsData();
     this.props.getMyOwnPlayLists();
-    
   }
 
   render() {
@@ -202,7 +201,11 @@ class App extends React.Component {
               previousTrack={this.props.previousTrack}
               disablerButtonNext={this.props.disablerButtonNext}
             />
-            <NotifyForm notifyOpacity={this.props.notifyOpacity}/>
+            <NotifyForm 
+              notifyTop={this.props.notifyTop}
+              notifyOpacity={this.props.notifyOpacity}
+              notifyVisibility={this.props.notifyVisibility}        
+            />
           </div>
         </div>
       );
@@ -225,7 +228,9 @@ const mapStateToProps = (state) => {
     indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
     activeTrack: state.musicPlayerReducer.activeTrack,
     disablerButtonNext: state.musicPlayerReducer.disablerButtonNext,
-    notifyOpacity: state.notifyReducer.notifyOpacity
+    notifyTop: state.notifyReducer.notifyTop,
+    notifyOpacity: state.notifyReducer.notifyOpacity,
+    notifyVisibility: state.notifyReducer.notifyVisibility,
   };
 };
 
@@ -247,6 +252,6 @@ export default compose(
     pausePlayer,
     setIndexOfTrack,
     nextTrack,
-    previousTrack
+    previousTrack,
   })
 )(App);
