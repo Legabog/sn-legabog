@@ -1,0 +1,17 @@
+.notifyFormHeader {
+    display: flex;
+    background-color: rgb(249, 249, 249);
+}
+
+.notifyFormHeader a{
+    text-decoration: none;
+    color: #4a76a8;
+    margin-top: 7px;
+    margin-left: 255px;
+}
+
+.notifyFormHeader h3 {
+    margin-top: 5px;
+    color: #4a76a8;
+    margin-left: 15px;
+}

@@ -1,0 +1,11 @@
+.notifyInformation {
+    z-index: 101;
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    width: 600px;
+    min-height: 100px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(249, 249, 249);
+}

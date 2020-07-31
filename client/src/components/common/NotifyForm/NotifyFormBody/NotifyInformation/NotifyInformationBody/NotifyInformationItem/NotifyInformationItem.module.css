@@ -1,0 +1,21 @@
+.NotifyInformationItem {
+    margin-top: 40px;
+    display: flex;
+    margin-left: 25px;
+}
+
+.NotifyInformationItem h5 {
+    margin: 0px;
+    color: #4A76A8;
+}
+
+.NotifyInformationItem p {
+    padding-top: 5px;
+    margin: 0px;
+    color: #939393;
+}
+
+.description {
+    margin-left: 20px;
+    display: block;
+}

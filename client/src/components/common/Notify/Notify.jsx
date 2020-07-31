@@ -15,7 +15,7 @@ const Notify = (props) => {
   return (
     <div className={classes.notify}>
       <img src={ active ? notify_active : notify_notactive} alt="notify" onClick={() => {
-        props.toggleNotifyOpacity()
+        props.toggleNotifyForm()
         setActive()
       }}></img>
     </div>

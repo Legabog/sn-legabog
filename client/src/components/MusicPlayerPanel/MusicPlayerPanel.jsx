@@ -11,6 +11,11 @@ import dropDown from "../../assets/images/icons/music-player-panel/dropdown.svg"
 import mute from "../../assets/images/icons/music-player-panel/mute.svg";
 import volumeicon from "../../assets/images/icons/music-player-panel/volume.svg";
 import { useEffect } from "react";
+import shuffle from "../../assets/images/icons/music-player-panel/shuffle.svg";
+import shuffle_active from "../../assets/images/icons/music-player-panel/shuffle_active.svg";
+import repeat from "../../assets/images/icons/music-player-panel/repeat.svg";
+import repeat_active from "../../assets/images/icons/music-player-panel/repeat_active.svg";
+import repeatone_active from "../../assets/images/icons/music-player-panel/repeat-one_active.svg";
 
 const MusicPlayerPanel = (props) => {
   let audio = document.getElementById("audio");
@@ -32,6 +37,30 @@ const MusicPlayerPanel = (props) => {
   const audioTimeHandler = (e) => {
     audioCurrentTime = audio.currentTime;
     setAudioCurrentTime((audio.currentTime = e.target.value));
+  };
+
+  let [shuffleState, toggleShuffleState] = useState(false);
+
+  const setShuffleState = () => {
+    toggleShuffleState(!shuffleState);
+  };
+
+  let [repeatState, toggleRepeatState] = useState(0);
+
+  const setRepeatState = () => {
+    switch (repeatState) {
+      case 0:
+        toggleRepeatState(1);
+        break;
+      case 1:
+        toggleRepeatState(2);
+        break;
+      case 2:
+        toggleRepeatState(0);
+        break;
+      default:
+        break;
+    }
   };
 
   useEffect(() => {
@@ -245,11 +274,32 @@ const MusicPlayerPanel = (props) => {
             </div>
           </div>
           <div className={classes.controlPanel}>
+            <div className={classes.shuffleAndRepeat}>
+              <button onClick={setShuffleState}>
+                <img
+                  src={shuffleState ? shuffle_active : shuffle}
+                  alt="shuffle"
+                />
+              </button>
+              <button style={{ marginLeft: "425px" }} onClick={setRepeatState}>
+                <img
+                  src={
+                    repeatState === 0
+                      ? repeat
+                      : repeatState === 1
+                      ? repeat_active
+                      : repeatone_active
+                  }
+                  alt="repeat"
+                />
+              </button>
+            </div>
+
             <button
               disabled={props.disablerButtonNext}
               style={{ marginLeft: "130px" }}
               onClick={() => {
-                if (props.activeTrack !== null && audio.currentTime > 3 ) {
+                if (props.activeTrack !== null && audio.currentTime > 3) {
                   audio.currentTime = 0;
                 } else {
                   if (props.indexOfPlayingTrack - 1 >= 0) {

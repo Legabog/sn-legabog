@@ -1,0 +1,6 @@
+.notifyInformationBody hr{
+    height: 0;
+    border: none;
+    margin-top: 40px;
+    border-top: 1px solid rgb(240, 236, 236);
+}

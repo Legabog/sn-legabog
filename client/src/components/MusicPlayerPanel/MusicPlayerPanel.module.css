@@ -158,15 +158,9 @@
 .MusicPlayerPanel.close .controlPanel button {
     background-color: #F9F9F9;
     border: none;
-    width: 50px;
-    height: 50px;
     margin-top: 20px;
 }
 
-.MusicPlayerPanel.close .controlPanel button img{
-    width: 50px;
-    height: 50px;
-}
 
 .MusicPlayerPanel.close .controlPanel button:hover {
     filter: opacity(70%);
@@ -359,4 +353,24 @@
 
 .MusicPlayerPanel.close .trackBar .time .timeLeft {
     margin-left: 410px;
+}
+
+.shuffleAndRepeat {
+    display: flex;
+}
+
+.shuffleAndRepeat button {
+    margin-left: 60px;
+    width: 30px;
+    height: 30px;
+}
+
+.shuffleAndRepeat button:hover {
+    cursor: pointer;
+    filter: opacity(80%);
+}
+
+.shuffleAndRepeat button img{
+    width: 30px;
+    height: 30px;
 }
