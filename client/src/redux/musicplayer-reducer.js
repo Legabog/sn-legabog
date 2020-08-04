@@ -2,7 +2,8 @@ const SET_MUSIC_FOR_PLAYER = "SET_MUSIC_FOR_PLAYER";
 const TOGGLE_IS_PLAYING = "TOGGLE_IS_PLAYING";
 const SET_INDEX_OF_TRACK = "SET_INDEX_OF_TRACK";
 const SET_ACTIVE_TRACK = "SET_ACTIVE_TRACK";
-const SET_DISABLER_BUTTON_NEXT = "SET_DISABLER_BUTTON_NEXT"
+const SET_DISABLER_BUTTON_NEXT = "SET_DISABLER_BUTTON_NEXT";
+const SET_DISABLER_BUTTON_PLAY = "SET_DISABLER_BUTTON_PLAY";
 
 let initialState = {
   musicPlayerPlayList: null,
@@ -10,6 +11,7 @@ let initialState = {
   indexOfPlayingTrack: 0,
   activeTrack: null,
   disablerButtonNext: false,
+  disablerButtonPlay: false,
 };
 
 const musicPlayerReducer = (state = initialState, action) => {
@@ -37,13 +39,19 @@ const musicPlayerReducer = (state = initialState, action) => {
         ...state,
         activeTrack: action.track,
       };
-    
+
     case SET_DISABLER_BUTTON_NEXT:
       return {
         ...state,
-        disablerButtonNext: action.boolean
-      }
-    
+        disablerButtonNext: action.boolean,
+      };
+
+    case SET_DISABLER_BUTTON_PLAY:
+      return {
+        ...state,
+        disablerButtonPlay: action.boolean,
+      };
+
     default:
       return state;
   }
@@ -80,68 +88,65 @@ export const toggleIsPlaying = (boolean) => {
 export const setDisablerButtonNext = (boolean) => {
   return {
     type: SET_DISABLER_BUTTON_NEXT,
-    boolean
-  }
-}
+    boolean,
+  };
+};
+
+export const setDisablerButtonPlay = (boolean) => {
+  return {
+    type: SET_DISABLER_BUTTON_PLAY,
+    boolean,
+  };
+};
 
 export const playPlayer = (activeTrack, data, index) => {
-  return (dispatch) => {
-    dispatch(toggleIsPlaying(true));
-    dispatch(setIndexOfTrack(index));
-    dispatch(setMusicForPlayer(data));
-    dispatch(setActiveTrack(activeTrack))
+  return async (dispatch) => {
+    await dispatch(toggleIsPlaying(true));
+    await dispatch(setIndexOfTrack(index));
+    await dispatch(setMusicForPlayer(data));
+    await dispatch(setActiveTrack(activeTrack));
+    await dispatch(setDisablerButtonPlay(true));
 
+    let audio = document.getElementById("audio");
+    audio.src = activeTrack.trackUrl;
+    audio.currentTime = 0;
+    await audio.play();
 
-    setTimeout(() => {
-      let audio = document.getElementById("audio")
-      audio.src = activeTrack.trackUrl;
-      audio.currentTime = 0;
-      audio.play()
-    }, 10)
-
+    dispatch(setDisablerButtonPlay(false));
   };
 };
 
 export const nextTrack = (activeTrack, index) => {
-  return (dispatch) => {
-    dispatch(toggleIsPlaying(true));
-    dispatch(setIndexOfTrack(index));
-    dispatch(setActiveTrack(activeTrack))
-    dispatch(setDisablerButtonNext(true))
+  return async (dispatch) => {
+    await dispatch(toggleIsPlaying(true));
+    await dispatch(setIndexOfTrack(index));
+    await dispatch(setActiveTrack(activeTrack));
+    await dispatch(setDisablerButtonNext(true));
 
-    setTimeout(() => {
-      let audio = document.getElementById("audio")
-      audio.src = activeTrack.trackUrl;
-      audio.currentTime = 0;
-      audio.play()
-    }, 10)
+    let audio = document.getElementById("audio");
+    audio.src = activeTrack.trackUrl;
+    audio.currentTime = 0;
+    await audio.play();
 
-    setTimeout(() => {
-      dispatch(setDisablerButtonNext(false))
-    }, 800)
-  }
-}
+    dispatch(setDisablerButtonNext(false));
+  };
+};
 
 export const previousTrack = (activeTrack, index) => {
-  return (dispatch) => {
-    dispatch(toggleIsPlaying(true));
-    dispatch(setIndexOfTrack(index));
-    dispatch(setActiveTrack(activeTrack))
-    dispatch(setDisablerButtonNext(true))
+  return async (dispatch) => {
+    await dispatch(toggleIsPlaying(true));
+    await dispatch(setIndexOfTrack(index));
+    await dispatch(setActiveTrack(activeTrack));
+    await dispatch(setDisablerButtonNext(true));
 
-    setTimeout(() => {
-      let audio = document.getElementById("audio")
-      audio.src = activeTrack.trackUrl;
-      audio.currentTime = 0;
-      audio.play()
-    }, 10)
+    let audio = document.getElementById("audio");
+    audio.src = activeTrack.trackUrl;
+    audio.currentTime = 0;
+    await audio.play();
 
-    setTimeout(() => {
-      dispatch(setDisablerButtonNext(false))
-    }, 800)
-  }
-}
-
+    dispatch(setDisablerButtonNext(false));
+  };
+};
 
 export const pausePlayer = () => {
   return (dispatch) => {
