@@ -4,6 +4,7 @@ const SET_INDEX_OF_TRACK = "SET_INDEX_OF_TRACK";
 const SET_ACTIVE_TRACK = "SET_ACTIVE_TRACK";
 const SET_DISABLER_BUTTON_NEXT = "SET_DISABLER_BUTTON_NEXT";
 const SET_DISABLER_BUTTON_PLAY = "SET_DISABLER_BUTTON_PLAY";
+const SHUFFLE_MUSIC = "SHUFFLE_MUSIC";
 
 let initialState = {
   musicPlayerPlayList: null,
@@ -52,6 +53,11 @@ const musicPlayerReducer = (state = initialState, action) => {
         disablerButtonPlay: action.boolean,
       };
 
+    case SHUFFLE_MUSIC:
+      return {
+        ...state,
+        musicPlayerPlayList: {...state.musicPlayerPlayList, tracks: state.musicPlayerPlayList.tracks.sort(() => Math.random() - 0.5)} 
+      };
     default:
       return state;
   }
@@ -99,6 +105,12 @@ export const setDisablerButtonPlay = (boolean) => {
   };
 };
 
+export const shuffle = () => {
+  return {
+    type: SHUFFLE_MUSIC,
+  };
+};
+
 export const playPlayer = (activeTrack, data, index) => {
   return async (dispatch) => {
     await dispatch(toggleIsPlaying(true));
@@ -106,6 +118,7 @@ export const playPlayer = (activeTrack, data, index) => {
     await dispatch(setMusicForPlayer(data));
     await dispatch(setActiveTrack(activeTrack));
     await dispatch(setDisablerButtonPlay(true));
+    await dispatch(setDisablerButtonNext(true));
 
     let audio = document.getElementById("audio");
     audio.src = activeTrack.trackUrl;
@@ -113,6 +126,7 @@ export const playPlayer = (activeTrack, data, index) => {
     await audio.play();
 
     dispatch(setDisablerButtonPlay(false));
+    dispatch(setDisablerButtonNext(false));
   };
 };
 
@@ -153,6 +167,12 @@ export const pausePlayer = () => {
     let audio = document.getElementById("audio");
     audio.pause();
     dispatch(toggleIsPlaying(false));
+  };
+};
+
+export const shuffleMusic = () => {
+  return (dispatch) => {
+    dispatch(shuffle());
   };
 };
 

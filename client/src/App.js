@@ -40,6 +40,7 @@ import {
   setIndexOfTrack,
   nextTrack,
   previousTrack,
+  shuffleMusic
 } from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
@@ -84,7 +85,7 @@ class App extends React.Component {
               <Route path="/users" render={() => <UsersContainer />} />
               <Route path="/news" component={() => <NewsContainer />} />
               <Route path="/login" component={() => <Login />} />
-              <Route path="/settings" component={() => <SettingsContainer />} />
+              <Route path="/settings" component={() => <SettingsContainer  shuffleMusic={this.props.shuffleMusic}/>} />
 
               {/* -----------------------Player Routes----------------- */}
               <Route path="/music" component={() => <Music />} />
@@ -155,6 +156,7 @@ class App extends React.Component {
                       indexOfPlayingTrack={this.props.indexOfPlayingTrack}
                       isPlaying={this.props.isPlaying}
                       activeTrack={this.props.activeTrack}
+                      disablerButtonPlay={this.props.disablerButtonPlay}
                     />
                   )}
                 />
@@ -182,6 +184,7 @@ class App extends React.Component {
                       indexOfPlayingTrack={this.props.indexOfPlayingTrack}
                       isPlaying={this.props.isPlaying}
                       activeTrack={this.props.activeTrack}
+                      disablerButtonPlay={this.props.disablerButtonPlay}
                     />
                   )}
                 />
@@ -228,6 +231,7 @@ const mapStateToProps = (state) => {
     indexOfPlayingTrack: state.musicPlayerReducer.indexOfPlayingTrack,
     activeTrack: state.musicPlayerReducer.activeTrack,
     disablerButtonNext: state.musicPlayerReducer.disablerButtonNext,
+    disablerButtonPlay: state.musicPlayerReducer.disablerButtonPlay,
     notifyTop: state.notifyReducer.notifyTop,
     notifyOpacity: state.notifyReducer.notifyOpacity,
     notifyVisibility: state.notifyReducer.notifyVisibility,
@@ -253,5 +257,6 @@ export default compose(
     setIndexOfTrack,
     nextTrack,
     previousTrack,
+    shuffleMusic
   })
 )(App);
