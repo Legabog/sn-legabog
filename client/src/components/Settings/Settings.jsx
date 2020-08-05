@@ -8,7 +8,7 @@ const Settings = (props) => {
       <div className={classes.themeSettings}>
         <h3>Theme Settings</h3>
         <button onClick={() => {
-          
+          props.shuffleMusic()
         }}></button>
       </div>
     </div>

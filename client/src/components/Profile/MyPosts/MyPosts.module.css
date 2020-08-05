@@ -61,3 +61,7 @@
 .inputMessage textarea::-webkit-input-placeholder { 
     color: #4A76A8;
 }
+
+.inputMessage textarea::-moz-placeholder { 
+    color: #4A76A8;
+}

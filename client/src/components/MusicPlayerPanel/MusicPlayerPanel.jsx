@@ -11,8 +11,8 @@ import dropDown from "../../assets/images/icons/music-player-panel/dropdown.svg"
 import mute from "../../assets/images/icons/music-player-panel/mute.svg";
 import volumeicon from "../../assets/images/icons/music-player-panel/volume.svg";
 import { useEffect } from "react";
-import shuffle from "../../assets/images/icons/music-player-panel/shuffle.svg";
-import shuffle_active from "../../assets/images/icons/music-player-panel/shuffle_active.svg";
+// import shuffle from "../../assets/images/icons/music-player-panel/shuffle.svg";
+// import shuffle_active from "../../assets/images/icons/music-player-panel/shuffle_active.svg";
 import repeat from "../../assets/images/icons/music-player-panel/repeat.svg";
 import repeat_active from "../../assets/images/icons/music-player-panel/repeat_active.svg";
 import repeatone_active from "../../assets/images/icons/music-player-panel/repeat-one_active.svg";
@@ -39,11 +39,11 @@ const MusicPlayerPanel = (props) => {
     setAudioCurrentTime((audio.currentTime = e.target.value));
   };
 
-  let [shuffleState, toggleShuffleState] = useState(false);
+  // let [shuffleState, toggleShuffleState] = useState(false);
 
-  const setShuffleState = () => {
-    toggleShuffleState(!shuffleState);
-  };
+  // const setShuffleState = () => {
+  //   toggleShuffleState(!shuffleState);
+  // };
 
   let [repeatState, toggleRepeatState] = useState(0);
 
@@ -132,126 +132,130 @@ const MusicPlayerPanel = (props) => {
             <button
               disabled={props.disablerButtonNext}
               onClick={() => {
-                switch (repeatState) {
-                  case 0:
-                    if (
-                      props.indexOfPlayingTrack + 1 <
-                      props.musicPlayerPlayList.tracks.length
-                    ) {
-                      props.nextTrack(
-                        {
-                          albumCover:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].albumCover !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].albumCover
-                              : props.musicPlayerPlayList.albumCover,
-                          album:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].albumTitle !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].albumTitle
-                              : props.musicPlayerPlayList.title,
-                          author:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].author !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].author
-                              : props.musicPlayerPlayList.author,
-                          title:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].title,
-                          trackUrl:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].trackUrl,
-                        },
-                        props.indexOfPlayingTrack + 1
-                      );
-                    }
-                    break;
-                  case 1:
-                    if (
-                      props.indexOfPlayingTrack ===
-                      props.musicPlayerPlayList.tracks.length - 1
-                    ) {
-                      props.nextTrack(
-                        {
-                          albumCover:
-                            props.musicPlayerPlayList.tracks[0].albumCover !==
-                            undefined
-                              ? props.musicPlayerPlayList.tracks[0].albumCover
-                              : props.musicPlayerPlayList.albumCover,
-                          album:
-                            props.musicPlayerPlayList.tracks[0].albumTitle !==
-                            undefined
-                              ? props.musicPlayerPlayList.tracks[0].albumTitle
-                              : props.musicPlayerPlayList.title,
-                          author:
-                            props.musicPlayerPlayList.tracks[0].author !==
-                            undefined
-                              ? props.musicPlayerPlayList.tracks[0].author
-                              : props.musicPlayerPlayList.author,
-                          title: props.musicPlayerPlayList.tracks[0].title,
-                          trackUrl:
-                            props.musicPlayerPlayList.tracks[0].trackUrl,
-                        },
-                        0
-                      );
-                    } else {
-                      props.nextTrack(
-                        {
-                          albumCover:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].albumCover !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].albumCover
-                              : props.musicPlayerPlayList.albumCover,
-                          album:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].albumTitle !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].albumTitle
-                              : props.musicPlayerPlayList.title,
-                          author:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].author !== undefined
-                              ? props.musicPlayerPlayList.tracks[
-                                  props.indexOfPlayingTrack + 1
-                                ].author
-                              : props.musicPlayerPlayList.author,
-                          title:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].title,
-                          trackUrl:
-                            props.musicPlayerPlayList.tracks[
-                              props.indexOfPlayingTrack + 1
-                            ].trackUrl,
-                        },
-                        props.indexOfPlayingTrack + 1
-                      );
-                    }
-                    break;
-                  case 2:
-                    audio.currentTime = 0;
-                    audio.play();
+                if (props.activeTrack !== null) {
+                  switch (repeatState) {
+                    case 0:
+                      if (
+                        props.indexOfPlayingTrack + 1 <
+                        props.musicPlayerPlayList.tracks.length
+                      ) {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumCover !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumTitle !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].author !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].author
+                                : props.musicPlayerPlayList.author,
+                            title:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].trackUrl,
+                          },
+                          props.indexOfPlayingTrack + 1
+                        );
+                      }
 
-                    break;
-                  default:
-                    break;
+                      break;
+                    case 1:
+                      if (
+                        props.indexOfPlayingTrack ===
+                        props.musicPlayerPlayList.tracks.length - 1
+                      ) {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[0].albumCover !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[0].albumTitle !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[0].author !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].author
+                                : props.musicPlayerPlayList.author,
+                            title: props.musicPlayerPlayList.tracks[0].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[0].trackUrl,
+                          },
+                          0
+                        );
+                      } else {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumCover !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumTitle !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].author !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].author
+                                : props.musicPlayerPlayList.author,
+                            title:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].trackUrl,
+                          },
+                          props.indexOfPlayingTrack + 1
+                        );
+                      }
+
+                      break;
+                    case 2:
+                      audio.currentTime = 0;
+                      audio.play();
+
+                      break;
+                    default:
+                      break;
+                  }
                 }
               }}
             >
@@ -305,6 +309,7 @@ const MusicPlayerPanel = (props) => {
           </div>
           <div className={classes.trackBar}>
             <input
+              disabled={props.activeTrack !== null ? false : true}
               id="trackBarRange"
               type="range"
               min="0"
@@ -352,13 +357,17 @@ const MusicPlayerPanel = (props) => {
           </div>
           <div className={classes.controlPanel}>
             <div className={classes.shuffleAndRepeat}>
-              <button onClick={setShuffleState}>
+              {/* <button onClick={setShuffleState}>
                 <img
                   src={shuffleState ? shuffle_active : shuffle}
                   alt="shuffle"
                 />
-              </button>
-              <button style={{ marginLeft: "425px" }} onClick={setRepeatState}>
+              </button> */}
+              <button
+                disabled={props.activeTrack !== null ? false : true}
+                style={{ marginLeft: "515px" }}
+                onClick={setRepeatState}
+              >
                 <img
                   src={
                     repeatState === 0
@@ -376,47 +385,105 @@ const MusicPlayerPanel = (props) => {
               disabled={props.disablerButtonNext}
               style={{ marginLeft: "130px" }}
               onClick={() => {
-                if (props.activeTrack !== null && audio.currentTime > 3) {
-                  audio.currentTime = 0;
-                } else {
-                  if (props.indexOfPlayingTrack - 1 >= 0) {
-                    props.previousTrack(
-                      {
-                        albumCover:
-                          props.musicPlayerPlayList.tracks[
+                if (props.activeTrack !== null) {
+                  switch (repeatState) {
+                    case 0:
+                      if (props.activeTrack !== null && audio.currentTime > 3) {
+                        audio.currentTime = 0;
+                      } else {
+                        if (props.indexOfPlayingTrack - 1 >= 0) {
+                          props.previousTrack(
+                            {
+                              albumCover:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].albumCover !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].albumCover
+                                  : props.musicPlayerPlayList.albumCover,
+                              album:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].albumTitle !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].albumTitle
+                                  : props.musicPlayerPlayList.title,
+                              author:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].author !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].author
+                                  : props.musicPlayerPlayList.author,
+                              title:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].title,
+                              trackUrl:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].trackUrl,
+                            },
                             props.indexOfPlayingTrack - 1
-                          ].albumCover !== undefined
-                            ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack - 1
-                              ].albumCover
-                            : props.musicPlayerPlayList.albumCover,
-                        album:
-                          props.musicPlayerPlayList.tracks[
+                          );
+                        }
+                      }
+                      break;
+                    case 1:
+                      if (props.activeTrack !== null && audio.currentTime > 3) {
+                        audio.currentTime = 0;
+                      } else {
+                        if (props.indexOfPlayingTrack - 1 >= 0) {
+                          props.previousTrack(
+                            {
+                              albumCover:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].albumCover !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].albumCover
+                                  : props.musicPlayerPlayList.albumCover,
+                              album:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].albumTitle !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].albumTitle
+                                  : props.musicPlayerPlayList.title,
+                              author:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].author !== undefined
+                                  ? props.musicPlayerPlayList.tracks[
+                                      props.indexOfPlayingTrack - 1
+                                    ].author
+                                  : props.musicPlayerPlayList.author,
+                              title:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].title,
+                              trackUrl:
+                                props.musicPlayerPlayList.tracks[
+                                  props.indexOfPlayingTrack - 1
+                                ].trackUrl,
+                            },
                             props.indexOfPlayingTrack - 1
-                          ].albumTitle !== undefined
-                            ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack - 1
-                              ].albumTitle
-                            : props.musicPlayerPlayList.title,
-                        author:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack - 1
-                          ].author !== undefined
-                            ? props.musicPlayerPlayList.tracks[
-                                props.indexOfPlayingTrack - 1
-                              ].author
-                            : props.musicPlayerPlayList.author,
-                        title:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack - 1
-                          ].title,
-                        trackUrl:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack - 1
-                          ].trackUrl,
-                      },
-                      props.indexOfPlayingTrack - 1
-                    );
+                          );
+                        }
+                      }
+                      break;
+                    case 2:
+                      audio.currentTime = 0;
+                      audio.play();
+
+                      break;
+                    default:
+                      break;
                   }
                 }
               }}
@@ -446,47 +513,126 @@ const MusicPlayerPanel = (props) => {
               style={{ marginLeft: "100px" }}
               onClick={() => {
                 if (props.activeTrack !== null) {
-                  if (
-                    props.indexOfPlayingTrack + 1 <
-                    props.musicPlayerPlayList.tracks.length
-                  ) {
-                    props.nextTrack(
-                      {
-                        albumCover:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
-                          ].albumCover !== undefined
-                            ? props.musicPlayerPlayList.tracks[
+                  switch (repeatState) {
+                    case 0:
+                      if (
+                        props.indexOfPlayingTrack + 1 <
+                        props.musicPlayerPlayList.tracks.length
+                      ) {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[
                                 props.indexOfPlayingTrack + 1
-                              ].albumCover
-                            : props.musicPlayerPlayList.albumCover,
-                        album:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
-                          ].albumTitle !== undefined
-                            ? props.musicPlayerPlayList.tracks[
+                              ].albumCover !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[
                                 props.indexOfPlayingTrack + 1
-                              ].albumTitle
-                            : props.musicPlayerPlayList.title,
-                        author:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
-                          ].author !== undefined
-                            ? props.musicPlayerPlayList.tracks[
+                              ].albumTitle !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[
                                 props.indexOfPlayingTrack + 1
-                              ].author
-                            : props.musicPlayerPlayList.author,
-                        title:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
-                          ].title,
-                        trackUrl:
-                          props.musicPlayerPlayList.tracks[
-                            props.indexOfPlayingTrack + 1
-                          ].trackUrl,
-                      },
-                      props.indexOfPlayingTrack + 1
-                    );
+                              ].author !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].author
+                                : props.musicPlayerPlayList.author,
+                            title:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].trackUrl,
+                          },
+                          props.indexOfPlayingTrack + 1
+                        );
+                      }
+                      break;
+                    case 1:
+                      if (
+                        props.indexOfPlayingTrack ===
+                        props.musicPlayerPlayList.tracks.length - 1
+                      ) {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[0].albumCover !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[0].albumTitle !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[0].author !==
+                              undefined
+                                ? props.musicPlayerPlayList.tracks[0].author
+                                : props.musicPlayerPlayList.author,
+                            title: props.musicPlayerPlayList.tracks[0].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[0].trackUrl,
+                          },
+                          0
+                        );
+                      } else {
+                        props.nextTrack(
+                          {
+                            albumCover:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumCover !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumCover
+                                : props.musicPlayerPlayList.albumCover,
+                            album:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].albumTitle !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].albumTitle
+                                : props.musicPlayerPlayList.title,
+                            author:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].author !== undefined
+                                ? props.musicPlayerPlayList.tracks[
+                                    props.indexOfPlayingTrack + 1
+                                  ].author
+                                : props.musicPlayerPlayList.author,
+                            title:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].title,
+                            trackUrl:
+                              props.musicPlayerPlayList.tracks[
+                                props.indexOfPlayingTrack + 1
+                              ].trackUrl,
+                          },
+                          props.indexOfPlayingTrack + 1
+                        );
+                      }
+                      break;
+                    case 2:
+                      audio.currentTime = 0;
+                      audio.play();
+
+                      break;
+                    default:
+                      break;
                   }
                 }
               }}
@@ -500,12 +646,15 @@ const MusicPlayerPanel = (props) => {
                 src={mute}
                 alt="mute"
                 onClick={() => {
-                  volumeH((audio.volume = 0));
+                  if (props.activeTrack !== null) {
+                    volumeH((audio.volume = 0));
+                  }
                 }}
               />
             </div>
 
             <input
+              disabled={props.activeTrack !== null ? false : true}
               id="volumeRange"
               type="range"
               min="0"
@@ -534,7 +683,9 @@ const MusicPlayerPanel = (props) => {
                 src={volumeicon}
                 alt="volumeicon"
                 onClick={() => {
-                  volumeH((audio.volume = 1));
+                  if (props.activeTrack !== null) {
+                    volumeH((audio.volume = 1));
+                  }
                 }}
               />
             </div>
