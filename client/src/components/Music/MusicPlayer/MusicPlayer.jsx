@@ -40,6 +40,7 @@ const MusicPlayer = (props) => {
         indexOfPlayingTrack={props.indexOfPlayingTrack}
         isPlaying={props.isPlaying}
         activeTrack={props.activeTrack}
+        disablerButtonPlay={props.disablerButtonPlay}
       />
     </div>
   );

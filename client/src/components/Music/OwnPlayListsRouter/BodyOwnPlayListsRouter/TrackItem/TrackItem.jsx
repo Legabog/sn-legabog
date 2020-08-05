@@ -14,22 +14,25 @@ const TracksItem = (props) => {
               let index = props.tracks.findIndex(
                 (e) => e.title === SearchElement
               );
-              props.playPlayer(
-                {
-                  albumCover: props.albumCover,
-                  album: props.albumTitle,
-                  author: props.author,
-                  title: props.title,
-                  trackUrl: props.trackUrl,
-                },
-                {
-                  author: props.author,
-                  title: props.albumTitle,
-                  albumCover: props.albumCover,
-                  tracks: props.tracks,
-                },
-                index
-              );
+
+              if (!props.disablerButtonPlay) {
+                props.playPlayer(
+                  {
+                    albumCover: props.albumCover,
+                    album: props.albumTitle,
+                    author: props.author,
+                    title: props.title,
+                    trackUrl: props.trackUrl,
+                  },
+                  {
+                    author: props.author,
+                    title: props.albumTitle,
+                    albumCover: props.albumCover,
+                    tracks: props.tracks,
+                  },
+                  index
+                );
+              }
             }}
           >
             <h2>{props.title}</h2>

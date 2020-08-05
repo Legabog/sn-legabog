@@ -30,25 +30,24 @@ const TracksItem = (props) => {
                     (e) => e.title === SearchElement
                   );
 
-                  props.playPlayer(
-                    {
-                      albumCover: props.img,
-                      album: props.title,
-                      author: props.author,
-                      title: e.title,
-                      trackUrl: e.trackUrl,
-                    },
-                    {
-                      author: props.author,
-                      title: props.title,
-                      albumCover: props.img,
-                      tracks: props.tracks,
-                    },
-                    index
-                  )
-
-
-                  
+                  if (!props.disablerButtonPlay) {
+                    props.playPlayer(
+                      {
+                        albumCover: props.img,
+                        album: props.title,
+                        author: props.author,
+                        title: e.title,
+                        trackUrl: e.trackUrl,
+                      },
+                      {
+                        author: props.author,
+                        title: props.title,
+                        albumCover: props.img,
+                        tracks: props.tracks,
+                      },
+                      index
+                    );
+                  }
                 }}
               >
                 {e.title}
