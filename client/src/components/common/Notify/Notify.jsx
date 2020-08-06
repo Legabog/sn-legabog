@@ -1,23 +1,26 @@
 import React from "react";
 import classes from "./Notify.module.css";
-import notify_notactive from "../../../assets/images/icons/ic_head_notify.svg"
-import notify_active from "../../../assets/images/icons/notify_active.svg"
+import map_svg from "../../../assets/images/map.svg";
 import { useState } from "react";
 
 const Notify = (props) => {
-
-  let [active, toggleActive] = useState(0)
+  let [active, toggleActive] = useState(0);
 
   const setActive = () => {
-    toggleActive(!active)
-  }
+    toggleActive(!active);
+  };
 
   return (
     <div className={classes.notify}>
-      <img src={ active ? notify_active : notify_notactive} alt="notify" onClick={() => {
-        props.toggleNotifyForm()
-        setActive()
-      }}></img>
+      <svg
+        viewBox="0 0 20 20"
+        onClick={() => {
+          props.toggleNotifyForm();
+          setActive();
+        }}
+      >
+        <use href={active ? map_svg + "#notify_active" : map_svg + "#notify"} />
+      </svg>
     </div>
   );
 };

@@ -20,6 +20,7 @@ import repeatone_active from "../../assets/images/icons/music-player-panel/repea
 const MusicPlayerPanel = (props) => {
   let audio = document.getElementById("audio");
 
+
   const [isOpen, switchCondition] = useState(true);
 
   const toggleMusicPanel = () => {
@@ -695,6 +696,7 @@ const MusicPlayerPanel = (props) => {
 
       {isOpen ? null : <BackDrop onClick={toggleMusicPanel} />}
       <audio
+        volume={volume}
         controls
         id="audio"
         onEnded={() => {
@@ -741,6 +743,9 @@ const MusicPlayerPanel = (props) => {
                   },
                   props.indexOfPlayingTrack + 1
                 );
+              } else {
+                props.setActiveTrackAndPlayerPlayListNull()
+                audio.currentTime = 0
               }
               break;
             case 1:

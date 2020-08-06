@@ -18,3 +18,10 @@
 .notify img:hover {
     cursor: pointer;
 }
+
+.notify svg {
+    width: 35px;
+    height: 35px;
+    margin-left: 7.5px;
+    margin-top: 12px;
+}
