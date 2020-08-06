@@ -5,6 +5,7 @@ const SET_ACTIVE_TRACK = "SET_ACTIVE_TRACK";
 const SET_DISABLER_BUTTON_NEXT = "SET_DISABLER_BUTTON_NEXT";
 const SET_DISABLER_BUTTON_PLAY = "SET_DISABLER_BUTTON_PLAY";
 const SHUFFLE_MUSIC = "SHUFFLE_MUSIC";
+const SET_ACTIVE_TRACK_AND_PLAYER_PLAYLIST_NULL = "SET_ACTIVE_TRACK_AND_PLAYER_PLAYLIST_NULL"
 
 let initialState = {
   musicPlayerPlayList: null,
@@ -58,6 +59,14 @@ const musicPlayerReducer = (state = initialState, action) => {
         ...state,
         musicPlayerPlayList: {...state.musicPlayerPlayList, tracks: state.musicPlayerPlayList.tracks.sort(() => Math.random() - 0.5)} 
       };
+
+    case SET_ACTIVE_TRACK_AND_PLAYER_PLAYLIST_NULL:
+      return {
+        ...state,
+        musicPlayerPlayList: null,
+        indexOfPlayingTrack: 0,
+        activeTrack: null
+      }   
     default:
       return state;
   }
@@ -110,6 +119,12 @@ export const shuffle = () => {
     type: SHUFFLE_MUSIC,
   };
 };
+
+export const setActiveTrackAndPlayerPlayListNull = () => {
+  return {
+    type: SET_ACTIVE_TRACK_AND_PLAYER_PLAYLIST_NULL
+  }
+}
 
 export const playPlayer = (activeTrack, data, index) => {
   return async (dispatch) => {

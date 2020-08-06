@@ -40,7 +40,8 @@ import {
   setIndexOfTrack,
   nextTrack,
   previousTrack,
-  shuffleMusic
+  shuffleMusic,
+  setActiveTrackAndPlayerPlayListNull
 } from "./redux/musicplayer-reducer";
 import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
@@ -203,6 +204,7 @@ class App extends React.Component {
               nextTrack={this.props.nextTrack}
               previousTrack={this.props.previousTrack}
               disablerButtonNext={this.props.disablerButtonNext}
+              setActiveTrackAndPlayerPlayListNull={this.props.setActiveTrackAndPlayerPlayListNull}
             />
             <NotifyForm 
               notifyTop={this.props.notifyTop}
@@ -257,6 +259,7 @@ export default compose(
     setIndexOfTrack,
     nextTrack,
     previousTrack,
-    shuffleMusic
+    shuffleMusic,
+    setActiveTrackAndPlayerPlayListNull
   })
 )(App);
