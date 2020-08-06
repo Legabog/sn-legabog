@@ -1,17 +1,17 @@
 import React from "react";
 import classes from "./StartScreen.module.css";
 import { NavLink } from "react-router-dom";
-import playlist from "../../../assets/images/icons/music/playlist.svg"
+import apple_icon from "../../../assets/apple theme/logo_apple.svg"
 
 const StartScreen = (props) => {
   return (
     <NavLink to="/music-list" style={{textDecoration: "none"}}>
       <div className={classes.startScreen}>
         <div className={classes.description}>
-          <img src={playlist} alt={playlist}></img>
-          <h1>Music-player</h1> 
+          <img src={apple_icon} alt="apple_icon"></img>
+          <h1>MUSIC-PLAYER</h1> 
+          <p>click to enter</p>
         </div>
-        <p>press to Enter</p>
       </div>
     </NavLink>
   );
