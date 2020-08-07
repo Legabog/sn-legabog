@@ -55,15 +55,16 @@
     text-align: center;
 }
 
-.MusicPlayerPanel.close .dropDown img{
-    margin-top: -20px;
+.MusicPlayerPanel.close .dropDown svg{
+    width: 50px;
+    height: 50px; 
 }
 
 .MusicPlayerPanel.close .dropDown:hover {
     cursor: pointer;
 }
 
-.MusicPlayerPanel.close .dropDown:hover img{
+.MusicPlayerPanel.close .dropDown:hover svg{
     filter: opacity(70%);
 }
 
@@ -135,7 +136,7 @@
 }
 
 
-.controlPanel button img {
+.controlPanel button svg {
     /* padding-top: 20px; */
     width: 50px;
     height: 50px;
@@ -187,25 +188,32 @@
     margin-left: 25px;
 }
 
-.MusicPlayerPanel.close .volume img{
+.MusicPlayerPanel.close .volume .unmute {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.MusicPlayerPanel.close .volume svg{
     width: 30px;
     height: 30px;
     margin-top: -10px;
 }
 
-.MusicPlayerPanel.close .volume .mute img:hover {
+.MusicPlayerPanel.close .volume .mute svg:hover {
     filter: opacity(70%);
     cursor: pointer;
 }
 
-.MusicPlayerPanel.close .volume .unmute img:hover {
+.MusicPlayerPanel.close .volume .unmute svg:hover {
     filter: opacity(70%);
     cursor: pointer;
 }
+
 
 .MusicPlayerPanel.close .volume input{
     -webkit-appearance: none;
-    width: 80%;
+    width: 90%;
     border-radius:2px;
     margin-left: 5px;
     height: 5px;
@@ -360,6 +368,9 @@
 }
 
 .shuffleAndRepeat button {
+    background-color: #F9F9F9;
+    border: none;
+    margin-top: -30px;
     margin-left: 60px;
     width: 30px;
     height: 30px;
@@ -370,7 +381,7 @@
     filter: opacity(80%);
 }
 
-.shuffleAndRepeat button img{
-    width: 30px;
-    height: 30px;
+.shuffleAndRepeat button svg{
+    width: 50px;
+    height: 50px;
 }

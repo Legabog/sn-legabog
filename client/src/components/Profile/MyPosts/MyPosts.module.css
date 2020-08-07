@@ -12,7 +12,8 @@
     display: flex;
 }
 
-.header img {
+
+.header svg {
     width: 40px;
     height: 40px;
     margin-top: 15px;

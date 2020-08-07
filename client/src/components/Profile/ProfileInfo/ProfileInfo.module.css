@@ -43,13 +43,13 @@
     display: flex;
 }
 
-.headerinfo img {
+.headerinfo svg {
     margin-top: 15px;
     width: 20px;
     height: 20px;
 }
 
-.headerinfo img:hover {
+.headerinfo svg:hover {
     cursor: pointer;
     filter: opacity(50%);
 }
@@ -99,10 +99,13 @@
     padding: 2px;
 }
 
-.profileStatus img {
+.profileStatus svg {
+    width: 25px;
+    height: 25px;
     margin-bottom: -4px;
     margin-right: 5px;
 }
+
 
 .profileStatus span {
     width: fit-content;
@@ -161,20 +164,26 @@
     width: fit-content;
 }
 
-.downloadIcon img {
+.downloadIcon svg {
     position: relative;
-    top: -110px;
-    left: 240px;
+    top: -90px;
+    left: 260px;
     width: 50px;
+    height: 50px;
     border: none;
     opacity: 0;
+}
+
+.downloadIcon svg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .savePhoto {
     height: 340px;
 }
 
-.savePhoto:hover .downloadIcon img {
+.savePhoto:hover .downloadIcon svg {
     opacity: 1;
 }
 
@@ -265,8 +274,9 @@
     filter: brightness(0.95);
 }
 
-.buttonSettings img {
-    width: 30px;
+.buttonSettings svg {
+    width: 25px;
+    height: 25px;
     margin-top: 7px;
 }
 
@@ -283,6 +293,12 @@
     height: 0;
 	border: none;
 	border-top: 1px solid rgb(240, 236, 236);
+}
+
+.Contacts svg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -5px;
 }
 
 .Contacts{

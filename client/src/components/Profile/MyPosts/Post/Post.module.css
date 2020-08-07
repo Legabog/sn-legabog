@@ -28,9 +28,10 @@
   margin-top: 10px;
 }
 
-.likesCount img {
-  margin-bottom: -3px;
+.likesCount svg {
   width: 20px;
+  height: 20px;
+  margin-bottom: -3px;
 }
 
 .likesCount span {
@@ -39,8 +40,8 @@
   font-size: 100%;
 }
 
-.likesCount img:hover {
+.likesCount svg:hover {
   cursor: pointer;
   filter:opacity(70%);
-  width: 25px;
+  transform: scale(1.2);
 }

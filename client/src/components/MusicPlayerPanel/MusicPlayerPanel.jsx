@@ -1,25 +1,13 @@
 import React from "react";
 import classes from "./MusicPlayerPanel.module.css";
 import musicCover from "../../assets/apple theme/music.jpg";
-import play from "../../assets/images/icons/music-player-panel/play.svg";
-import next from "../../assets/images/icons/music-player-panel/next.svg";
-import pause from "../../assets/images/icons/music-player-panel/pause.svg";
-import previous from "../../assets/images/icons/music-player-panel/previous.svg";
+import map_svg from "../../assets/images/map.svg";
 import { useState } from "react";
 import BackDrop from "../common/BackDrop/BackDrop";
-import dropDown from "../../assets/images/icons/music-player-panel/dropdown.svg";
-import mute from "../../assets/images/icons/music-player-panel/mute.svg";
-import volumeicon from "../../assets/images/icons/music-player-panel/volume.svg";
 import { useEffect } from "react";
-// import shuffle from "../../assets/images/icons/music-player-panel/shuffle.svg";
-// import shuffle_active from "../../assets/images/icons/music-player-panel/shuffle_active.svg";
-import repeat from "../../assets/images/icons/music-player-panel/repeat.svg";
-import repeat_active from "../../assets/images/icons/music-player-panel/repeat_active.svg";
-import repeatone_active from "../../assets/images/icons/music-player-panel/repeat-one_active.svg";
 
 const MusicPlayerPanel = (props) => {
   let audio = document.getElementById("audio");
-
 
   const [isOpen, switchCondition] = useState(true);
 
@@ -39,13 +27,7 @@ const MusicPlayerPanel = (props) => {
     audioCurrentTime = audio.currentTime;
     setAudioCurrentTime((audio.currentTime = e.target.value));
   };
-
-  // let [shuffleState, toggleShuffleState] = useState(false);
-
-  // const setShuffleState = () => {
-  //   toggleShuffleState(!shuffleState);
-  // };
-
+  
   let [repeatState, toggleRepeatState] = useState(0);
 
   const setRepeatState = () => {
@@ -127,7 +109,13 @@ const MusicPlayerPanel = (props) => {
                 }
               }}
             >
-              <img src={props.isPlaying ? pause : play} alt="playAndPause" />
+              <svg>
+                <use
+                  href={
+                    props.isPlaying ? map_svg + "#pause" : map_svg + "#play"
+                  }
+                />
+              </svg>
             </button>
 
             <button
@@ -260,14 +248,18 @@ const MusicPlayerPanel = (props) => {
                 }
               }}
             >
-              <img src={next} alt="next" />
+              <svg>
+                <use href={map_svg + "#next"} />
+              </svg>
             </button>
           </div>
         </div>
       ) : (
         <div className={cls.join(" ")}>
           <div className={classes.dropDown}>
-            <img src={dropDown} alt="dropDown" onClick={toggleMusicPanel} />
+            <svg alt="dropDown" onClick={toggleMusicPanel}>
+              <use href={map_svg + "#dropdown-2"} />
+            </svg>
           </div>
           {props.isPlaying ? (
             <div className={classes.avatarIsPlaying}>
@@ -357,31 +349,6 @@ const MusicPlayerPanel = (props) => {
             </div>
           </div>
           <div className={classes.controlPanel}>
-            <div className={classes.shuffleAndRepeat}>
-              {/* <button onClick={setShuffleState}>
-                <img
-                  src={shuffleState ? shuffle_active : shuffle}
-                  alt="shuffle"
-                />
-              </button> */}
-              <button
-                disabled={props.activeTrack !== null ? false : true}
-                style={{ marginLeft: "515px" }}
-                onClick={setRepeatState}
-              >
-                <img
-                  src={
-                    repeatState === 0
-                      ? repeat
-                      : repeatState === 1
-                      ? repeat_active
-                      : repeatone_active
-                  }
-                  alt="repeat"
-                />
-              </button>
-            </div>
-
             <button
               disabled={props.disablerButtonNext}
               style={{ marginLeft: "130px" }}
@@ -489,7 +456,9 @@ const MusicPlayerPanel = (props) => {
                 }
               }}
             >
-              <img src={previous} alt="previous" />
+              <svg>
+                <use href={map_svg + "#previous"} />
+              </svg>
             </button>
 
             <button
@@ -506,7 +475,13 @@ const MusicPlayerPanel = (props) => {
                 }
               }}
             >
-              <img src={props.isPlaying ? pause : play} alt="playAndPause" />
+              <svg>
+                <use
+                  href={
+                    props.isPlaying ? map_svg + "#pause" : map_svg + "#play"
+                  }
+                />
+              </svg>
             </button>
 
             <button
@@ -638,20 +613,22 @@ const MusicPlayerPanel = (props) => {
                 }
               }}
             >
-              <img src={next} alt="next" />
+              <svg>
+                <use href={map_svg + "#next"} />
+              </svg>
             </button>
           </div>
           <div className={classes.volume}>
             <div className={classes.mute}>
-              <img
-                src={mute}
-                alt="mute"
+              <svg
                 onClick={() => {
                   if (props.activeTrack !== null) {
                     volumeH((audio.volume = 0));
                   }
                 }}
-              />
+              >
+                <use href={map_svg + "#mute"} />
+              </svg>
             </div>
 
             <input
@@ -680,16 +657,35 @@ const MusicPlayerPanel = (props) => {
               onChange={volumeHandler}
             />
             <div className={classes.unmute}>
-              <img
-                src={volumeicon}
-                alt="volumeicon"
+              <svg
                 onClick={() => {
                   if (props.activeTrack !== null) {
                     volumeH((audio.volume = 1));
                   }
                 }}
-              />
+              >
+                <use href={map_svg + "#max_volume"} />
+              </svg>
             </div>
+          </div>
+          <div className={classes.shuffleAndRepeat}>
+            <button
+              disabled={props.activeTrack !== null ? false : true}
+              style={{ marginLeft: "518px" }}
+              onClick={setRepeatState}
+            >
+              <svg>
+                <use
+                  href={
+                    repeatState === 0
+                      ? map_svg + "#repeat"
+                      : repeatState === 1
+                      ? map_svg + "#repeat_active"
+                      : map_svg + "#repeat-one_active"
+                  }
+                />
+              </svg>
+            </button>
           </div>
         </div>
       )}
@@ -744,8 +740,8 @@ const MusicPlayerPanel = (props) => {
                   props.indexOfPlayingTrack + 1
                 );
               } else {
-                props.setActiveTrackAndPlayerPlayListNull()
-                audio.currentTime = 0
+                props.setActiveTrackAndPlayerPlayListNull();
+                audio.currentTime = 0;
               }
               break;
             case 1:

@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Post.module.css";
 import { useState } from "react";
-import like from "../../../../assets/images/icons/like.svg";
+import map_svg from "../../../../assets/images/map.svg";
 
 const Post = (props) => {
   let [likes, likeHandler] = useState(0);
@@ -16,13 +16,13 @@ const Post = (props) => {
       <div className={classes.likes}>
         <h4>{props.message}</h4>
         <div className={classes.likesCount}>
-          <img
-            src={like}
-            alt="like"
+          <svg
             onClick={() => {
               likeHandler(likes + 1);
             }}
-          ></img>
+          >
+            <use href={map_svg + "#like"} />
+          </svg>
           <span>
             <strong> {likes}</strong>
           </span>

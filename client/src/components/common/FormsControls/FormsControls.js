@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./FormsControls.module.css";
-import error from "../../../assets/images/icons/error.svg"
+import map_svg from "../../../assets/images/map.svg"
+
 
 const FormControl = ({ input, child, meta, ...props }) => {
   const hasError = meta.touched && meta.error;
@@ -11,7 +12,9 @@ const FormControl = ({ input, child, meta, ...props }) => {
       <div>{props.children}</div>
       {hasError && (
         <span>
-          <img src={error} alt="error"></img> {meta.error}
+          <svg>
+            <use href={map_svg + "#error"}/>
+          </svg> {meta.error}
         </span>
       )}
     </div>

@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import classes from "./SimpleMenu.module.css";
 import { NavLink } from "react-router-dom";
 import map_svg from "../../../assets/images/map.svg"
-import dropdown from "../../../assets/images/icons/dropdown.svg";
+
 
 export const SimpleMenu = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);

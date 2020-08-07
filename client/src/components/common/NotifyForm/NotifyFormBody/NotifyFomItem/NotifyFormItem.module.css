@@ -10,10 +10,11 @@
     background-color: rgb(249, 249, 249);
 }
 
-.notifyFormItem img {
-    width: 50px;
+.notifyFormItem svg {
+    width: 100px;
     height: 50px;
     margin-left: 15px;
+    margin-top: 10px;
 }
 
 .notifyFormItem p {

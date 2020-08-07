@@ -5,16 +5,21 @@
   margin-left: 20px;
 }
 
-.logo img{
-    width: 150px;
-    height: 51px;
-    margin-top: 5px;
-  }
+.githubprofile {
+  display: flex;
+}
 
-.logospan {
-    margin-top: 17px;
-} 
-.logospan a{
-    text-decoration: none;
-    color: #fff
-} 
+.logo a {
+  text-decoration: none;
+}
+
+.logo h3{
+  margin-left: px;
+  color: #fff
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+}  

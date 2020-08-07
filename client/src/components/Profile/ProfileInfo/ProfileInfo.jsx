@@ -4,17 +4,7 @@ import classes from "./ProfileInfo.module.css";
 import MyPostsContainer from "../MyPosts/MyPostsContainer";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import ProfileFollowButton from "./ProfileFollowButton";
-import download from "../../../assets/images/icons/download.svg";
-import settings from "../../../assets/images/icons/navbar/settings.svg";
-import info from "../../../assets/images/icons/info.svg";
-import facebook from "../../../assets/images/icons/facebook.svg";
-import site from "../../../assets/images/icons/site.svg";
-import vk from "../../../assets/images/icons/vk.svg";
-import twitter from "../../../assets/images/icons/twitter.svg";
-import instagram from "../../../assets/images/icons/instagram.svg";
-import youtube from "../../../assets/images/icons/youtube.svg";
-import github from "../../../assets/images/icons/github.svg";
-import linked from "../../../assets/images/icons/linked.svg";
+import map_svg from "../../../assets/images/map.svg";
 
 const ProfileInfo = (props) => {
   const onMainPhotoSelected = (e) => {
@@ -41,7 +31,9 @@ const ProfileInfo = (props) => {
                     alt="description"
                   />
                   <div className={classes.downloadIcon}>
-                    <img src={download} alt="download"></img>
+                    <svg>
+                      <use href={map_svg + "#download"} />
+                    </svg>
                   </div>
                 </label>
                 <input
@@ -59,23 +51,27 @@ const ProfileInfo = (props) => {
             </div>
             <div className={classes.buttonSettings}>
               <button>
-                <img src={settings} alt="settings"></img>
+                <svg>
+                  <use href={map_svg + "#settings"} />
+                </svg>
               </button>
             </div>
-          </div> 
+          </div>
 
           <div className={classes.posts}>
             <MyPostsContainer />
           </div>
         </div>
-  
+
         <div className={classes.descriptionBlock}>
           <div className={classes.info}>
             <div className={classes.headerinfo}>
               <h2>
                 <strong>{props.profile.fullName || "Нет информации"}</strong>
               </h2>
-              <img src={info} alt="info"></img>
+              <svg>
+                <use href={map_svg + "#info"} />
+              </svg>
               {props.isOwner ? (
                 <ProfileFollowButton
                   followStatus={props.followStatus}
@@ -109,70 +105,55 @@ const ProfileInfo = (props) => {
             <h4>Contacts:</h4>
             <div className={classes.Contacts}>
               <ul>
-              <li>
-                <img
-                  src={facebook}
-                  alt="facebook"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.facebook || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={site}
-                  alt="site"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.website || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={vk}
-                  alt="vk"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.vk || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={twitter}
-                  alt="twitter"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.twitter || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={instagram}
-                  alt="instagram"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.instagram || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={youtube}
-                  alt="youtube"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.youtube || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={github}
-                  alt="github"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.github || "Нет"}</strong>
-              </li>
-              <li>
-                <img
-                  src={linked}
-                  alt="linked"
-                  style={{ width: "30px", marginBottom: "-5px" }}
-                ></img>
-                <strong> {props.profile.contacts.mainlink || "Нет"}</strong>
-              </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#facebook"} />
+                  </svg>
+                  <strong> {props.profile.contacts.facebook || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#site"} />
+                  </svg>
+                  <strong> {props.profile.contacts.website || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#vk"} />
+                  </svg>
+                  <strong> {props.profile.contacts.vk || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#twitter"} />
+                  </svg>
+
+                  <strong> {props.profile.contacts.twitter || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#instagram"} />
+                  </svg>
+                  <strong> {props.profile.contacts.instagram || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#youtube"} />
+                  </svg>
+                  <strong> {props.profile.contacts.youtube || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#github"} />
+                  </svg>
+                  <strong> {props.profile.contacts.github || "Нет"}</strong>
+                </li>
+                <li>
+                  <svg>
+                    <use href={map_svg + "#linked"} />
+                  </svg>
+                  <strong> {props.profile.contacts.mainlink || "Нет"}</strong>
+                </li>
               </ul>
               <hr />
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { AddMyPostFormRedux } from "./AddMyPostRedux";
-import discussions from "../../../assets/images/icons/discussions.svg";
+import map_svg from "../../../assets/images/map.svg";
 
 const MyPosts = (props) => {
   let PostsElements = props.PostsData.map((ell) => (
@@ -16,7 +16,9 @@ const MyPosts = (props) => {
   return (
     <div className={classes.postsBlock}>
       <div className={classes.header}>
-        <img src={discussions} alt="discussions"></img>
+        <svg>
+          <use href={map_svg + "#discussions"} />
+        </svg>
         <h2>Posts</h2>
       </div>
 
