@@ -10,14 +10,14 @@
     background-color: rgb(214, 233, 255);
   }
   
-  .itemArtists img {
+  .itemArtists svg {
     margin-top: 15px;
     margin-left: -10px;
     width: 30px;
     height: 30px;
   }
 
-  .itemArtists:hover img {
+  .itemArtists:hover svg {
     margin-left: -40px;
   }
 

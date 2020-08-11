@@ -1,39 +1,39 @@
 /* -------------------Button_back--------------------- */
-
 .buttonBack {
-    margin-top: -70px;
-    margin-bottom: 22.4px;
-    margin-left: 20px;
-    display: flex;
-    color: #4A76A8;
-    /* margin-left: 15px; */
-  
-  }
-  
-  .headerMusicPlayer a {
-    text-decoration: none;
-  }
-  
-  .buttonBack h3 {
-    margin-left: 5px;
-    color: #4A76A8;
-  }
-  
-  .buttonBack:hover h3 {
-    color: #F62A54;
-  }
-  
-  
-  .headerMusicPlayer {
-    padding-top: 80px;
-  }
+  margin-top: -70px;
+  margin-bottom: 22.4px;
+  margin-left: 20px;
+  display: flex;
+  color: #4A76A8;
+  margin-left: 15px;
+}
 
-  .buttonBack img {
-    margin-top: 10px;
-    width: 30px;
-    height: 40px;
-  
-  }
+.buttonBack svg {
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
+
+}
+
+.buttonBack h3 {
+  margin-left: 5px;
+  margin-top: 20px;
+  color: #4A76A8;
+}
+
+.headerMusicPlayer {
+  padding-top: 80px;
+}
+
+.headerMusicPlayer a {
+  display: flex;
+  text-decoration: none;
+}
+
+.headerMusicPlayer a:hover h3 {
+  color: #F62A54;
+}
+
 
 
 

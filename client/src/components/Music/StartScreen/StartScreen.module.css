@@ -23,8 +23,10 @@
     display: flex;
 }
 
-.description img{
-    height: 100%;
+.description svg{
+    width: 60px;
+    height: 60px;
+    margin-top: 8px;
 }
 
 .description h1 {

@@ -5,7 +5,8 @@ import AddPhoto from "../../../../../assets/apple theme/photo_add.png";
 import DefaultPhoto from "../../../../../assets/apple theme/music.jpg";
 import firebase from "firebase/app";
 import "firebase/storage";
-import arrow_back from "../../../../../assets/images/icons/music/arrow_back.svg"
+import map_svg from "../../../../../assets/images/map.svg"
+
 
 class HeaderCreateAlbum extends React.Component {
   componentDidMount() {
@@ -17,6 +18,11 @@ class HeaderCreateAlbum extends React.Component {
     nameImg: "",
     name: "",
     description: "",
+    hover: 0
+  };
+
+  setHover = (e) => {
+    this.setState({ hover: e });
   };
 
   onChangeHandlerInput1 = (e) => {
@@ -52,9 +58,25 @@ class HeaderCreateAlbum extends React.Component {
   render() {
     return (
       <div className={classes.headerCreateAlbum}>
-        <NavLink to="/music-list/playlists">
+        <NavLink 
+          to="/music-list/playlists"
+          onMouseOver={() => {
+            this.setHover(1);
+          }}
+          onMouseOut={() => {
+            this.setHover(0);
+          }}
+        >
           <div className={classes.buttonBack}>
-            <img src={arrow_back} alt="button-back"></img>
+          <svg>
+                <use
+                  href={
+                    this.state.hover
+                      ? map_svg + "#arrow_back_hover"
+                      : map_svg + "#arrow_back"
+                  }
+                />
+              </svg>
             <h3>Cancel</h3>
           </div>
         </NavLink>

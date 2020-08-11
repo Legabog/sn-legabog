@@ -1,10 +1,10 @@
 import React from "react";
+import classes from "./HeaderArtists.module.css";
 import { NavLink } from "react-router-dom";
-import classes from "./ItemArtists.module.css";
-import map_svg from "../../../../../../assets/images/map.svg";
+import map_svg from "../../../../../assets/images/map.svg";
 import { useState } from "react";
 
-const ItemArtists = (props) => {
+const HeaderArtists = (props) => {
   const [hover, toggleHover] = useState(0);
 
   const setHover = (e) => {
@@ -12,10 +12,10 @@ const ItemArtists = (props) => {
   };
 
   return (
-    <div>
-      <NavLink to={`/music-list/artists/${props.nameArtist}`}>
-        <div
-          className={classes.itemArtists}
+    <div className={classes.headerArtists}>
+      <div className={classes.buttonBack}>
+        <NavLink
+          to="/music-list"
           onMouseOver={() => {
             setHover(1);
           }}
@@ -23,21 +23,20 @@ const ItemArtists = (props) => {
             setHover(0);
           }}
         >
-          <h2>{props.nameArtist}</h2>
           <svg>
             <use
               href={
-                hover
-                  ? map_svg + "#arrow_right_hover"
-                  : map_svg + "#arrow_right"
+                hover ? map_svg + "#arrow_back_hover" : map_svg + "#arrow_back"
               }
             />
           </svg>
-        </div>
-      </NavLink>
+          <h3>Library</h3>
+        </NavLink>
+      </div>
+      <h1>Artists</h1>
       <hr />
     </div>
   );
 };
 
-export default ItemArtists;
+export default HeaderArtists;

@@ -1,4 +1,80 @@
-.ActionSwitcher button:focus {
-  outline: none;
+.root {
+
 }
 
+.root hr {
+  margin: 0;
+  height: 0;
+  border: none;
+  border-top: 1px solid rgb(240, 236, 236);
+
+}
+
+.ActionSwitcher svg {
+  width: 28px;
+  height: 28px;
+  margin-top: 10px;
+}
+
+.descriptionHeader {
+  width: 350px;
+  display: flex;
+}
+
+.descriptionHeader img {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+
+.descriptionHeader svg {
+  margin-left: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.descriptionHeader svg:hover {
+  cursor: pointer;
+  filter: opacity(70%)
+}
+
+.titleAndAuthor {
+  margin-left: 10px;
+}
+
+.titleAndAuthor h3 {
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+  color: #4a76a8;
+}
+
+.titleAndAuthor p {
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: -15px;
+  color: rgb(163, 163, 163)
+}
+
+.addToPlayList {
+  display: flex;
+  height: 30px;
+}
+
+.addToPlayList h3 {
+  margin-top: 3px;
+  margin-left: 150px;
+  color: #4a76a8;
+}
+
+.addToPlayList svg {
+  margin-top: 3px;
+  margin-left: 0px;
+  width: 28px;
+  height: 28px;
+}

@@ -1,27 +1,46 @@
 import React from "react";
 import classes from "./HeaderMusicPlayer.module.css";
 import { NavLink } from "react-router-dom";
-import arrow_back from  "../../../../assets/images/icons/music/arrow_back.svg"
+import map_svg from "../../../../assets/images/map.svg";
+import { useState } from "react";
 
 const HeaderMusicPlayer = (props) => {
+  const [hover, toggleHover] = useState(0);
+
+  const setHover = (e) => {
+    toggleHover(e);
+  };
+
   return (
     <div className={classes.headerMusicPlayer}>
-      <NavLink
-        to={
-          props.switcher === 1
-            ? `/music-list/artists/${props.nameArtist}`
-            : props.switcher === 2
-            ? "/music-list/albums"
-            : "/music-list/"
-        }
+      <div
+        className={classes.buttonBack}
+        onClick={() => {
+          props.toggleSwitcher(1);
+        }}
       >
-        <div
-          className={classes.buttonBack}
-          onClick={() => {
-            props.toggleSwitcher(1);
+        <NavLink
+          to={
+            props.switcher === 1
+              ? `/music-list/artists/${props.nameArtist}`
+              : props.switcher === 2
+              ? "/music-list/albums"
+              : "/music-list/"
+          }
+          onMouseOver={() => {
+            setHover(1);
+          }}
+          onMouseOut={() => {
+            setHover(0);
           }}
         >
-          <img src={arrow_back} alt="arrow-back"></img>
+          <svg>
+            <use
+              href={
+                hover ? map_svg + "#arrow_back_hover" : map_svg + "#arrow_back"
+              }
+            />
+          </svg>
           <h3>
             {props.switcher === 1
               ? props.nameArtist
@@ -29,8 +48,8 @@ const HeaderMusicPlayer = (props) => {
               ? "Albums"
               : "Library"}
           </h3>
-        </div>
-      </NavLink>
+        </NavLink>
+      </div>
     </div>
   );
 };

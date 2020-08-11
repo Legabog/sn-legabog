@@ -1,31 +1,26 @@
 .buttonBack {
-    margin-top: -70px;
-    margin-bottom: 22.4px;
-    margin-left: 0px;
-    display: flex;
-    color: #4A76A8;
-    /* margin-left: 15px; */
-  
-  }
-  
-  .buttonBack img {
-    margin-top: 10px;
-    width: 30px;
-    height: 40px;
-  
-  }
-  
-  .buttonBack h3 {
-    margin-left: 5px;
-    color: #4A76A8;
-  }
-  
-  .buttonBack:hover h3 {
-    color: #F62A54;
-  }
-  
+  margin-top: -70px;
+  margin-bottom: 22.4px;
+  margin-left: 20px;
+  display: flex;
+  color: #4A76A8;
+  margin-left: 15px;
+}
 
 
+.buttonBack svg {
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
+
+}
+
+.buttonBack h3 {
+  margin-left: 5px;
+  margin-top: 20px;
+  color: #4A76A8;
+}
+  
 /* ----------------------------------------------------------------- */
 
 .buttonDone {
@@ -56,24 +51,30 @@
 /* ------------------------------------------------------------------ */
 
 
-.headerCreateAlbum {
-    padding-top: 80px;
-  }
+.headerCreateAlbum  {
+  padding-top: 80px;
+}
 
-.headerCreateAlbum a {
+.headerCreateAlbum  hr {
+  margin: 0;
+  height: 0;
+  border: none;
+  border-top: 1px solid rgb(240, 236, 236);
+}
+
+.headerCreateAlbum  a {
+  display: flex;
   text-decoration: none;
 }
-  
-  .headerCreateAlbum hr {
-    margin: 0;
-  
-  }
-  
-  
-  .headerCreateAlbum h1 {
-      margin-left: 55px;
-      color: #4A76A8;
-  }
+
+.headerCreateAlbum  a:hover h3 {
+  color: #F62A54;
+}
+
+.headerCreateAlbum h1 {
+    margin-left: 55px;
+    color: #4A76A8;
+}
 
   .headerCreateAlbum img {
    margin-left: 30px;
@@ -117,6 +118,8 @@
 
 .input1::-webkit-input-placeholder { color: #4A76A8 }
 
+.input1::-moz-placeholder { color: #4A76A8}
+
 
 
 .input1:hover {
@@ -140,6 +143,8 @@
 }
 
 .input2::-webkit-input-placeholder { color: #4A76A8 }
+
+.input2::-moz-placeholder { color: #4A76A8 }
 
 
   .lastBlock {

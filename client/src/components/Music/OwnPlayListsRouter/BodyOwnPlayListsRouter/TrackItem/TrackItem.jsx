@@ -39,6 +39,9 @@ const TracksItem = (props) => {
             <p>{props.author}</p>
           </div>
           <ActionSwitcher
+            albumCover={props.albumCover}
+            title={props.title}
+            author={props.author}
             id={props.id}
             pid={props.pid}
             deleteTrackFromPlayList={props.deleteTrackFromPlayList}

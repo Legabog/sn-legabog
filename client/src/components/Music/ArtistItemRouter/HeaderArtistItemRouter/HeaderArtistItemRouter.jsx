@@ -1,17 +1,38 @@
 import React from "react";
 import classes from "./HeaderArtistItemRouter.module.css";
 import { NavLink } from "react-router-dom";
-import arrow_back from "../../../../assets/images/icons/music/arrow_back.svg"
+import map_svg from "../../../../assets/images/map.svg";
+import { useState } from "react";
 
 const HeaderArtistItemRouter = (props) => {
+  const [hover, toggleHover] = useState(0);
+
+  const setHover = (e) => {
+    toggleHover(e);
+  };
+
   return (
     <div className={classes.headerArtistItemRouter}>
-      <NavLink to="/music-list/artists">
-        <div className={classes.buttonBack}>
-          <img src={arrow_back} alt="arrow-back"></img>
+      <div className={classes.buttonBack}>
+        <NavLink
+          to="/music-list/artists"
+          onMouseOver={() => {
+            setHover(1);
+          }}
+          onMouseOut={() => {
+            setHover(0);
+          }}
+        >
+          <svg>
+            <use
+              href={
+                hover ? map_svg + "#arrow_back_hover" : map_svg + "#arrow_back"
+              }
+            />
+          </svg>
           <h3>Artists</h3>
-        </div>
-      </NavLink>
+        </NavLink>
+      </div>
       <h1>{props.nameArtist}</h1>
       <hr />
     </div>

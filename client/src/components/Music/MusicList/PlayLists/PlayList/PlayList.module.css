@@ -19,13 +19,13 @@
     height: 200px;
 }
 
-.arrowRight img{
+.arrowRight svg{
     margin-top: 70px;
     width: 50px;
     height: 50px;
 }
 
-.playList:hover .arrowRight img {
+.playList:hover .arrowRight svg {
     margin-left: -50px;
 }
 

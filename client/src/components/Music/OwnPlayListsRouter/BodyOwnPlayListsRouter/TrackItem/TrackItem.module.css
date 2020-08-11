@@ -12,10 +12,6 @@
     font-size: 130%;
     margin-bottom: 0px;
   }
-
-  .item img {
-    margin-top: 15px;
-  }
   
   .item:hover h2{
     margin-left: 40px;
@@ -31,8 +27,6 @@
     margin-left: -40px;
     
   }
-
- 
 
   .description {
     display: flex;

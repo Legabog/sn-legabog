@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Artists.module.css";
-import HeaderArtists from "./HeaderArtists/HeaderArtists copy";
+import HeaderArtists from "./HeaderArtists/HeaderArtists";
 import BodyArtists from "./BodyArtists/BodyArtists";
 import { connect } from "react-redux";
 

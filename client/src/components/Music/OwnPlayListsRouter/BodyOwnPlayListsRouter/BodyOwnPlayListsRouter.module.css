@@ -46,7 +46,7 @@
 }
 
 .playListTracks p {
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .playListTracks hr {
@@ -60,16 +60,14 @@
     height: 30px;
 }
 
-.delete img{
+.delete svg {
+    width: 35px;
+    height: 35px;
+}
+
+.delete svg{
     margin-top: 270px;
     margin-left: -335px;
 
 }
 
-.delete a {
-    color: #F62A54;
-}
-
-.delete i:hover {
-    cursor: pointer;
-}

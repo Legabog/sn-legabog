@@ -1,30 +1,27 @@
 /* -------------------Button_back--------------------- */
 
 .buttonBack {
-    margin-top: -70px;
-    margin-bottom: 22.4px;
-    margin-left: 20px;
-    display: flex;
-    color: #4A76A8;
-    /* margin-left: 15px; */
-  
-  }
-  
-  .buttonBack img {
-    margin-top: 10px;
-    width: 30px;
-    height: 40px;
-  
-  }
-  
-  .buttonBack h3 {
-    margin-left: 5px;
-    color: #4A76A8;
-  }
-  
-  .buttonBack:hover h3 {
-    color: #F62A54;
-  }
+  margin-top: -70px;
+  margin-bottom: 22.4px;
+  margin-left: 20px;
+  display: flex;
+  color: #4A76A8;
+  margin-left: 15px;
+}
+
+
+.buttonBack svg {
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
+
+}
+
+.buttonBack h3 {
+  margin-left: 5px;
+  margin-top: 20px;
+  color: #4A76A8;
+}
   
   
   /* ------------------------------------------------------------- */
@@ -39,11 +36,16 @@
     border: none;
     border-top: 1px solid rgb(240, 236, 236);
   }
-
+  
   .headerArtistItemRouter a {
+    display: flex;
     text-decoration: none;
   }
   
+  .headerArtistItemRouter a:hover h3 {
+    color: #F62A54;
+  
+  }
   
   .headerArtistItemRouter h1 {
       margin-left: 55px;
