@@ -14,12 +14,6 @@ let initialState = {
       avatarpath: "https://gamepedia.cursecdn.com/wowpedia/6/69/BTNDrekthar.png"
     },
     {
-      id: 3,
-      name: "Leha",
-      avatarpath:
-        "https://im0-tub-ru.yandex.net/i?id=50f395987d25877d3494778a95743d8c-sr&n=13&exp=1"
-    },
-    {
       id: 4,
       name: "Anton",
       avatarpath:

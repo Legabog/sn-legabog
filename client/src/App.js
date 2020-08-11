@@ -1,26 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import classes from "./App.module.css";
 import { connect } from "react-redux";
 import { initializeApp } from "./redux/app-reducer";
 import Navbar from "./components/Navbar/Navbar";
-import { Route, withRouter, Switch } from "react-router-dom";
-import Music from "./components/Music/Music";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import NewsContainer from "./components/News/NewsContainer";
-import SettingsContainer from "./components/Settings/SettingsContainer";
-import Login from "./components/Login/Login";
+import { Route, withRouter, Switch } from "react-router-dom";
 import { compose } from "redux";
 import Preloader from "./components/common/Preloader/Preloader";
-import MusicList from "./components/Music/MusicList/MusicList";
-import ArtistsList from "./components/Music/MusicList/Artists/Artists";
-import AlbumsList from "./components/Music/MusicList/Albums/Albums";
-import ArtistItemRouter from "./components/Music/ArtistItemRouter/ArtistItemRouter";
-import MusicPlayer from "./components/Music/MusicPlayer/MusicPlayer";
-import PlayLists from "./components/Music/MusicList/PlayLists/PlayLists";
-import CreateAlbum from "./components/Music/MusicList/CreateAlbum/CreateAlbum";
 import { getMusicAlbumsData } from "./redux/musicalbums-reducer";
 import ErrorRoute from "./components/common/ErrorRoute/ErrorRoute";
 import {
@@ -41,14 +27,55 @@ import {
   nextTrack,
   previousTrack,
   shuffleMusic,
-  setActiveTrackAndPlayerPlayListNull
+  setActiveTrackAndPlayerPlayListNull,
 } from "./redux/musicplayer-reducer";
-import OwnPlayListsRouter from "./components/Music/OwnPlayListsRouter/OwnPlayListsRouter";
 import MusicPlayerPanel from "./components/MusicPlayerPanel/MusicPlayerPanel";
-
+import NotifyForm from "./components/common/NotifyForm/NotifyForm";
 import firebase from "firebase/app";
 import "firebase/storage";
-import NotifyForm from "./components/common/NotifyForm/NotifyForm";
+
+//--------------React.lazy components
+const DialogsContainer = React.lazy(() =>
+  import("./components/Dialogs/DialogsContainer")
+);
+const Music = React.lazy(() => import("./components/Music/Music"));
+const ProfileContainer = React.lazy(() =>
+  import("./components/Profile/ProfileContainer")
+);
+const UsersContainer = React.lazy(() =>
+  import("./components/Users/UsersContainer")
+);
+const NewsContainer = React.lazy(() =>
+  import("./components/News/NewsContainer")
+);
+const SettingsContainer = React.lazy(() =>
+  import("./components/Settings/SettingsContainer")
+);
+const Login = React.lazy(() => import("./components/Login/Login"));
+const MusicList = React.lazy(() =>
+  import("./components/Music/MusicList/MusicList")
+);
+const ArtistsList = React.lazy(() =>
+  import("./components/Music/MusicList/Artists/Artists")
+);
+const AlbumsList = React.lazy(() =>
+  import("./components/Music/MusicList/Albums/Albums")
+);
+const ArtistItemRouter = React.lazy(() =>
+  import("./components/Music/ArtistItemRouter/ArtistItemRouter")
+);
+const PlayLists = React.lazy(() =>
+  import("./components/Music/MusicList/PlayLists/PlayLists")
+);
+const MusicPlayer = React.lazy(() =>
+  import("./components/Music/MusicPlayer/MusicPlayer")
+);
+const CreateAlbum = React.lazy(() =>
+  import("./components/Music/MusicList/CreateAlbum/CreateAlbum")
+);
+const OwnPlayListsRouter = React.lazy(() =>
+  import("./components/Music/OwnPlayListsRouter/OwnPlayListsRouter")
+);
 
 class App extends React.Component {
   componentDidMount() {
@@ -80,49 +107,111 @@ class App extends React.Component {
               {/* -------------------------Netowrk Routes----------------- */}
               <Route
                 path="/profile/:userId?"
-                render={() => <ProfileContainer />}
+                render={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <ProfileContainer />
+                  </Suspense>
+                )}
               />
-              <Route path="/dialogs" render={() => <DialogsContainer />} />
-              <Route path="/users" render={() => <UsersContainer />} />
-              <Route path="/news" component={() => <NewsContainer />} />
-              <Route path="/login" component={() => <Login />} />
-              <Route path="/settings" component={() => <SettingsContainer  shuffleMusic={this.props.shuffleMusic}/>} />
+              <Route
+                path="/dialogs"
+                render={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <DialogsContainer />
+                  </Suspense>
+                )}
+              />
+              <Route
+                path="/users"
+                render={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <UsersContainer />
+                  </Suspense>
+                )}
+              />
+              <Route
+                path="/news"
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <NewsContainer />
+                  </Suspense>
+                )}
+              />
+              <Route
+                path="/login"
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <Login />
+                  </Suspense>
+                )}
+              />
+              <Route
+                path="/settings"
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <SettingsContainer shuffleMusic={this.props.shuffleMusic} />
+                  </Suspense>
+                )}
+              />
 
               {/* -----------------------Player Routes----------------- */}
-              <Route path="/music" component={() => <Music />} />
+              <Route
+                path="/music"
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <Music />
+                  </Suspense>
+                )}
+              />
               <Route
                 exact
                 path="/music-list"
                 component={() => (
-                  <React.Fragment>
-                    <MusicList />
-                  </React.Fragment>
+                  <Suspense fallback={<Preloader />}>
+                    <React.Fragment>
+                      <MusicList />
+                    </React.Fragment>
+                  </Suspense>
                 )}
               />
               <Route
                 exact
                 path="/music-list/artists"
-                component={() => <ArtistsList />}
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <ArtistsList />
+                  </Suspense>
+                )}
               />
               <Route
                 exact
                 path="/music-list/albums"
-                component={() => <AlbumsList />}
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <AlbumsList />
+                  </Suspense>
+                )}
               />
               <Route
                 exact
                 path="/music-list/playlists"
-                component={() => <PlayLists />}
+                component={() => (
+                  <Suspense fallback={<Preloader />}>
+                    <PlayLists />
+                  </Suspense>
+                )}
               />
               <Route
                 exact
                 path="/music-list/playlists/create"
                 component={() => (
-                  <CreateAlbum
-                    fetch={this.props.fetch}
-                    addToPlayList={this.props.createNewPlayList}
-                    update={this.props.getMyOwnPlayLists}
-                  />
+                  <Suspense fallback={<Preloader />}>
+                    <CreateAlbum
+                      fetch={this.props.fetch}
+                      addToPlayList={this.props.createNewPlayList}
+                      update={this.props.getMyOwnPlayLists}
+                    />
+                  </Suspense>
                 )}
               />
               {this.props.musicAlbums.map((e) => (
@@ -131,9 +220,9 @@ class App extends React.Component {
                   exact
                   path={`/music-list/artists/${e.author}`}
                   component={() => (
-                    <ArtistItemRouter
-                      nameArtist={e.author}
-                    />
+                    <Suspense fallback={<Preloader />}>
+                      <ArtistItemRouter nameArtist={e.author} />
+                    </Suspense>
                   )}
                 />
               ))}
@@ -144,21 +233,25 @@ class App extends React.Component {
                   exact
                   path={`/music-player/${e.author}/${e.title}`}
                   component={() => (
-                    <MusicPlayer
-                      nameArtist={e.author}
-                      albumTitle={e.title}
-                      img={e.albumcoverUrl}
-                      switchStateOfPlayLists={this.props.switchStateOfPlayLists}
-                      addTrackToPlayList={this.props.addTrackToPlayList}
-                      playPlayer={this.props.playPlayer}
-                      setMusicForPlayer={this.props.setMusicForPlayer}
-                      setIndexOfTrack={this.props.setIndexOfTrack}
-                      musicPlayerPlayList={this.props.musicPlayerPlayList}
-                      indexOfPlayingTrack={this.props.indexOfPlayingTrack}
-                      isPlaying={this.props.isPlaying}
-                      activeTrack={this.props.activeTrack}
-                      disablerButtonPlay={this.props.disablerButtonPlay}
-                    />
+                    <Suspense fallback={<Preloader />}>
+                      <MusicPlayer
+                        nameArtist={e.author}
+                        albumTitle={e.title}
+                        img={e.albumcoverUrl}
+                        switchStateOfPlayLists={
+                          this.props.switchStateOfPlayLists
+                        }
+                        addTrackToPlayList={this.props.addTrackToPlayList}
+                        playPlayer={this.props.playPlayer}
+                        setMusicForPlayer={this.props.setMusicForPlayer}
+                        setIndexOfTrack={this.props.setIndexOfTrack}
+                        musicPlayerPlayList={this.props.musicPlayerPlayList}
+                        indexOfPlayingTrack={this.props.indexOfPlayingTrack}
+                        isPlaying={this.props.isPlaying}
+                        activeTrack={this.props.activeTrack}
+                        disablerButtonPlay={this.props.disablerButtonPlay}
+                      />
+                    </Suspense>
                   )}
                 />
               ))}
@@ -168,25 +261,27 @@ class App extends React.Component {
                   exact
                   path={`/music-playlists/${e.title}/`}
                   component={() => (
-                    <OwnPlayListsRouter
-                      id={e._id}
-                      img={e.playlistcoverUrl}
-                      title={e.title}
-                      description={e.description}
-                      tracks={e.tracks}
-                      deleteOwnPlayList={this.props.deleteOwnPlayList}
-                      deleteTrackFromPlayList={
-                        this.props.deleteTrackFromPlayList
-                      }
-                      playPlayer={this.props.playPlayer}
-                      setMusicForPlayer={this.props.setMusicForPlayer}
-                      setIndexOfTrack={this.props.setIndexOfTrack}
-                      musicPlayerPlayList={this.props.musicPlayerPlayList}
-                      indexOfPlayingTrack={this.props.indexOfPlayingTrack}
-                      isPlaying={this.props.isPlaying}
-                      activeTrack={this.props.activeTrack}
-                      disablerButtonPlay={this.props.disablerButtonPlay}
-                    />
+                    <Suspense fallback={<Preloader />}>
+                      <OwnPlayListsRouter
+                        id={e._id}
+                        img={e.playlistcoverUrl}
+                        title={e.title}
+                        description={e.description}
+                        tracks={e.tracks}
+                        deleteOwnPlayList={this.props.deleteOwnPlayList}
+                        deleteTrackFromPlayList={
+                          this.props.deleteTrackFromPlayList
+                        }
+                        playPlayer={this.props.playPlayer}
+                        setMusicForPlayer={this.props.setMusicForPlayer}
+                        setIndexOfTrack={this.props.setIndexOfTrack}
+                        musicPlayerPlayList={this.props.musicPlayerPlayList}
+                        indexOfPlayingTrack={this.props.indexOfPlayingTrack}
+                        isPlaying={this.props.isPlaying}
+                        activeTrack={this.props.activeTrack}
+                        disablerButtonPlay={this.props.disablerButtonPlay}
+                      />
+                    </Suspense>
                   )}
                 />
               ))}
@@ -204,12 +299,15 @@ class App extends React.Component {
               nextTrack={this.props.nextTrack}
               previousTrack={this.props.previousTrack}
               disablerButtonNext={this.props.disablerButtonNext}
-              setActiveTrackAndPlayerPlayListNull={this.props.setActiveTrackAndPlayerPlayListNull}
+              setActiveTrackAndPlayerPlayListNull={
+                this.props.setActiveTrackAndPlayerPlayListNull
+              }
             />
-            <NotifyForm 
+
+            <NotifyForm
               notifyTop={this.props.notifyTop}
               notifyOpacity={this.props.notifyOpacity}
-              notifyVisibility={this.props.notifyVisibility}        
+              notifyVisibility={this.props.notifyVisibility}
             />
           </div>
         </div>
@@ -260,6 +358,6 @@ export default compose(
     nextTrack,
     previousTrack,
     shuffleMusic,
-    setActiveTrackAndPlayerPlayListNull
+    setActiveTrackAndPlayerPlayListNull,
   })
 )(App);
