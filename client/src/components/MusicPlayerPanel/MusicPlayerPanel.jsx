@@ -97,6 +97,7 @@ const MusicPlayerPanel = (props) => {
           </h1>
           <div className={classes.controlPanel}>
             <button
+              aria-label="music_panel_play_pause"
               onClick={() => {
                 if (props.activeTrack !== null) {
                   if (props.isPlaying) {
@@ -120,6 +121,7 @@ const MusicPlayerPanel = (props) => {
 
             <button
               disabled={props.disablerButtonNext}
+              aria-label="music_panel_next"
               onClick={() => {
                 if (props.activeTrack !== null) {
                   switch (repeatState) {
@@ -671,7 +673,7 @@ const MusicPlayerPanel = (props) => {
           <div className={classes.shuffleAndRepeat}>
             <button
               disabled={props.activeTrack !== null ? false : true}
-              style={{ marginLeft: "518px" }}
+              style={{ marginLeft: "513px" }}
               onClick={setRepeatState}
             >
               <svg>

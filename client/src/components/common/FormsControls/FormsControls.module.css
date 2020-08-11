@@ -31,10 +31,11 @@
     color: #F62A54;
 }
 
-.formSummaryError img {
+.formSummaryError svg {
     margin-bottom: -13px;
     margin-right: 5px;
     width: 50px;
+    height: 50px;
 }
 
 .formSummaryError span { 

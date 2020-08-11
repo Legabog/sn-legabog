@@ -10,14 +10,14 @@
     color: #fff;
 }
 
-.notifyInformationHeader img {
+.notifyInformationHeader svg {
     margin-top: 20px;
     margin-left: 380px;
     width: 20px;
     height: 20px;
 }
 
-.notifyInformationHeader img:hover {
+.notifyInformationHeader svg:hover {
     cursor: pointer;
     filter: opacity(80%);
 }

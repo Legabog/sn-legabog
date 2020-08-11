@@ -50,7 +50,7 @@ const ProfileInfo = (props) => {
               <button>Write a message</button>
             </div>
             <div className={classes.buttonSettings}>
-              <button>
+              <button aria-label="profile_settings">
                 <svg>
                   <use href={map_svg + "#settings"} />
                 </svg>
@@ -88,21 +88,21 @@ const ProfileInfo = (props) => {
 
             <ProfileStatusWithHooks {...props} />
             <hr align="center" />
-            <h4>Information about me:</h4>
-            <li style={{ marginTop: "-20px" }}>
-              {props.profile.aboutMe || "Нет информации"}{" "}
-            </li>
+            <h3 style={{ marginBottom: "-20px" }}>Information about me:</h3>
+            <ul>
+              <li>{props.profile.aboutMe || "Нет информации"} </li>
+            </ul>
             <hr />
-            <h4>Inforamtion about job:</h4>
-            <li style={{ marginTop: "-20px" }}>
-              Ищу работу: {props.profile.lookingForAJob ? "да" : "Нет"}
-            </li>
-            <li>
-              Описание: {props.profile.lookingForAJobDescription || "Нет"}
-            </li>
+            <h3 style={{ marginBottom: "-20px" }}>Inforamtion about job:</h3>
+            <ul>
+              <li>Ищу работу: {props.profile.lookingForAJob ? "да" : "Нет"}</li>
+              <li>
+                Описание: {props.profile.lookingForAJobDescription || "Нет"}
+              </li>
+            </ul>
             <hr />
 
-            <h4>Contacts:</h4>
+            <h3 style={{ marginBottom: "-20px" }}>Contacts:</h3>
             <div className={classes.Contacts}>
               <ul>
                 <li>
@@ -157,7 +157,7 @@ const ProfileInfo = (props) => {
               </ul>
               <hr />
             </div>
-            <h4>Photos:</h4>
+            <h3>Photos:</h3>
             <div className={classes.photos}></div>
             <hr />
           </div>

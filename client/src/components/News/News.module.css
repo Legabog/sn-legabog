@@ -59,19 +59,19 @@
     background-color: #fff;
 }
 
-.optionsLabel img {
-    width: 420px;
-    height: 420px;
-    margin-left: -70px;
-    margin-bottom: -70px;
+.optionsLabel svg {
+    width: 320px;
+    height: 320px;
+    margin-top: 60px;
+    margin-left: 30px;
 }
 
 .optionsLabel h1 {
-    width: 200px;
+    width: 400px;
     font-size: 350%;
-    margin-left: 160px;
+    margin-left: 5px;
     line-height: 3.4rem;
-    margin-top: -5px;
+    margin-top: 0px;
     position: absolute;
     color: #4A76A8;
 }
@@ -81,28 +81,29 @@
     display: flex;
 }
 
-.optionstitle img {
+.optionstitle svg {
     margin-top: 10px;
-    width: 200px;
+    width: 250px;
+    height: 240px;
     margin-left: 30px;
 }
 
 .optionstitle h1{
     font-size: 350%;
     color: #4A76A8;
-    margin-left: 130px;
+    margin-left: 80px;
     margin-top: -5px;
 }
 
 
 .inputGroup1 {
     display: flex;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .inputGroup1 select{
     margin-left: 10px;
-    width: 400px;
+    width: 350px;
     height: 50px;
     font-size: 200%;
     color: #4A76A8;
@@ -110,7 +111,7 @@
 }
 
 .inputGroup1 button {
-    width: 160px;
+    width: 210px;
     height: 50px;
     font-size: 120%;
     background-color: #4A76A8;
@@ -135,7 +136,7 @@
 
 .inputGroup2 select{
     margin-left: 10px;
-    width: 400px;
+    width: 350px;
     height: 50px;
     font-size: 200%;
     color: #4A76A8;
@@ -143,7 +144,7 @@
 }
 
 .inputGroup2 button {
-    width: 160px;
+    width: 210px;
     height: 50px;
     font-size: 120%;
     background-color: #4A76A8;

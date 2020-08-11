@@ -1,12 +1,14 @@
 import React from "react";
 import classes from "./ErrorRoute.module.css";
-import error from "../../../assets/images/icons/error.svg";
+import map_svg from "../../../assets/images/map.svg";
 
 const ErrorRoute = (props) => {
   return (
     <div className={classes.error}>
       <div className={classes.errorIcon}>
-        <img src={error} alt="error"></img>
+        <svg>
+          <use href={map_svg + "#error"} />
+        </svg>
       </div>
       <div className={classes.errorDescription}>
         <h2>Oops, error</h2>

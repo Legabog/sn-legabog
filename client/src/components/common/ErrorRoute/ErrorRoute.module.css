@@ -13,8 +13,9 @@
    text-align: center;
   }
 
-  .error img {
+  .error svg {
     width: 100px;
+    height: 100px;
   }
 
   .errorIcon {

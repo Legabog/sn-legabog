@@ -1,20 +1,23 @@
 import React from "react";
 import classes from "./News.module.css";
 import store from "../../redux/redux-store";
-import news from "../../assets/images/icons/navbar/news.svg";
-import settings_news from "../../assets/images/icons/settings-news.svg";
+import map_svg from "../../assets/images/map.svg";
 
 const News = (props) => {
   return (
     <div className={classes.root}>
       <div className={classes.optionsTogether}>
         <div className={classes.optionsLabel}>
-          <img src={news} alt="news"></img>
+          <svg>
+            <use href={map_svg + "#news_icon"} />
+          </svg>
           <h1>Headline News</h1>
         </div>
         <div className={classes.options}>
           <div className={classes.optionstitle}>
-            <img src={settings_news} alt="settings news"></img>
+            <svg>
+              <use href={map_svg + "#news_settings"} />
+            </svg>
             <h1>Options</h1>
           </div>
 
@@ -30,20 +33,20 @@ const News = (props) => {
                   </option>
                 ))}
               </select>
-                <button
-                  type="button"
-                  onClick={() => {
-                    props.setCountry(
-                      document.getElementById("inputGroupSelect04").value
-                    );
-                    props.getNews(
-                      store.getState().newsReducer.country,
-                      store.getState().newsReducer.category
-                    );
-                  }}
-                >
-                  Choose country
-                </button>
+              <button
+                type="button"
+                onClick={() => {
+                  props.setCountry(
+                    document.getElementById("inputGroupSelect04").value
+                  );
+                  props.getNews(
+                    store.getState().newsReducer.country,
+                    store.getState().newsReducer.category
+                  );
+                }}
+              >
+                Choose country
+              </button>
             </div>
           </div>
 
@@ -59,20 +62,20 @@ const News = (props) => {
                   </option>
                 ))}
               </select>
-                <button
-                  type="button"
-                  onClick={() => {
-                    props.setCategory(
-                      document.getElementById("inputGroupSelect03").value
-                    );
-                    props.getNews(
-                      store.getState().newsReducer.country,
-                      store.getState().newsReducer.category
-                    );
-                  }}
-                >
-                  Choose category
-                </button>
+              <button
+                type="button"
+                onClick={() => {
+                  props.setCategory(
+                    document.getElementById("inputGroupSelect03").value
+                  );
+                  props.getNews(
+                    store.getState().newsReducer.country,
+                    store.getState().newsReducer.category
+                  );
+                }}
+              >
+                Choose category
+              </button>
             </div>
           </div>
         </div>

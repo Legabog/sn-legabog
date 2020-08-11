@@ -10,6 +10,10 @@
     background-color: #fff;
 }
 
+.descriptionBlock ul {
+    display: inline;
+}
+
 .descriptionBlock li {
     list-style: none;
 }
@@ -33,7 +37,7 @@
     max-width: 400px;
 }
 
-.descriptionBlock h4 {
+.descriptionBlock h3 {
     color: #4A76A8;
     margin-top: -1px;
 }

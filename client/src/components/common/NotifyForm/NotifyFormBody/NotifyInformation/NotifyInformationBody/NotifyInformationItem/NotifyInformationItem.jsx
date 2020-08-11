@@ -1,10 +1,13 @@
 import React from "react";
 import classes from "./NotifyInformationItem.module.css";
+import map_svg from "../../../../../../../assets/images/map.svg"
 
 const NotifyInformationItem = (props) => {
   return (
     <div className={classes.NotifyInformationItem}>
-      <img src={props.img} alt={props.img} />
+      <svg>
+        <use href={map_svg + `#${props.img}`}/>
+      </svg>
       <div className={classes.description}>
         <h5>
           {props.typeOfSystem} ● {props.city}, {props.country}

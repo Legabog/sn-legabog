@@ -6,10 +6,7 @@ const Settings = (props) => {
     <div className={classes.rootSettings}>
       <h1 className={classes.headerh1}>Account settings</h1>
       <div className={classes.themeSettings}>
-        <h3>Theme Settings</h3>
-        <button onClick={() => {
-          props.shuffleMusic()
-        }}></button>
+        <h2>Theme Settings</h2>
       </div>
     </div>
   );

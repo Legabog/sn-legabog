@@ -7,7 +7,6 @@ import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 
 
-
 class NewsContainer extends React.Component {
   componentDidMount() {
     this.props.getNews(this.props.country, this.props.category)

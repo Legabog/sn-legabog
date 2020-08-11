@@ -8,7 +8,7 @@ import { login } from "../.././redux/auth-reducer";
 import { Redirect } from "react-router-dom";
 import Img from "../../assets/images/user.png";
 import cls from "../common/FormsControls/FormsControls.module.css";
-import report from "../../assets/images/icons/report.svg";
+import map_svg from "../../assets/images/map.svg"
 
 const LoginForm = (props) => {
   return (
@@ -39,7 +39,9 @@ const LoginForm = (props) => {
         <div>
           <div className={cls.formSummaryError}>
             <div>
-              <img src={report} alt="error"></img>
+              <svg>
+                <use href={map_svg + "#report_login"}/>
+              </svg>
               <span>Warning!!!</span>
             </div>
             <div>
