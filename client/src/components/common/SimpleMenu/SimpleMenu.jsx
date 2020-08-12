@@ -4,8 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import classes from "./SimpleMenu.module.css";
 import { NavLink } from "react-router-dom";
-import map_svg from "../../../assets/images/map.svg"
-
+import map_svg from "../../../assets/images/map.svg";
 
 export const SimpleMenu = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,7 +38,7 @@ export const SimpleMenu = (props) => {
             <strong>{props.login}</strong>
           </p>
           <svg>
-            <use href={map_svg + "#dropdown"}/>
+            <use href={map_svg + "#dropdown"} />
           </svg>
         </div>
       </Button>
@@ -49,29 +48,53 @@ export const SimpleMenu = (props) => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        style={{ width: "260px" }}
       >
+        <div className={classes.menuHeader}>
+          <div className={classes.signedInfo}>
+            <p>
+              Signed in as <strong>{props.login}</strong>
+            </p>
+          </div>
+          <hr />
+        </div>
         <MenuItem onClick={() => {}}>
           <NavLink
             to={"/profile/"}
-            style={{ color: "#4A76A8", textDecoration: "none" }}
+            style={{ textDecoration: "none", color: "#4a76a8" }}
           >
-            My profile
+            <div className={classes.linkToProfile}>
+              <svg>
+                <use href={map_svg + "#user"} />
+              </svg>
+              <h3>Profile</h3>
+            </div>
           </NavLink>
         </MenuItem>
         <MenuItem onClick={() => {}}>
           <NavLink
-            style={{ color: "#4A76A8", textDecoration: "none" }}
             to={"/music"}
+            style={{ textDecoration: "none", color: "#4a76a8" }}
           >
-            Music
+            <div className={classes.linkToMusic}>
+              <svg>
+                <use href={map_svg + "#music"} />
+              </svg>
+              <h3>Music</h3>
+            </div>
           </NavLink>
         </MenuItem>
         <MenuItem onClick={() => {}}>
           <NavLink
-            style={{ color: "#4A76A8", textDecoration: "none" }}
             to={"/settings"}
+            style={{ textDecoration: "none", color: "#4a76a8" }}
           >
-            Settings
+            <div className={classes.linkToSettings}>
+              <svg>
+                <use href={map_svg + "#settings"} />
+              </svg>
+              <h3>Settings</h3>
+            </div>
           </NavLink>
         </MenuItem>
         <MenuItem
@@ -80,10 +103,15 @@ export const SimpleMenu = (props) => {
           }}
         >
           <NavLink
-            style={{ color: "#4A76A8", textDecoration: "none" }}
             to={"/login"}
+            style={{ textDecoration: "none", color: "#4a76a8" }}
           >
-            Logout
+            <div className={classes.linkToLogout}>
+              <svg>
+                <use href={map_svg + "#logout"} />
+              </svg>
+              <h3>Logout</h3>
+            </div>
           </NavLink>
         </MenuItem>
       </Menu>
