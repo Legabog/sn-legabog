@@ -16,6 +16,7 @@ export const ActionSwitcher = (props) => {
 
   const handleClose = () => {
     setAnchorEl(null);
+    setHover(0)
   };
 
   const [hover, toggleHover] = useState(0);
