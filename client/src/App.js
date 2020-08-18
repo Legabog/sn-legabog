@@ -94,6 +94,7 @@ class App extends React.Component {
     this.props.initializeApp();
     this.props.getMusicAlbumsData();
     this.props.getMyOwnPlayLists();
+    
   }
 
   render() {
