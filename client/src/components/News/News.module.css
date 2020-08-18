@@ -103,29 +103,18 @@
 
 .inputGroup1 select{
     margin-left: 10px;
-    width: 350px;
+    padding-left: 30px;
+    width: 560px;
     height: 50px;
     font-size: 200%;
-    color: #4A76A8;
-    border: 2px solid #939393;
-}
-
-.inputGroup1 button {
-    width: 210px;
-    height: 50px;
-    font-size: 120%;
-    background-color: #4A76A8;
+    border-radius: 20px;
+    background-color: #4a76a8;
     color: #fff;
-    border: none;
-}
-
-.inputGroup1 button:hover {
-    filter: opacity(80%);
-    cursor: pointer;    
 }
 
 .inputGroup1 select:hover {
     cursor: pointer;
+    filter: opacity(80%);
 }
 
 .inputGroup2 {
@@ -136,28 +125,17 @@
 
 .inputGroup2 select{
     margin-left: 10px;
-    width: 350px;
+    padding-left: 30px;
+    width: 560px;
     height: 50px;
     font-size: 200%;
-    color: #4A76A8;
-    border: 2px solid #939393;
-}
-
-.inputGroup2 button {
-    width: 210px;
-    height: 50px;
-    font-size: 120%;
-    background-color: #4A76A8;
+    border-radius: 20px;
+    background-color: #4a76a8;
     color: #fff;
-    border: none;
-}
-
-.inputGroup2 button:hover {
-    filter: opacity(80%);
-    cursor: pointer;    
 }
 
 .inputGroup2 select:hover {
     cursor: pointer;
+    filter: opacity(80%);
 }
 

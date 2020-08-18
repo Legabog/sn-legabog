@@ -1,9 +1,23 @@
 import React from "react";
 import classes from "./News.module.css";
-import store from "../../redux/redux-store";
 import map_svg from "../../assets/images/map.svg";
 
-const News = (props) => {
+
+const News = React.memo((props) => {
+
+  const changeHander = (e) => {
+    props.setCountry(
+      document.getElementById("inputGroupSelect04").value
+    );
+  }
+
+  const changeHander_2 = (e) => {
+    props.setCategory(
+      document.getElementById("inputGroupSelect03").value
+    );
+  }
+
+
   return (
     <div className={classes.root}>
       <div className={classes.optionsTogether}>
@@ -26,27 +40,16 @@ const News = (props) => {
               <select
                 id="inputGroupSelect04"
                 aria-label="Example select with button addon"
+                value={props.country}
+                onChange={changeHander}
+                
               >
                 {props.countries.map((e) => (
-                  <option value={e.id} key={e.id}>
+                  <option value={e.id} key={e.id} >
                     {e.title}
                   </option>
                 ))}
               </select>
-              <button
-                type="button"
-                onClick={() => {
-                  props.setCountry(
-                    document.getElementById("inputGroupSelect04").value
-                  );
-                  props.getNews(
-                    store.getState().newsReducer.country,
-                    store.getState().newsReducer.category
-                  );
-                }}
-              >
-                Choose country
-              </button>
             </div>
           </div>
 
@@ -55,6 +58,8 @@ const News = (props) => {
               <select
                 id="inputGroupSelect03"
                 aria-label="Example select with button addon"
+                value={props.category}
+                onChange={changeHander_2}
               >
                 {props.categories.map((e) => (
                   <option value={e} key={e}>
@@ -62,20 +67,6 @@ const News = (props) => {
                   </option>
                 ))}
               </select>
-              <button
-                type="button"
-                onClick={() => {
-                  props.setCategory(
-                    document.getElementById("inputGroupSelect03").value
-                  );
-                  props.getNews(
-                    store.getState().newsReducer.country,
-                    store.getState().newsReducer.category
-                  );
-                }}
-              >
-                Choose category
-              </button>
             </div>
           </div>
         </div>
@@ -102,6 +93,6 @@ const News = (props) => {
       })}
     </div>
   );
-};
+});
 
 export default News;

@@ -4,7 +4,8 @@ import Post from "./Post/Post";
 import { AddMyPostFormRedux } from "./AddMyPostRedux";
 import map_svg from "../../../assets/images/map.svg";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
+  
   let PostsElements = props.PostsData.map((ell) => (
     <Post key={ell.id} message={ell.message} likes={ell.likes} {...props} />
   ));
@@ -28,6 +29,6 @@ const MyPosts = (props) => {
       <div className={classes.posts}>{PostsElements}</div>
     </div>
   );
-};
+});
 
 export default MyPosts;
