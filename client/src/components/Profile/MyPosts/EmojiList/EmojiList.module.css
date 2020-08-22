@@ -1,0 +1,31 @@
+.emojiList {
+  position: absolute;
+  z-index: 2;
+  margin-top: -30px;
+  margin-left: 40px;
+  background: #fff;
+  border: 1px solid rgb(233, 233, 233);
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.3);
+  max-width: 330px;
+  max-height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  transition: opacity 100ms linear, top 100ms linear, visibility 100ms linear;
+}
+
+.emojiListItem {
+  height: 50px;
+  padding: 5px;
+}
+
+.emojiList p {
+  width: 30px;
+  font-size: 130%;
+}
+
+.emojiList p:hover {
+  cursor: pointer;
+  filter: opacity(80%);
+  transform: scale(1.1);
+}

@@ -1,32 +1,29 @@
 import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import { AddMyPostFormRedux } from "./AddMyPostRedux";
-import map_svg from "../../../assets/images/map.svg";
+import Header from "./Header/Header";
+import Body from "./Body/Body";
+import { useState } from "react";
 
 const MyPosts = React.memo((props) => {
-  
-  let PostsElements = props.PostsData.map((ell) => (
-    <Post key={ell.id} message={ell.message} likes={ell.likes} {...props} />
-  ));
+  const [message, setMessage] = useState("");
 
-  const AddMyPost = (values) => {
-    props.addPostActionCreator(values.addMyPostForm);
+  const changeHanlder = (e) => {
+    setMessage(e.target.value);
   };
 
   return (
     <div className={classes.postsBlock}>
-      <div className={classes.header}>
-        <svg>
-          <use href={map_svg + "#discussions"} />
-        </svg>
-        <h2>Posts</h2>
-      </div>
-
-      <div className={classes.inputMessage}>
-        <AddMyPostFormRedux onSubmit={AddMyPost} />
-      </div>
-      <div className={classes.posts}>{PostsElements}</div>
+      <Header />
+      <Body
+        {...props}
+        message={message}
+        setMessage={setMessage}
+        changeHanlder={changeHanlder}
+      />
+      {props.PostsData.map((ell, index) => (
+        <Post index={index} key={ell.id} message={ell.message} likes={ell.likes} {...props} />
+      ))}
     </div>
   );
 });

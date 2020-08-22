@@ -1,8 +1,6 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-import { NavLink } from "react-router-dom";
-import map_svg from "../../assets/images/map.svg";
-
+import NavbarItem from "./NavbarItem/NavbarItem";
 
 const Navbar = (props) => {
   return (
@@ -10,64 +8,34 @@ const Navbar = (props) => {
       <div className={classes.list}>
         <ul>
           <li>
-            <div className={`${classes.item} ${classes.active}`}>
-              <svg>
-                <use href={map_svg + "#user"} />
-              </svg>
-              <NavLink to="/profile" activeClassName={classes.active}>
-                <span>Profile</span>
-              </NavLink>
-            </div>
+            <NavbarItem
+              svgId={"#user"}
+              itemName={"Profile"}
+              link={"/profile"}
+            />
           </li>
           <li>
-            <div className={classes.item}>
-              <svg>
-                <use href={map_svg + "#chats"} />
-              </svg>
-              <NavLink to="/dialogs" activeClassName={classes.active}>
-                <span>Messages</span>
-              </NavLink>
-            </div>
+            <NavbarItem
+              svgId={"#chats"}
+              itemName={"Messages"}
+              link={"/dialogs"}
+            />
           </li>
           <li>
-            <div className={classes.item}>
-              <svg>
-                <use href={map_svg + "#news"} />
-              </svg>
-              <NavLink to="/news" activeClassName={classes.active}>
-                <span>News</span>
-              </NavLink>
-            </div>
+            <NavbarItem svgId={"#news"} itemName={"News"} link={"/news"} />
           </li>
           <li>
-            <div className={classes.item}>
-              <svg>
-                <use href={map_svg + "#music"} />
-              </svg>
-              <NavLink to="/music" activeClassName={classes.active}>
-                <span>Music</span>
-              </NavLink>
-            </div>
+            <NavbarItem svgId={"#music"} itemName={"Music"} link={"/music"} />
           </li>
           <li>
-            <div className={classes.item}>
-              <svg>
-                <use href={map_svg + "#settings"} />
-              </svg>
-              <NavLink to="/settings" activeClassName={classes.active}>
-                <span>Settings</span>
-              </NavLink>
-            </div>
+            <NavbarItem
+              svgId={"#settings"}
+              itemName={"Settings"}
+              link={"/settings"}
+            />
           </li>
           <li>
-            <div className={classes.item}>
-              <svg>
-                <use href={map_svg + "#users"} />
-              </svg>
-              <NavLink to="/users" activeClassName={classes.active}>
-                <span>Users</span>
-              </NavLink>
-            </div>
+            <NavbarItem svgId={"#users"} itemName={"Users"} link={"/users"} />
           </li>
         </ul>
       </div>

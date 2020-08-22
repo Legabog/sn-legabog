@@ -1,0 +1,13 @@
+.item a {
+    color:#4A76A8;
+    text-decoration: none;
+  }
+  
+  .item a:hover {
+    color: #4A76A8;
+  }
+  
+  .item svg {
+    width: 25px;
+    height: 25px;
+  }

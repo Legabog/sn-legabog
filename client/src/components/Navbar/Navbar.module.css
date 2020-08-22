@@ -36,21 +36,3 @@
 
 }
 
-.item a {
-  color:#4A76A8;
-  text-decoration: none;
-}
-
-.item a:hover {
-  color: #4A76A8;
-}
-
-.nav img {
-  width: 25px;
-}
-
-
-.nav svg {
-  width: 25px;
-  height: 25px;
-}

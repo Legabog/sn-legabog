@@ -1,0 +1,109 @@
+.inputMessage {
+    color: #4A76A8;
+    padding: 10px;
+}
+
+.emojiMenu svg {
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.emojiMenu svg:hover {
+    cursor: pointer;
+    filter: opacity(70%)
+}
+
+.posts {
+    margin-top: 10px;
+}
+
+.inputMessage button {
+    width: 320px;
+    height: 40px;
+    font-size: 160%;
+    margin-top: 10px;
+    background: #4a76a8;
+    border: #4A76A8;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.inputMessage button:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.inputMessage textarea {
+    width: 302px;
+    font-size: 200%;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #4A76A8;
+    border: #4A76A8;
+    padding-left: 10px;
+}
+
+.inputMessage textarea::-webkit-input-placeholder { 
+    color: #4A76A8;
+}
+
+.inputMessage textarea::-moz-placeholder { 
+    color: #4A76A8;
+}
+
+.errorTextAria {
+    color: #F62A54;
+    padding: 10px;
+}
+
+.errorTextAria button {
+    width: 320px;
+    height: 40px;
+    font-size: 160%;
+    margin-top: 10px;
+    background: #F62A54;
+    border: #F62A54;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.errorTextAria button:hover {
+    cursor: not-allowed;
+}
+
+.errorTextAria textarea {
+    width: 302px;
+    font-size: 200%;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 3px solid #F62A54;
+    color: #F62A54;
+    padding-left: 10px;
+}
+
+.errorTextAria textarea::-webkit-input-placeholder { 
+    color: #F62A54;
+}
+
+.errorTextAria textarea::-moz-placeholder { 
+    color: #F62A54;
+}
+
+
+.error svg {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -3px;
+    margin-right: -5px;
+}
+
+.error {
+    color: #F62A54;
+}
+
+.emojiMenu svg {
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
+}
