@@ -4,10 +4,11 @@ const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_PROFILE_STATUS = "SET_PROFILE_STATUS";
 const CHANGE_STATUS_HANDLER = "CHANGE_STATUS_HANDLER";
-const GET_CAPTCHA = "GET_CAPTCHA"
-const SAVE_PHOTO_SUCCESS = "SAVE_PHOTO_SUCCESS"
-const SET_FOLLOW_STATUS = "SET_FOLLOW_STATUS"
-const TOGGLE_FETCH_STATUS = "TOGGLE_FETCH_STATUS"
+const GET_CAPTCHA = "GET_CAPTCHA";
+const SAVE_PHOTO_SUCCESS = "SAVE_PHOTO_SUCCESS";
+const SET_FOLLOW_STATUS = "SET_FOLLOW_STATUS";
+const TOGGLE_FETCH_STATUS = "TOGGLE_FETCH_STATUS";
+const DELETE_POST = "DELETE_POST"
 
 let initialState = {
   PostsData: [],
@@ -17,7 +18,7 @@ let initialState = {
   profileStatus: "Change status",
   captcha: "",
   followStatus: null,
-  fetchStatus: false
+  fetchStatus: false,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -25,13 +26,19 @@ const profileReducer = (state = initialState, action) => {
     case ADD_POST: {
       let newPost = {
         id: Math.random(),
-        message: action.text
+        message: action.text,
       };
-      let stateCopy = {
+      return {
         ...state,
         PostsData: [...state.PostsData, newPost],
       };
-      return stateCopy;
+    }
+
+    case DELETE_POST: {
+      return {
+        ...state,
+        PostsData: newArray,
+      }
     }
 
     case SET_USER_PROFILE: {
@@ -58,29 +65,29 @@ const profileReducer = (state = initialState, action) => {
     case GET_CAPTCHA: {
       return {
         ...state,
-        captcha: action.captcha
-      }
+        captcha: action.captcha,
+      };
     }
 
     case SAVE_PHOTO_SUCCESS: {
       return {
         ...state,
-        profile: {...state.profile, photos: action.photos}
-      }
+        profile: { ...state.profile, photos: action.photos },
+      };
     }
 
     case SET_FOLLOW_STATUS: {
       return {
-        ...state, 
-        followStatus: action.status
-      }
+        ...state,
+        followStatus: action.status,
+      };
     }
 
     case TOGGLE_FETCH_STATUS: {
       return {
         ...state,
-        fetchStatus: action.status
-      }
+        fetchStatus: action.status,
+      };
     }
 
     default:
@@ -94,6 +101,13 @@ export const addPostActionCreator = (text) => {
     text,
   };
 };
+
+export const deletePost = (index) => {
+  return {
+    type: DELETE_POST,
+    index
+  }
+}
 
 export const setUserProfile = (profile) => {
   return {
@@ -119,38 +133,37 @@ export const changeStatusHandler = (status) => {
 export const setCaptcha = (captcha) => {
   return {
     type: GET_CAPTCHA,
-    captcha
-  }
-}
+    captcha,
+  };
+};
 
 export const savePhotoSuccess = (photos) => {
   return {
     type: SAVE_PHOTO_SUCCESS,
-    photos
-  }
-}
+    photos,
+  };
+};
 
 export const setFollowStatus = (status) => {
   return {
     type: SET_FOLLOW_STATUS,
-    status
-  }
-}
+    status,
+  };
+};
 
 export const setFetchStatus = (status) => {
   return {
     type: TOGGLE_FETCH_STATUS,
-    status
-  }
-}
+    status,
+  };
+};
 
 export const getCaptcha = () => {
-  return (dispatch) => 
-  userAPI.getCaptcha().then(response => {
-    dispatch(setCaptcha(response.url))
-  })
-
-}
+  return (dispatch) =>
+    userAPI.getCaptcha().then((response) => {
+      dispatch(setCaptcha(response.url));
+    });
+};
 
 export const getProfile = (userId) => {
   return (dispatch) =>
@@ -179,32 +192,30 @@ export const updateProfileStatus = (status) => {
 export const getFollowStatus = (userId) => {
   return (dispatch) => {
     userAPI.getFollow(userId).then((response) => {
-      dispatch(setFollowStatus(response))
-    })
-  }
-}
+      dispatch(setFollowStatus(response));
+    });
+  };
+};
 
 export const setFollowTrue = (userId) => {
   return (dispatch) => {
-    dispatch(setFetchStatus(true))
+    dispatch(setFetchStatus(true));
     userAPI.follow(userId).then((response) => {
-      dispatch(setFetchStatus(false))
-      dispatch(setFollowStatus(true))
-    })
-
-  }
-}
+      dispatch(setFetchStatus(false));
+      dispatch(setFollowStatus(true));
+    });
+  };
+};
 
 export const setFollowFalse = (userId) => {
   return (dispatch) => {
-    dispatch(setFetchStatus(true))
+    dispatch(setFetchStatus(true));
     userAPI.unfollow(userId).then((response) => {
-      dispatch(setFetchStatus(false))
-      dispatch(setFollowStatus(false))
-    })
-
-  }
-}
+      dispatch(setFetchStatus(false));
+      dispatch(setFollowStatus(false));
+    });
+  };
+};
 
 export const savePhoto = (file) => {
   return (dispatch) => {
