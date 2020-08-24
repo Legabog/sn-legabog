@@ -22,7 +22,15 @@ const MyPosts = React.memo((props) => {
         changeHanlder={changeHanlder}
       />
       {props.PostsData.map((ell, index) => (
-        <Post index={index} key={ell.id} message={ell.message} likes={ell.likes} {...props} />
+        <Post
+          index={index}
+          key={ell.id}
+          message={ell.message}
+          likes={ell.likes}
+          date={ell.date}
+          time={ell.time}
+          {...props}
+        />
       ))}
     </div>
   );
