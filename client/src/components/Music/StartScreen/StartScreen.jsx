@@ -3,8 +3,6 @@ import classes from "./StartScreen.module.css";
 import { NavLink } from "react-router-dom";
 import map_svg from "../../../assets/images/map.svg"
 
-
-
 const StartScreen = (props) => {
   return (
     <NavLink to="/music-list" style={{textDecoration: "none"}}>

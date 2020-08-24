@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./FooterItem.module.css";
 import { NavLink } from "react-router-dom";
 
+
 const FooterItem = (props) => {
   return (
     <NavLink to={`/music-player/${props.author}/${props.title}`}>
