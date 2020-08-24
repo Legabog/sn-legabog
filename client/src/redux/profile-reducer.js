@@ -27,6 +27,8 @@ const profileReducer = (state = initialState, action) => {
       let newPost = {
         id: Math.random(),
         message: action.text,
+        date: action.date,
+        time: action.time,
       };
       return {
         ...state,
@@ -37,7 +39,7 @@ const profileReducer = (state = initialState, action) => {
     case DELETE_POST: {
       return {
         ...state,
-        PostsData: newArray,
+        PostsData: [...state.PostsData].slice(0, action.index).concat([...state.PostsData].slice(action.index + 1, [...state.PostsData].length)),
       }
     }
 
@@ -95,10 +97,12 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreator = (text) => {
+export const addPostActionCreator = (text, date, time) => {
   return {
     type: ADD_POST,
     text,
+    date,
+    time
   };
 };
 
